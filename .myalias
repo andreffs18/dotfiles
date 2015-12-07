@@ -1,0 +1,90 @@
+############
+### UTIS ###
+############
+# clear screen
+alias c="clear"
+# search and look information in directori
+alias ls="ls -lhFAG"
+# ip information
+alias ip='echo "Your IP IS:"; ifconfig | grep "inet " | grep -v 127.0.0.1'
+# reload ./bashrc
+alias resource='echo "Source .myalias & .bashrc"; source ~/.bashrc;	echo "Success!";'
+# project root folder localtion
+alias project_root="c && cd /Users/andresilva/Desktop/"
+# clear all .pyc files from current directory
+alias delpyc="find . -name '*.pyc' -delete"
+
+######################
+### PORTFOLIO UTIS ###
+######################
+# virtual enviroments
+alias _vm_andreffs="workon andreffs"
+# goto projects folder
+alias _andreffsfolder="project_root && cd webprojects/_andreffs/andreffs/ && _vm_andreffs"
+# start my server
+alias andreffs="_andreffsfolder && gits && python manage.py runserver"
+
+####################
+### COLLEGE UTIS ###
+####################
+# current year i'm @
+alias IST="cd /Users/andresilva/Dropbox/IST/3\ Ano/"
+
+
+################
+### GIT UTIS ###
+################
+alias gits="git status"
+alias gitd="c && git diff"
+alias gitcp='function _gitcp(){
+	current_branch=$(git symbolic-ref HEAD --short)
+	echo "Commit Message: \"$1\"";
+	echo "origin->$current_branch";
+	git commit -am "$1";
+	git push origin $current_branch;
+	echo "Success!";
+};_gitcp'
+alias gitrmerged='git branch --merged | grep -v "\*" | grep -v release | grep -v master | xargs -n 1 git branch -d'
+
+####################
+### UNBABEL UTIS ###
+####################
+# virtual enviroments
+alias _vm_ub="workon ub"
+alias _vm_ubzendesk="workon ubzendesk"
+alias _vm_uberrorcheck="workon ubcheck"
+alias _vm_ubtranscription="workon ubtranscription"
+# handle mongodb
+alias startmdbserver="echo '>>> Starting MONGODB SERVER' && mongod --fork"
+alias startmdb="startmdbserver && mongo"
+alias stopmdb="ps aux | grep mongod | awk {'print \$2'} | xargs kill -9"
+# start redis_server (background)
+alias startredis="echo '>>> Starting REDIS SERVER' && redis-server &"
+# start smtp server
+alias startsmtp="echo '>>> Starting SMTP SERVER' && python -m smtpd -n -c DebuggingServer localhost:1025"
+# start notebooks
+alias startnb="_vm_ub && echo '>>> Starting iPYTHON NOTEBOOK' && python manage.py shell_plus --notebook"
+# goto projects folder
+alias _ubfolder="project_root && cd unbabelServer/unbabel/ && _vm_ub"
+alias _ubzendeskfolder="project_root && cd unbabelZendesk/unbabel-zendesk/ && _vm_ubzendesk"
+alias _uberrorcheckfolder="project_root && cd unbabelErrorCheck/error-check/ && _vm_uberrorcheck"
+alias _ubtranscription="project_root && cd unbabelTranscription/unbabel-transcription/ && _vm_ubtranscription"
+# run projects
+alias ub="_ubfolder && gits"
+alias ubzendesk="_ubzendeskfolder && gits"
+alias uberrorcheck="_uberrorcheckfolder && gits"
+alias ubtranscription="_ubtranscription && gits"
+# python manage.py projects
+alias py="python manage.py runserver"
+alias pyub="ub && py"
+alias pyubzendesk="ubzendesk && py"
+alias pyerrorcheck="uberrorcheck && source .env && python error-check.py"
+alias pyubtranscription="ubtranscription && py"
+# logs & shell
+alias hlogs="heroku logs -t"
+alias logs_production="hlogs --remote=production"
+alias logs_staging="hlogs --remote=staging"
+alias shell="python manage.py shell"
+alias hshell="heroku run 'python manage.py shell'"
+alias shell_production="hshell --remote=production"
+alias shell_staging="hshell  --remote=staging"
