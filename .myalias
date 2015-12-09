@@ -14,24 +14,20 @@ alias desktop="c && cd /Users/andresilva/Desktop/"
 # clear all .pyc files from current directory
 alias delpyc="find . -name '*.pyc' -delete"
 # update dotfiles
-
-alias updatedotfiles='function _updatedotfiles(){
+alias updotfiles='function _updotfiles(){
     read -r -p "Are you sure? [y/N] " response
     if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
     then
+        dotfiledir=$(/Users/andresilva/Desktop)
+        # dotfiledir=$(/Users/andresilva/Documents/projects/dotfiles)
         # copy files to dotfile folder and commit code
-        cp ~/.myalias /Users/andresilva/Documents/projects/dotfiles
-        gitcp "UPDATED DOTFILES"
+        cp ~/.myalias dotfiledir
+
+        #gitcp "UPDATED DOTFILES"
     else
-        echo "not today."
+        echo "What do we say to the God of Death? Not today."
     fi
-    #current_branch=$(git symbolic-ref HEAD --short)
-    #echo "Updating Dotfiles";
-    #echo "origin->$current_branch";
-    #git commit -am "$1";
-    #git push origin $current_branch;
-    echo "Success!";
-};_updatedotfiles'
+};_updotfiles'
 
 
 ##############################
