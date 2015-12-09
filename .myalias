@@ -18,7 +18,7 @@ alias updotfiles='function _updotfiles(){
     read -r -p "Update DOT Files? [y/N] " response
     if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
     then
-        dotfiledir=~/Documents/projects/dotfiles
+        dotfiledir=~/Documents/projects/dotfiles/
         # copy files to dotfile folder and commit code
         cp ~/.{bash_profile,bashrc,gitignore,mansettings,myalias,profile,promptsettings} $dotfiledir
         # update github
