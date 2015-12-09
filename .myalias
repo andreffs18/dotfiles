@@ -15,25 +15,24 @@ alias desktop="c && cd /Users/andresilva/Desktop/"
 alias delpyc="find . -name '*.pyc' -delete"
 # update dotfiles
 alias updotfiles='function _updotfiles(){
-    read -r -p "Are you sure? [y/N] " response
+    read -r -p "Update DOT Files? [y/N] " response
     if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
     then
-        dotfiledir=$(/Users/andresilva/Desktop)
-        # dotfiledir=$(/Users/andresilva/Documents/projects/dotfiles)
+        dotfiledir=~/Documents/projects/dotfiles
         # copy files to dotfile folder and commit code
-        cp ~/.myalias dotfiledir
-
-        #gitcp "UPDATED DOTFILES"
+        cp ~/.{bash_profile,bashrc,gitignore,mansettings,myalias,profile,promptsettings} $dotfiledir
+        # update github
+        cd $dotfiledir
+        gitcp "UPDATE DOT FILES"
     else
         echo "What do we say to the God of Death? Not today."
     fi
 };_updotfiles'
 
-
 ##############################
 ### APPLICATIONS SHORTCUTS ###
 ##############################
-alias st2='open "$1" -a Sublime\ Text\ 2'
+alias st2='open $1 -a Sublime\ Text\ 2'
 
 ######################
 ### PORTFOLIO UTIS ###
