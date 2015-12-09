@@ -10,9 +10,34 @@ alias ip='echo "Your IP IS:"; ifconfig | grep "inet " | grep -v 127.0.0.1'
 # reload ./bashrc
 alias resource='echo "Source .myalias & .bashrc"; source ~/.bashrc;	echo "Success!";'
 # project root folder localtion
-alias project_root="c && cd /Users/andresilva/Desktop/"
+alias desktop="c && cd /Users/andresilva/Desktop/"
 # clear all .pyc files from current directory
 alias delpyc="find . -name '*.pyc' -delete"
+# update dotfiles
+
+alias updatedotfiles='function _updatedotfiles(){
+    read -r -p "Are you sure? [y/N] " response
+    if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+    then
+        # copy files to dotfile folder and commit code
+        cp ~/.myalias /Users/andresilva/Documents/projects/dotfiles
+        gitcp "UPDATED DOTFILES"
+    else
+        echo "not today."
+    fi
+    #current_branch=$(git symbolic-ref HEAD --short)
+    #echo "Updating Dotfiles";
+    #echo "origin->$current_branch";
+    #git commit -am "$1";
+    #git push origin $current_branch;
+    echo "Success!";
+};_updatedotfiles'
+
+
+##############################
+### APPLICATIONS SHORTCUTS ###
+##############################
+alias st2='open "$1" -a Sublime\ Text\ 2'
 
 ######################
 ### PORTFOLIO UTIS ###
@@ -20,16 +45,15 @@ alias delpyc="find . -name '*.pyc' -delete"
 # virtual enviroments
 alias _vm_andreffs="workon andreffs"
 # goto projects folder
-alias _andreffsfolder="project_root && cd webprojects/_andreffs/andreffs/ && _vm_andreffs"
+alias _andreffsfolder="desktop && cd webprojects/_andreffs/"
 # start my server
-alias andreffs="_andreffsfolder && gits && python manage.py runserver"
+alias andreffs="_andreffsfolder && _vm_andreffs && gits && py"
 
 ####################
 ### COLLEGE UTIS ###
 ####################
 # current year i'm @
 alias IST="cd /Users/andresilva/Dropbox/IST/3\ Ano/"
-
 
 ################
 ### GIT UTIS ###
@@ -65,10 +89,10 @@ alias startsmtp="echo '>>> Starting SMTP SERVER' && python -m smtpd -n -c Debugg
 # start notebooks
 alias startnb="_vm_ub && echo '>>> Starting iPYTHON NOTEBOOK' && python manage.py shell_plus --notebook"
 # goto projects folder
-alias _ubfolder="project_root && cd unbabelServer/unbabel/ && _vm_ub"
-alias _ubzendeskfolder="project_root && cd unbabelZendesk/unbabel-zendesk/ && _vm_ubzendesk"
-alias _uberrorcheckfolder="project_root && cd unbabelErrorCheck/error-check/ && _vm_uberrorcheck"
-alias _ubtranscription="project_root && cd unbabelTranscription/unbabel-transcription/ && _vm_ubtranscription"
+alias _ubfolder="desktop && cd unbabelServer/unbabel/ && _vm_ub"
+alias _ubzendeskfolder="desktop && cd unbabelZendesk/unbabel-zendesk/ && _vm_ubzendesk"
+alias _uberrorcheckfolder="desktop && cd unbabelErrorCheck/error-check/ && _vm_uberrorcheck"
+alias _ubtranscription="desktop && cd unbabelTranscription/unbabel-transcription/ && _vm_ubtranscription"
 # run projects
 alias ub="_ubfolder && gits"
 alias ubzendesk="_ubzendeskfolder && gits"
