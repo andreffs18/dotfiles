@@ -24,7 +24,7 @@ alias updotfiles='function _updotfiles(){
     cp ~/.{mybashrc,gitignore,gitconfig,mansettings,myalias,promptsettings,zshrc} $dotfiledir
     # update github
     cd $dotfiledir
-    gitcp "UPDATE DOT FILES"
+    gitcp "fix: automatic update .dotfiles!"
 };_updotfiles'
 
 # grep string on given folder
@@ -46,6 +46,16 @@ alias _vm_andreffs="workon andreffs"
 alias _andreffsfolder="projects && cd andreffs/"
 # start my server
 alias andreffs="_andreffsfolder && _vm_andreffs && gits"
+
+######################
+###  PROJECT UTIS  ###
+######################
+# virtual enviroments
+alias _vm_flasktut="workon flask_template"
+# goto projects folder
+alias _flasktemplatefolder="projects && cd flask-template-project/"
+# 
+alias flasktemplate="_flasktemplatefolder && _vm_flasktut && gits"
 
 ####################
 ### COLLEGE UTIS ###
