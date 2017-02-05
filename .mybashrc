@@ -17,17 +17,17 @@ else
     echo "WARNING: Can't find virtualenvwrapper.sh"
 fi
 
-# Added by the Heroku Toolbelt
-export PATH="$PATH:/usr/local/heroku/bin"
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
+# add mysql path
+export PATH="$PATH:/usr/local/mysql/bin"
+export PATH="$PATH:/usr/local/mysql/support-files/bin"
 
 # PYTHONPATH=$PYTHONPATH:/Users/andresilva/Desktop/unbabelGithub/unbabel-utils
 # PYTHONPATH=$PYTHONPATH:/Users/andresilva/Desktop/unbabelDocumentFormatter/unbabel-document-formatter
 # PYTHONPATH=$PYTHONPATH:/Users/andresilva/Desktop/unbabelServer/unbabel
 PYTHONPATH=$PYTHONPATH:
-NLTK_DATA=/Users/andresilva/Desktop/unbabelServer/unbabel/nltk_data/
-
+NLTK_DATA=/Users/andreffs18/work/unbabel/nltk_data/
 export PYTHONPATH NLTK_DATA
 export PGHOST=localhost
 
@@ -39,10 +39,10 @@ source ~/.myalias
 # Load man settings
 source ~/.mansettings
 # Load custom prompt settings
-source ~/.promptsettings
-
+# source ~/.promptsettings
 
 # welcome message
 echo " "
 echo "Welcome to the dark side of the moon, $USER!"
 echo " "
+

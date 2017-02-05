@@ -4,13 +4,17 @@
 # clear screen
 alias c="clear"
 # search and look information in directori
-alias ls="ls -lhFAG"
+alias list="ls"
+alias ls="list -lhFAG"
 # ip information
 alias ip='echo "Your IP IS:"; ifconfig | grep "inet " | grep -v 127.0.0.1'
-# reload ./bashrc
-alias resource='echo "Source .myalias & .bashrc"; source ~/.bashrc;	echo "Success!";'
+# reload every dotfile
+alias resource='echo "Source ~/.zshrc"; source ~/.zshrc; echo "Success!";'
 # project root folder localtion
-alias desktop="c && cd /Users/andresilva/Desktop/"
+alias desktop="c && cd ~/Desktop/"
+alias documents="c && cd ~/Documents/"
+alias projects="c && ~/projects/"
+alias work="c && ~/work/"
 # clear all .pyc files from current directory
 alias delpyc="find . -name '*.pyc' -delete"
 # update dotfiles
@@ -18,7 +22,7 @@ alias updotfiles='function _updotfiles(){
     read -r -p "Update DOT Files? [y/N] " response
     if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
     then
-        dotfiledir=~/Documents/projects/dotfiles/
+        dotfiledir=~/projects/dotfiles/
         # copy files to dotfile folder and commit code
         cp ~/.{bash_profile,bashrc,gitignore,mansettings,myalias,profile,promptsettings} $dotfiledir
         # update github
@@ -28,6 +32,11 @@ alias updotfiles='function _updotfiles(){
         echo "What do we say to the God of Death? Not today."
     fi
 };_updotfiles'
+
+# grep string on given folder
+alias findstr='function _findstr(){
+    find $1 \( -name node_modules -prune \) -o -name "*.py" -exec grep --color -Hn "$2" {} 2>/dev/null \;
+};_findstr'
 
 ##############################
 ### APPLICATIONS SHORTCUTS ###
@@ -40,15 +49,15 @@ alias st2='open $1 -a Sublime\ Text\ 2'
 # virtual enviroments
 alias _vm_andreffs="workon andreffs"
 # goto projects folder
-alias _andreffsfolder="desktop && cd webprojects/_andreffs/"
+alias _andreffsfolder="projects && cd andreffs/"
 # start my server
-alias andreffs="_andreffsfolder && _vm_andreffs && gits && py"
+alias andreffs="_andreffsfolder && _vm_andreffs && gits"
 
 ####################
 ### COLLEGE UTIS ###
 ####################
 # current year i'm @
-alias IST="cd /Users/andresilva/Dropbox/IST/3\ Ano/"
+alias IST="cd ~/Dropbox/IST"
 
 ################
 ### GIT UTIS ###
@@ -69,41 +78,26 @@ alias gitrmerged='git branch --merged | grep -v "\*" | grep -v release | grep -v
 ### UNBABEL UTIS ###
 ####################
 # virtual enviroments
-alias _vm_ub="workon ub"
-alias _vm_ubzendesk="workon ubzendesk"
-alias _vm_uberrorcheck="workon ubcheck"
-alias _vm_ubtranscription="workon ubtranscription"
+alias _vm_u="workon u"
+alias _vm_uannotation="workon uannotation"
+alias _vm_uops="workon uops"
+
 # handle mongodb
-alias startmdbserver="echo '>>> Starting MONGODB SERVER' && mongod --fork"
-alias startmdb="startmdbserver && mongo"
+alias startmdb="echo '>>> Starting MONGODB SERVER' && mongod --dbpath /usr/local/var/mongodb/"
 alias stopmdb="ps aux | grep mongod | awk {'print \$2'} | xargs kill -9"
 # start redis_server (background)
 alias startredis="echo '>>> Starting REDIS SERVER' && redis-server &"
 # start smtp server
 alias startsmtp="echo '>>> Starting SMTP SERVER' && python -m smtpd -n -c DebuggingServer localhost:1025"
 # start notebooks
-alias startnb="_vm_ub && echo '>>> Starting iPYTHON NOTEBOOK' && python manage.py shell_plus --notebook"
+alias inb="echo '>>> Starting iPYTHON NOTEBOOK' && ipython notebook"
 # goto projects folder
-alias _ubfolder="desktop && cd unbabelServer/unbabel/ && _vm_ub"
-alias _ubzendeskfolder="desktop && cd unbabelZendesk/unbabel-zendesk/ && _vm_ubzendesk"
-alias _uberrorcheckfolder="desktop && cd unbabelErrorCheck/error-check/ && _vm_uberrorcheck"
-alias _ubtranscription="desktop && cd unbabelTranscription/unbabel-transcription/ && _vm_ubtranscription"
+alias _ufolder="work && cd unbabel/ && _vm_u"
+alias _uannotationfolder="work && cd error-check/ && _vm_uannotation"
+alias _uopsfolder="work && cd unbabel-ops/ && _vm_uops"
 # run projects
-alias ub="_ubfolder && gits"
-alias ubzendesk="_ubzendeskfolder && gits"
-alias uberrorcheck="_uberrorcheckfolder && gits"
-alias ubtranscription="_ubtranscription && gits"
+alias u="_ufolder && gits"
+alias uberrorcheck="_uannotationfolder && gits"
+alias ubops="_uopsfolder && cd playbooks && git pull && gits"
 # python manage.py projects
 alias py="python manage.py runserver"
-alias pyub="ub && py"
-alias pyubzendesk="ubzendesk && py"
-alias pyerrorcheck="uberrorcheck && source .env && python error-check.py"
-alias pyubtranscription="ubtranscription && py"
-# logs & shell
-alias hlogs="heroku logs -t"
-alias logs_production="hlogs --remote=production"
-alias logs_staging="hlogs --remote=staging"
-alias shell="python manage.py shell"
-alias hshell="heroku run 'python manage.py shell'"
-alias shell_production="hshell --remote=production"
-alias shell_staging="hshell  --remote=staging"
