@@ -19,18 +19,12 @@ alias work="c && ~/work/"
 alias delpyc="find . -name '*.pyc' -delete"
 # update dotfiles
 alias updotfiles='function _updotfiles(){
-    read -r -p "Update DOT Files? [y/N] " response
-    if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
-    then
-        dotfiledir=~/projects/dotfiles/
-        # copy files to dotfile folder and commit code
-        cp ~/.{bash_profile,bashrc,gitignore,mansettings,myalias,profile,promptsettings} $dotfiledir
-        # update github
-        cd $dotfiledir
-        gitcp "UPDATE DOT FILES"
-    else
-        echo "What do we say to the God of Death? Not today."
-    fi
+    dotfiledir=~/projects/dotfiles/
+    # copy files to dotfile folder and commit code
+    cp ~/.{mybashrc,gitignore,gitconfig,mansettings,myalias,promptsettings,zshrc} $dotfiledir
+    # update github
+    cd $dotfiledir
+    gitcp "UPDATE DOT FILES"
 };_updotfiles'
 
 # grep string on given folder
@@ -91,13 +85,14 @@ alias startredis="echo '>>> Starting REDIS SERVER' && redis-server &"
 alias startsmtp="echo '>>> Starting SMTP SERVER' && python -m smtpd -n -c DebuggingServer localhost:1025"
 # start notebooks
 alias inb="echo '>>> Starting iPYTHON NOTEBOOK' && ipython notebook"
+
 # goto projects folder
 alias _ufolder="work && cd unbabel/ && _vm_u"
 alias _uannotationfolder="work && cd error-check/ && _vm_uannotation"
 alias _uopsfolder="work && cd unbabel-ops/ && _vm_uops"
 # run projects
 alias u="_ufolder && gits"
-alias uberrorcheck="_uannotationfolder && gits"
-alias ubops="_uopsfolder && cd playbooks && git pull && gits"
+alias uannotation="_uannotationfolder && gits"
+alias uops="_uopsfolder && cd playbooks && git pull && gits"
 # python manage.py projects
 alias py="python manage.py runserver"
