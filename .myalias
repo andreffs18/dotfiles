@@ -54,7 +54,7 @@ alias andreffs="_andreffsfolder && _vm_andreffs && gits"
 alias _vm_flasktut="workon flask_template"
 # goto projects folder
 alias _flasktemplatefolder="projects && cd flask-template-project/"
-# 
+# start working on project
 alias flasktemplate="_flasktemplatefolder && _vm_flasktut && gits"
 
 ####################
@@ -100,9 +100,12 @@ alias inb="echo '>>> Starting iPYTHON NOTEBOOK' && ipython notebook"
 alias _ufolder="work && cd unbabel/ && _vm_u"
 alias _uannotationfolder="work && cd error-check/ && _vm_uannotation"
 alias _uopsfolder="work && cd unbabel-ops/ && _vm_uops"
+
 # run projects
 alias u="_ufolder && gits"
 alias uannotation="_uannotationfolder && gits"
 alias uops="_uopsfolder && cd playbooks && git pull && gits"
+
 # python manage.py projects
 alias py="python manage.py runserver"
+alias shell="python manage.py shell"
