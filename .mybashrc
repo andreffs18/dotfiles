@@ -20,15 +20,7 @@ fi
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
 # add mysql path
-export PATH="$PATH:/usr/local/mysql/bin"
-export PATH="$PATH:/usr/local/mysql/support-files/bin"
-
-# PYTHONPATH=$PYTHONPATH:/Users/andresilva/Desktop/unbabelGithub/unbabel-utils
-# PYTHONPATH=$PYTHONPATH:/Users/andresilva/Desktop/unbabelDocumentFormatter/unbabel-document-formatter
-# PYTHONPATH=$PYTHONPATH:/Users/andresilva/Desktop/unbabelServer/unbabel
-PYTHONPATH=$PYTHONPATH:
-NLTK_DATA=/Users/andreffs18/work/unbabel/nltk_data/
-export PYTHONPATH NLTK_DATA
+export PATH="$PATH:/usr/local/mysql/bin:/usr/local/mysql/support-files/bin"
 export PGHOST=localhost
 
 ##################
