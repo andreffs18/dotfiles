@@ -51,6 +51,13 @@ source ~/.mansettings
 # Load custom prompt settings
 # source ~/.promptsettings
 
+
+# bash-completion 
+# In case of not zsh > [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+source <(kubectl completion zsh)
+
+
 # welcome message
 echo " "
 echo "Welcome to the dark side of the moon, $USER!"

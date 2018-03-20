@@ -1,3 +1,4 @@
+
 ############
 ### UTIS ###
 ############
@@ -13,7 +14,7 @@ alias resource='echo "Source ~/.zshrc"; source ~/.zshrc; echo "Success!";'
 # project root folder localtion
 alias desktop="c && cd ~/Desktop/"
 alias documents="c && cd ~/Documents/"
-alias projects="c && ~/projects/"
+alias projects="c && ~/MEGA/projects/"
 alias work="c && ~/work/"
 # clear all .pyc files from current directory
 alias delpyc="find . -name '*.pyc' -delete"
@@ -22,15 +23,17 @@ function _killps(){
     ps -ef | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9; 
 }
 alias killps='_killps'
+# show disk space 
+alias space="sudo du -hd 1 $1"
 
 # update dotfiles
 alias updotfiles='function _updotfiles(){
-    dotfiledir=~/projects/dotfiles/
+    dotfiledir=~/MEGA/projects/dotfiles/
     # copy files to dotfile folder and commit code
-    cp ~/.{mybashrc,gitignore,gitconfig,mansettings,myalias,promptsettings,zshrc} $dotfiledir
+    cp ~/.{mybashrc,gitignore,gitconfig,mansettings,myalias,promptsettings,zshrc,config/flake8} $dotfiledir
     # update github
     cd $dotfiledir
-    gitcp "fix: automatic update .dotfiles!"
+    gitcp "Update .dotfiles!"
 };_updotfiles'
 
 # grep string on given folder
@@ -139,13 +142,3 @@ alias py="python manage.py runserver"
 alias py3="python3 manage.py runserver"
 alias shell="python manage.py shell"
 alias shell3="python3 manage.py shell"
-
-
-# ssh to machines
-alias ssh_eval_production="ssh -i ~/.ssh/do_all_dev_rsa root@67.207.71.242"
-alias ssh_eval_staging="ssh -i ~/.ssh/do_all_dev_rsa root@67.207.71.54"
-alias ssh_annot_production="ssh ubuntu@104.196.13.75"
-alias ssh_annot_staging="ssh ubuntu@35.185.30.54"
-alias ssh_sandbox="ssh ubuntu@184.73.86.227"
-
-alias ssh_aee_prod="ssh ubuntu@138.197.23.2"
