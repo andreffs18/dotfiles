@@ -28,7 +28,6 @@ fi
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
 # add mysql path
-<<<<<<< HEAD
 export PATH="$PATH:/usr/local/mysql/bin"
 export PATH="$PATH:/usr/local/mysql/support-files/bin"
 # add mongo path
@@ -40,9 +39,6 @@ export PATH="$PATH:/usr/local/opt/mongodb32/bin/"
 PYTHONPATH=$PYTHONPATH:/Users/andreffs18/work/unbabel-document-formatter
 NLTK_DATA=/Users/andreffs18/work/unbabel/nltk_data/
 export PYTHONPATH NLTK_DATA
-=======
-export PATH="$PATH:/usr/local/mysql/bin:/usr/local/mysql/support-files/bin"
->>>>>>> b3e13bdc51800efc456a3216c8616a3dd082a1c7
 export PGHOST=localhost
 
 ##################
