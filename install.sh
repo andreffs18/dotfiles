@@ -4,11 +4,11 @@ DIRECTORY=~/.dotfiles
 
 # Let's create the ~/.dotfiles folder to store cloned dotfiles
 if [ -d "$DIRECTORY" ]; then
-  echo "Directory exists"
+  echo "Directory exists. Just pulling from repository..."
   cd ~/.dotfiles
   git pull origin master
 else
-  echo "Directory not exists"
+  echo "Directory does not exist..."
   mkdir ~/.dotfiles
   cd ~/.dotfiles
   git clone https://github.com/andreffs18/dotfiles .

@@ -11,6 +11,6 @@ done
 # source <(kubectl completion zsh)
 
 # welcome message
-log.success "Welcome to the dark side of the moon, $USER\!"
+log.success "Welcome to the dark side of the moon, $USER!"
 
 # security find-generic-password -wa Unbabel  
