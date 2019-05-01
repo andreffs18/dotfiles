@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#brew "dockutil"
+brew "tree"
+#brew "wget"

@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+log.info "Loading .aliases ..."
+
+# Easier navigation: .., ..., .... and ~
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+
+# List directories
+alias l="ls -lF ${colorflag}"                              # List all files colorized in long format
+alias la="ls -lAF ${colorflag}"                            # List all files colorized in long format, excluding . and ..
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"  # List only directories
+alias ls="command ls ${colorflag}"                         # Always use color output for `ls`
+
+# Directory shortcut
+alias desktop="cd ~/Desktop/"
+alias documents="cd ~/Documents/"
+alias projects="cd ~/MEGA/projects/"
+alias work="cd ~/work/"
+
+# IP addresses
+alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Empty the Trash on all mounted volumes and the main HDD.
+# Also, clear Apple’s System Logs to improve shell startup speed.
+# Finally, clear download history from quarantine. https://mths.be/bum
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+# show disk space 
+alias space="sudo du -hd 1 $1"
+
+
+# Application shortcuts
+alias st2='open $1 -a Sublime\ Text\ 2'
+alias md='open $1 -a MacDown'
+alias vs='open $1 -a Visual\ Studio\ Code'
+
+
+# Git shortcuts
+alias g="git"
+alias go="g checkout $1 && git pull origin $1"
+alias gs="g status"
+alias gd="g diff"
+alias gitrmerged='git branch --merged | grep -v "\*" | grep -v release | grep -v master | xargs -n 1 git branch -d'
+
+# Python shortcuts
+alias py="python manage.py runserver"
+alias shell="python manage.py shell"         # start python shell session
+alias delpyc="find . -name '*.pyc' -delete"  # delete all .pyc files
+
+
+# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume output volume 100'"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+
+# Kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+
+
+# reload every dotfile
+alias resource='echo "Source ~/.zshrc"; source ~/.zshrc; echo "Success!";'
+
+
+
+

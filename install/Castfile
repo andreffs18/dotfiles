@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+cask "dash2"
+# cask "dropbox"
+# cask "google-chrome"
+# cask "macdown"
+# cask "postman"
+# cask "spotify"
+# cask "visual-studio-code"
+# cask "vlc"
+# cask "hammerspoon"

@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+log.info "Loading .functions ..."
+log.warning "TODO: Test all functions ..."
+
+# Remove all runnning processes for given name
+# eg: $ killps chrome
+function killps(){ 
+    ps -ef | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9; 
+}
+
+# Update all dotfiles
+function updotfiles(){
+    dotfiledir=~/MEGA/projects/dotfiles/
+    # copy files to dotfile folder and commit code
+    cp ~/.{mybashrc,gitignore,gitconfig,mansettings,myalias,promptsettings,zshrc,config/flake8} $dotfiledir
+    # update github
+    cd $dotfiledir
+    gitcp "Update .dotfiles!"
+}
+
+# Find given string on given folder
+# eg: $ findstr "documents.txt" .
+function findstr(){
+    find $1 \( -name node_modules -prune \) -o -name "*.py" -exec grep --color -Hn "$2" {} 2>/dev/null \;
+}
+
+
+# Shortcut to commit and push changes to current branch
+# eg: $ gitcp "This is a commit message"
+function gitcp(){
+	current_branch=$(git symbolic-ref HEAD --short)
+	echo "Commit Message: \"$1\"";
+	echo "origin->$current_branch";
+	git commit -am "$1";
+	git push origin $current_branch;
+	echo "Success!";
+}
