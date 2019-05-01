@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
+DIRECTORY="~/.dotfiles"
+
 # Let's create the ~/.dotfiles folder to store cloned dotfiles
-mkdir ~/.dotfiles
-cd ~/.dotfiles
-git clone https://github.com/andreffs18/dotfiles .
+if [ -d "$DIRECTORY" ]; then
+  cd ~/.dotfiles
+  git pull origin master
+else
+  mkdir ~/.dotfiles
+  cd ~/.dotfiles
+  git clone https://github.com/andreffs18/dotfiles .
+fi
 
 # Now let's symlinc all our dotfiles to the direcotry where they are expected (usually, our home directory) 
 ln -sfv ~/.dotfiles/.bash_profile ~
