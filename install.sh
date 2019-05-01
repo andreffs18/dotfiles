@@ -15,11 +15,12 @@ ln -sv ~/.dotfiles/.aliases ~
 ln -sv ~/.dotfiles/.functions ~
 ln -sv ~/.dotfiles/.dircolor ~
 ln -sv ~/.dotfiles/.inputrc ~
-ln -sv ~/.dotfiles/.osx ~
 ln -sv ~/.dotfiles/.prompt ~
 ln -sv ~/.dotfiles/.mansettings ~
 ln -sv ~/.dotfiles/.olhaaqui ~
 
+# Symlink MacOS initial configuration
+ln -sv ~/.dotfiles/config/macos.osx ~
 # Symlink all git configuration files
 ln -sv ~/.dotfiles/config/git/.gitignore ~
 ln -sv ~/.dotfiles/config/git/.gitconfig ~
