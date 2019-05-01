@@ -21,7 +21,7 @@ ln -sfv ~/.dotfiles/.logging ~
 ln -sfv ~/.dotfiles/.exports ~
 ln -sfv ~/.dotfiles/.aliases ~
 ln -sfv ~/.dotfiles/.functions ~
-ln -sfv ~/.dotfiles/.inputrc ~
+# ln -sfv ~/.dotfiles/.inputrc ~
 ln -sfv ~/.dotfiles/.prompt ~
 ln -sfv ~/.dotfiles/.mansettings ~
 ln -sfv ~/.dotfiles/.olhaaqui ~
