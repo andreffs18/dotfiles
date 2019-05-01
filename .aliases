@@ -42,7 +42,6 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 # show disk space 
 alias space="sudo du -hd 1 $1"
 
-
 # Application shortcuts
 alias st2='open $1 -a Sublime\ Text\ 2'
 alias md='open $1 -a MacDown'
@@ -82,5 +81,5 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 alias resource='echo "Source ~/.zshrc"; source ~/.zshrc; echo "Success!";'
 
 
-
+log.info ".aliases loaded with success!"
 

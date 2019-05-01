@@ -35,3 +35,5 @@ function gitcp(){
 	git push origin $current_branch;
 	echo "Success!";
 }
+
+log.success ".functions loaded with success!"

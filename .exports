@@ -36,3 +36,5 @@ export PYTHONIOENCODING='UTF-8';
 
 # Postgres default Host configuration
 export PGHOST=localhost
+
+log.success ".exports loaded with success!"

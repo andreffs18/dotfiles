@@ -11,6 +11,3 @@ set mark-symlinked-directories on
 set input-meta on
 set output-meta on
 set convert-meta off
-
-# Flip through autocompletion matches with Shift-Tab.
-"\e[Z": menu-complete
