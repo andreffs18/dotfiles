@@ -3,7 +3,7 @@ source ~/.logging
 log.info "Loading .bashrc ..."
 
 # Load all dotfiles one by one
-for DOTFILE in .{exports,aliases,functions,prompt,inputrc,mansettings,olhaaqui}; do
+for DOTFILE in .{exports,aliases,functions,prompt,mansettings,olhaaqui}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
