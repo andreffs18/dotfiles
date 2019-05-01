@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-#brew "dockutil"
+tap "homebrew/bundle"
+tap "homebrew/core"
+
 brew "tree"
-#brew "wget"
+brew "wget"
+#brew "dockutil"
 
 # https://github.com/driesvints/dotfiles/blob/master/Brewfile

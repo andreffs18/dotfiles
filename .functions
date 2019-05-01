@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-log.info "Loading .functions ..."
 log.warning "TODO: Test all functions ..."
 
 # Remove all runnning processes for given name

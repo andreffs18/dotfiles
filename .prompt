@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-log.info "Loading .prompt ..."
 
 # Prompt settings
 #  \a         # an ASCII bell character (07)
@@ -58,3 +57,5 @@ PS1_DIR="\[\033[1;36m\]\W\[\033[0m\]"
 PS1_CIFR="\[\033[1;32m\]$ \[\033[0m\]"
 
 export PS1="$PS1_TIME $PS1_NAME($PS1_DIR) $PS1_CIFR"
+
+log.success ".prompt loaded with success!"

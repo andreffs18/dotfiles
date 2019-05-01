@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 
 cask "dash2"
 # cask "dropbox"
