@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source ~/.logging
 log.info "Loading .bashrc ..."
 
 # Load all dotfiles one by one

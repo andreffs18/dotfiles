@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-DIRECTORY="~/.dotfiles"
+DIRECTORY=~/.dotfiles
 
 # Let's create the ~/.dotfiles folder to store cloned dotfiles
 if [ -d "$DIRECTORY" ]; then
+  echo "Directory exists"
   cd ~/.dotfiles
   git pull origin master
 else
+  echo "Directory not exists"
   mkdir ~/.dotfiles
   cd ~/.dotfiles
   git clone https://github.com/andreffs18/dotfiles .
@@ -51,3 +53,5 @@ brew bundle --file=~/.dotfiles/install/Brewfile
 
 log.info "Loading Castfile ..."
 brew bundle --file=~/.dotfiles/install/Castfile
+
+log.success "Mac os configured!"
