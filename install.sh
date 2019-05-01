@@ -26,6 +26,9 @@ ln -sv ~/.dotfiles/config/git/.gitconfig ~
 # Symlink python linting flake8 configuration
 ln -sv ~/.dotfiles/config/python/flake8 ~/.config/flake8
 
+# Setup MacOS settings for the first time
+source ~/.osx
+
 # Apply settings to all terminal sessions without need of a restart
 source ~/.bashrc
 

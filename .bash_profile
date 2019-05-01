@@ -2,7 +2,7 @@
 log.info "Loading .bash_profile ..."
 
 # Load all dotfiles one by one
-for DOTFILE in .{exports,aliases,functions,dircolor,prompt,inputrc,osx,mansettings,olhaaqui}; do
+for DOTFILE in .{exports,aliases,functions,dircolor,prompt,inputrc,mansettings,olhaaqui}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
