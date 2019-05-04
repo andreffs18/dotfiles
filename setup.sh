@@ -71,3 +71,5 @@ log.info "Setup mas packages configuration ..."
 
 log.success "Mac os configured!"
 log.info "Rebooting machine..."
+
+# Theres tmux missing and https://sw.kovidgoyal.net/kitty/#tabs-and-windows
