@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 DIRECTORY=~/.dotfiles
 
 # Let's create the ~/.dotfiles folder to store cloned dotfiles
@@ -13,15 +12,15 @@ else
   git clone https://github.com/andreffs18/dotfiles .
 fi
 
-# Now let's symlinc all our dotfiles to the direcotry where they are expected (usually, our home directory) 
+# Now let's symlinc all our dotfiles to the direcotry where they are expected (currently, our home directory) 
 for DIR in $DIRECTORY/.{bash_profile,bashrc,logging,exports,aliases,functions,prompt,mansettings,olhaaqui}; do
   [ -f "$DIR" ] && ln -sfv $DIR ~
 done
 
-# Symlink MacOS initial configuration
+# Symlink MacOS initial configuration (to setup prefered MacOS configurations)
 ln -sfv $DIRECTORY/config/mac/.osx ~
 
-# Symlink all git configuration files
+# Symlink all git configuration files 
 ln -sfv $DIRECTORY/config/git/.gitignore_global ~
 ln -sfv $DIRECTORY/config/git/.gitconfig ~
 

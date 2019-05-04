@@ -7,6 +7,12 @@ My configuration files.
 To setup a brand new mac os you just need to run the ```./install.sh``` script.
 
 
+## Functionality
+- store passwords https://keybase.io/docs/command_line
+- zsh shell with https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH pure prompt https://github.com/sindresorhus/pure
+- install kitty terminal https://sw.kovidgoyal.net/kitty/#tabs-and-windows
+
+
 ## Inspiration
 
 This repo was _heavily influeced_ by:
