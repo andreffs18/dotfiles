@@ -2,8 +2,11 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
 
+# Display directories as trees (https://www.geeksforgeeks.org/tree-command-unixlinux/) 
 brew "tree"
-brew "wget"
-#brew "dockutil"
 
-# https://github.com/driesvints/dotfiles/blob/master/Brewfile
+# Download files over network (https://www.computerhope.com/unix/wget.htm)
+brew "wget"
+
+# Tool for managing dock items (https://github.com/chilcote/outset/wiki/Dockutil)
+brew "dockutil"

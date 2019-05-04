@@ -7,15 +7,6 @@ function killps(){
     ps -ef | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9; 
 }
 
-# Update all dotfiles
-function updotfiles(){
-    dotfiledir=~/MEGA/projects/dotfiles/
-    # copy files to dotfile folder and commit code
-    cp ~/.{mybashrc,gitignore,gitconfig,mansettings,myalias,promptsettings,zshrc,config/flake8} $dotfiledir
-    # update github
-    cd $dotfiledir
-    gitcp "Update .dotfiles!"
-}
 
 # Find given string on given folder
 # eg: $ findstr "documents.txt" .

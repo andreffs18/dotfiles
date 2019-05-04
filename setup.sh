@@ -19,6 +19,7 @@ done
 
 # Symlink MacOS initial configuration (to setup prefered MacOS configurations)
 ln -sfv $DIRECTORY/config/mac/.osx ~
+ln -sfv $DIRECTORY/config/mac/.dockutil ~
 
 # Symlink all git configuration files 
 ln -sfv $DIRECTORY/config/git/.gitignore_global ~
@@ -46,7 +47,22 @@ brew update
 log.info "Loading Brewfile ..."
 brew bundle --file=$DIRECTORY/install/Brewfile
 
+log.info "Setup brew packages configuration ..."
+
+source ~/.dockutil
+# install OMYZSH
+# $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# setup defined shell
+# $ chsh -s $(which zsh)
+
+
 log.info "Loading Castfile ..."
 brew bundle --file=$DIRECTORY/install/Castfile
+log.info "Setup cast packages configuration ..."
+
+log.info "Loading Masfile..."
+brew bundle--file=$DIRECTORY/install/Masfile
+log.info "Setup mas packages configuration ..."
 
 log.success "Mac os configured!"
+log.info "Rebooting machine..."
