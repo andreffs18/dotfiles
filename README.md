@@ -12,7 +12,7 @@ $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/mas
 
 
 ## Functionality
-- store passwords https://keybase.io/docs/command_line
+- store passwords https://keybase.io/docs/command_line or https://bitwarden.com/
 - zsh shell with https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH pure prompt https://github.com/sindresorhus/pure
 - install kitty terminal https://sw.kovidgoyal.net/kitty/#tabs-and-windows
 - other brewfile examples https://github.com/driesvints/dotfiles/blob/master/Brewfile
