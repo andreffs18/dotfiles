@@ -10,3 +10,6 @@ brew "wget"
 
 # Tool for managing dock items (https://github.com/chilcote/outset/wiki/Dockutil)
 brew "dockutil"
+
+# Install ZShell (https://sourabhbajaj.com/mac-setup/iTerm/zsh.html)
+brew "zsh"

@@ -17,25 +17,29 @@ for DIR in $DIRECTORY/.{bash_profile,bashrc,logging,exports,aliases,functions,pr
   [ -f "$DIR" ] && ln -sfv $DIR ~
 done
 
+# Create .config folder, if it doens't exist already
+CONFIG_DIRECTORY=~/.config
+if [ ! -d "$CONFIG_DIRECTORY" ]; then
+  mkdir "$CONFIG_DIRECTORY";
+fi
 # Symlink MacOS initial configuration (to setup prefered MacOS configurations)
-ln -sfv $DIRECTORY/config/mac/.osx ~
-ln -sfv $DIRECTORY/config/mac/.dockutil ~
+ln -sfv $DIRECTORY/config/mac/.osx $CONFIG_DIRECTORY
+ln -sfv $DIRECTORY/config/mac/.dockutil $CONFIG_DIRECTORY
 
 # Symlink all git configuration files 
-ln -sfv $DIRECTORY/config/git/.gitignore_global ~
-ln -sfv $DIRECTORY/config/git/.gitconfig ~
+ln -sfv $DIRECTORY/config/git/.gitignore_global $CONFIG_DIRECTORY
+ln -sfv $DIRECTORY/config/git/.gitconfig $CONFIG_DIRECTORY
+# TODO: set git to read configuration from this file
 
 # Symlink python linting flake8 configuration 
-if [ ! -d ~/.config/ ]; then
-  mkdir ~/.config/;
-fi
-ln -sfv $DIRECTORY/config/python/flake8 ~/.config/flake8
+
+ln -sfv $DIRECTORY/config/python/flake8 $CONFIG_DIRECTORY
 
 # Initialize Logging
 source ~/.logging
 
 # Setup MacOS settings for the first time
-source ~/.osx
+source ~/.config/mac/.osx
 
 # Apply settings to all terminal sessions without need of a restart
 source ~/.bash_profile
@@ -54,7 +58,8 @@ source ~/.dockutil
 # $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # setup defined shell
 # $ chsh -s $(which zsh)
-
+# source ~/.zshrc
+# plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting)
 
 log.info "Loading Castfile ..."
 brew bundle --file=$DIRECTORY/install/Castfile
