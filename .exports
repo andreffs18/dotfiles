@@ -16,8 +16,6 @@ export LC_ALL='en_US.UTF-8';
 
 # Configuration for all Executable Paths
 export PATH="$PATH:/usr/local/sbin"
-# RVM path (for scripting)
-export PATH="$PATH:$HOME/.rvm/bin"
 # Mysql path
 export PATH="$PATH:/usr/local/mysql/bin"
 export PATH="$PATH:/usr/local/mysql/support-files/bin"
@@ -25,10 +23,12 @@ export PATH="$PATH:/usr/local/mysql/support-files/bin"
 export PATH="$PATH:/usr/local/opt/mongodb32/bin/"
 # PHP path
 export PATH="$PATH:/usr/local/php5/bin"
-# Kube authenticator path
-export PATH=$HOME/bin:$PATH
 # OpenSSL 1.0.2 path
-export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="$PATH:/usr/local/opt/openssl/bin"
+# RVM path (for scripting)
+export PATH="$PATH:$HOME/.rvm/bin"
+# Kube authenticator path
+export PATH="$PATH:$HOME/bin"
 
 # Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
 export PYTHONIOENCODING='UTF-8';

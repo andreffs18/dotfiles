@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 log.info "Loading .osx configuration ..."
 
-COMPUTER_NAME="andreffs"
+COMPUTER_NAME="$USER"
 
 # Quit "System Preferences" if it's already open
 osascript -e 'tell application "System Preferences" to quit'
@@ -13,14 +13,16 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
-# Software Update															  #
+# Software Update & Xcode													  #
 ###############################################################################
 
 # Download and install avaliable software updates
 sudo softwareupdate -i -a
 
 # Install latest version of xcode
-xcode-select --install
+if [[ ! "$(xcode-select -p)" ]]; then 
+	xcode-select --install
+fi
 
 log.success "Updated MacOS to it's most recent version!"
 

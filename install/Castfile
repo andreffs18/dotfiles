@@ -5,11 +5,17 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
 cask "dash2"
-# cask "dropbox"
-# cask "google-chrome"
-# cask "macdown"
-# cask "postman"
-# cask "spotify"
-# cask "visual-studio-code"
-# cask "vlc"
-# cask "hammerspoon"
+cask "docker"
+cask "dropbox"
+cask "evernote"
+cask "google-chrome"
+cask "postman"
+cask "spotify"
+cask "sublime-text"
+cask "utorrent"
+cask "visual-studio-code"
+cask "vlc"
+
+
+
+

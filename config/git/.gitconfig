@@ -9,7 +9,7 @@
 	default = simple
 
 [core]
-	excludesfile = ~/.config/git/.gitignore
+	excludesfile = ~/.gitignore_global
 
 [diff]
 	tool = vimdiff
