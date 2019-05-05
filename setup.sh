@@ -17,10 +17,6 @@ for DIR in $DIRECTORY/.{bash_profile,bashrc,logging,exports,aliases,functions,pr
   [ -f "$DIR" ] && ln -sfv $DIR ~
 done
 
-# Symlink MacOS initial configuration (to setup prefered MacOS configurations)
-ln -sfv $DIRECTORY/config/mac/.osx ~
-ln -sfv $DIRECTORY/config/mac/.dockutil ~
-
 # Symlink all git configuration files 
 ln -sfv $DIRECTORY/config/git/.gitignore_global ~
 ln -sfv $DIRECTORY/config/git/.gitconfig ~
@@ -37,16 +33,18 @@ ln -sfv $DIRECTORY/config/python/flake8 $CONFIG_DIRECTORY
 source ~/.logging
 
 # Setup MacOS settings for the first time
-source ~/.osx
+if ! source $DIRECTORY/config/mac/.osx; then
+  log.fail "Failed to source mac/.osx configuration!"
+fi
 
 # Install brew and apps
-if ! source ~/install/.brew; then
-  log.fail "Failed to source brew instalation"
+if ! source $DIRECTORY/install/.brew; then
+  log.fail "Failed to source .brew instalation!"
+fi
+
+# Apply settings to all terminal sessions without need of a restart
+if ! source ~/.bash_profile; then
+  log.fail "Failed to source .bash_profile!"
 fi
 
 log.success "Mac os configured!"
-
-# Apply settings to all terminal sessions without need of a restart
-source ~/.bash_profile
-
-# Theres tmux missing and https://sw.kovidgoyal.net/kitty/#tabs-and-windows
