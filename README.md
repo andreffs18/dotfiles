@@ -24,7 +24,7 @@ $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/mas
 - [awesome-dotfiles](https://github.com/webpro/awesome-dotfiles), a curated open source repo with a bunch of good examples.
 - The top 3 most forked repos: [Paul Irish](https://github.com/paulirish/dotfiles), [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) and [Lars Kappert](https://github.com/webpro/dotfiles)
 
-and many thanks to the [dotfiles](https://dotfiles.github.io/) community 👍.
+and many thanks to the unofficial [dotfiles](https://dotfiles.github.io/) page 👍.
 
 
 
