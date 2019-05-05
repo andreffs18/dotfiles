@@ -14,7 +14,7 @@ brew "dockutil"
 brew "zsh"
 
 # Mac App Store command-line interface (https://github.com/mas-cli/mas)
-brew "mas"
+# brew "mas"
 
 # Expose localhost to the internet and capture traffic for replay (https://ngrok.com/)
 brew "ngrok"

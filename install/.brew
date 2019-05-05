@@ -13,8 +13,8 @@ log.info "Loading Brewfile ..."
 brew bundle --file=$DIRECTORY/install/Brewfile
 log.info "Loading Castfile ..."
 brew bundle --file=$DIRECTORY/install/Castfile
-log.info "Loading Masfile..."
-brew bundle --file=$DIRECTORY/install/Masfile
+# log.info "Loading Masfile..."
+# brew bundle --file=$DIRECTORY/install/Masfile
 
 # Remove brew and cask old formulas
 brew cleanup
