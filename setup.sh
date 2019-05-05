@@ -40,7 +40,9 @@ source ~/.logging
 source ~/.osx
 
 # Install brew and apps
-source ~/install/.brew
+if ! source ~/install/.brew; then
+  log.fail "Failed to source brew instalation"
+fi
 
 log.success "Mac os configured!"
 
