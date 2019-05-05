@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Install brew package manager
 if test ! $(which brew)
 then
@@ -14,10 +16,8 @@ brew bundle --file=$DIRECTORY/install/Castfile
 log.info "Loading Masfile..."
 brew bundle --file=$DIRECTORY/install/Masfile
 
-# Remove brew cruft
+# Remove brew and cask old formulas
 brew cleanup
-
-# Remove cask cruft
 brew cask cleanup
 
 
