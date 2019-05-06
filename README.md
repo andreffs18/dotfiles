@@ -12,10 +12,11 @@ $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/mas
 
 
 ## Functionality
-- store passwords https://keybase.io/docs/command_line or https://bitwarden.com/
-- zsh shell with https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH pure prompt https://github.com/sindresorhus/pure
-- install kitty terminal https://sw.kovidgoyal.net/kitty/#tabs-and-windows
-- other brewfile examples https://github.com/driesvints/dotfiles/blob/master/Brewfile
+- Focus functionality (WIP): Alias to start focus (pomodoro + focus screen + spotify platlist + turn off notifications)
+- Manage credentials https://keybase.io/docs/command_line or https://bitwarden.com/
+- [zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) shell with pure prompt https://github.com/sindresorhus/pure
+- Install kitty terminal https://sw.kovidgoyal.net/kitty/#tabs-and-windows
+- Other brewfile examples https://github.com/driesvints/dotfiles/blob/master/Brewfile
 
 ## Credits
 - Amazing OpenSource ["Mac Setup guide"](https://sourabhbajaj.com/mac-setup/), https://github.com/sb2nov/mac-setup/
