@@ -38,9 +38,9 @@ if ! source $DIRECTORY/config/mac/.osx; then
 fi
 
 # Install brew and apps
-if ! source $DIRECTORY/install/.brew; then
-  log.fail "Failed to source .brew instalation!"
-fi
+# if ! source $DIRECTORY/install/.brew; then
+#   log.fail "Failed to source .brew instalation!"
+# fi
 
 # Apply settings to all terminal sessions without need of a restart
 if ! source ~/.bash_profile; then
