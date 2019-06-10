@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Mac App Store
 
+# Default presentation application from Apple
 mas 'Keynote', id: 409183694
 
 # Fancy wallpapers (https://unsplash.com/?utm_medium=referral&utm_source=mac-app-store&utm_campaign=wallpapers)

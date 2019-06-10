@@ -17,6 +17,7 @@ $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/mas
 - [zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) shell with pure prompt https://github.com/sindresorhus/pure
 - Install kitty terminal https://sw.kovidgoyal.net/kitty/#tabs-and-windows
 - Other brewfile examples https://github.com/driesvints/dotfiles/blob/master/Brewfile
+- 
 
 ## Credits
 - Amazing OpenSource ["Mac Setup guide"](https://sourabhbajaj.com/mac-setup/), https://github.com/sb2nov/mac-setup/

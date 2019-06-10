@@ -4,6 +4,10 @@ tap "homebrew/core"
 # Display directories as trees (https://www.geeksforgeeks.org/tree-command-unixlinux/) 
 brew "tree"
 
+
+# Display process as trees () 
+brew "pstree"
+
 # Download files over network (https://www.computerhope.com/unix/wget.htm)
 brew "wget"
 
@@ -14,4 +18,4 @@ brew "dockutil"
 brew "zsh"
 
 # Mac App Store command-line interface (https://github.com/mas-cli/mas)
-# brew "mas"
+brew "mas"

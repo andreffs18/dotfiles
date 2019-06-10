@@ -26,4 +26,14 @@ function gitcp(){
 	echo "Success!";
 }
 
+
+# Focus function that does the following:
+# - Turn on "No Disturb Mode" on mac
+# - Open Pomodor app with 25 minute
+# - Setup alarm for 5 minute break
+# - Start spotify "focus" playlist
+function focus(){
+
+}
+
 log.success ".functions loaded with success!"

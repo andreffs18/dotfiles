@@ -33,14 +33,14 @@ ln -sfv $DIRECTORY/config/python/flake8 $CONFIG_DIRECTORY
 source ~/.logging
 
 # Setup MacOS settings for the first time
-if ! source $DIRECTORY/config/mac/.osx; then
-  log.fail "Failed to source mac/.osx configuration!"
+if ! source $DIRECTORY/config/mac/osx; then
+  log.fail "Failed to source config/mac/osx configuration!"
 fi
 
 # Install brew and apps
-# if ! source $DIRECTORY/install/.brew; then
-#   log.fail "Failed to source .brew instalation!"
-# fi
+if ! source $DIRECTORY/install/apps; then
+   log.fail "Failed to source install/apps instalation!"
+fi
 
 # Apply settings to all terminal sessions without need of a restart
 if ! source ~/.bash_profile; then
