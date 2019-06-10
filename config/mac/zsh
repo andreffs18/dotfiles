@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Download .zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Setup defined shell on terminal
+chsh -s $(which zsh)
+
+# Source .zshrc file and configure plugins
+source ~/.zshrc
+
+# plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting)
