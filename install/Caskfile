@@ -1,0 +1,60 @@
+tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+
+# 
+cask "dash2"
+
+# 
+cask "docker"
+
+#
+cask "dropbox"
+
+# 
+cask "evernote"
+
+# 
+cask "google-chrome"
+
+# 
+cask "ngrok"
+
+# 
+cask "postman"
+
+# 
+cask "spotify"
+
+# 
+cask "sublime-text"
+
+# 
+cask "utorrent"
+
+# 
+cask "visual-studio-code"
+
+# 
+cask "vlc"
+
+
+cask "Amphetamine"
+cask "Calibre"
+cask "Coin Tick"
+cask "Exodus"
+cask "Final Cut Pro"
+cask "Flux"
+cask "Logitech Options"
+cask "Mega Sync"
+
+cask "Microsoft Excel/Word"
+cask "Postico"
+cask "Postman"
+cask "Pycharm"
+cask "RubyMine"
+cask "RecordIT"
+cask "Robo 3t"
+cask "Zoom.us"
+
