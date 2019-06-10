@@ -3,40 +3,22 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
-# 
-cask "dash2"
-
-# 
-cask "docker"
-
-#
-cask "dropbox"
-
-# 
-cask "evernote"
-
-# 
 cask "google-chrome"
 
-# 
-cask "ngrok"
+# Storage
+cask "dropbox"
+cask "evernote"
 
-# 
-cask "postman"
-
-# 
-cask "spotify"
-
-# 
+# Development
 cask "sublime-text"
-
-# 
-cask "utorrent"
-
-# 
 cask "visual-studio-code"
+cask "ngrok"
+cask "postman"
+cask "docker"
 
-# 
+# Media & Download
+cask "utorrent"
+cask "spotify"
 cask "vlc"
 
 

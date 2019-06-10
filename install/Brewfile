@@ -4,8 +4,7 @@ tap "homebrew/core"
 # Display directories as trees (https://www.geeksforgeeks.org/tree-command-unixlinux/) 
 brew "tree"
 
-
-# Display process as trees () 
+# Display process as trees (https://www.howtoforge.com/linux-pstree-command/) 
 brew "pstree"
 
 # Download files over network (https://www.computerhope.com/unix/wget.htm)

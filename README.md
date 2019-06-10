@@ -7,7 +7,7 @@ My configuration files.
 To setup a brand new mac os you just need to run the following one-liner:
 
 ```shell 
-$ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/master/setup.sh`"
+$ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/master/install.sh`"
 ``` 
 
 
