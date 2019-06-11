@@ -30,3 +30,6 @@ source $DIRECTORY/config/mac/dockutil
 # Remove brew and cask old formulas
 brew cleanup
 brew cask cleanup
+
+# Reminder to install missing apps
+log.warning "Don't forget to install the following:\n˲ Exodus: https://www.exodus.io/download/\n˲ Final Cut Pro\n˲ Microsoft Excel/Word"

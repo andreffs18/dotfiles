@@ -3,11 +3,10 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
-cask "google-chrome"
-
 # Storage
 cask "dropbox"
 cask "evernote"
+cask "megasync"
 
 # Development
 cask "sublime-text"
@@ -15,28 +14,24 @@ cask "visual-studio-code"
 cask "ngrok"
 cask "postman"
 cask "docker"
+cask "postico"
+cask "robo-3t"
+cask "pycharm"
+cask "rubymine"
 
 # Media & Download
 cask "utorrent"
 cask "spotify"
 cask "vlc"
+cask "calibre"  # E-book converter/manager 
 
-
-cask "Amphetamine"
-cask "Calibre"
-cask "Coin Tick"
-cask "Exodus"
-cask "Final Cut Pro"
-cask "Flux"
-cask "Logitech Options"
-cask "Mega Sync"
-
-cask "Microsoft Excel/Word"
-cask "Postico"
-cask "Postman"
-cask "Pycharm"
-cask "RubyMine"
-cask "RecordIT"
-cask "Robo 3t"
-cask "Zoom.us"
-
+# Browser 
+cask "google-chrome"
+# App to make the color of your computer's display adapt to the time of day (https://justgetflux.com/)
+cask "flux"  
+# Screen/Video sharing (https://zoom.us/)
+cask "zoomus" 
+# Record fast screencasts (http://recordit.co/)
+cask "recordit"
+# Logitech MX Master 2S drivers
+cask "logitech-options"
