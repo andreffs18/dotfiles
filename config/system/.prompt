@@ -56,6 +56,6 @@ PS1_NAME="\[\033[1;31m\]\u\[\033[0m\]"
 PS1_DIR="\[\033[1;36m\]\W\[\033[0m\]"
 PS1_CIFR="\[\033[1;32m\]$ \[\033[0m\]"
 
-# Hide prompt for now.
+# Hide prompt for now since we're using pure prompt.
 # export PS1="$PS1_TIME $PS1_NAME($PS1_DIR) $PS1_CIFR"
 # log.success ".prompt loaded with success!"

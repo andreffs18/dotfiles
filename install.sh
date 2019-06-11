@@ -12,12 +12,12 @@ else
   git clone https://github.com/andreffs18/dotfiles .
 fi
 
-# Now let's symlinc all our dotfiles to the direcotry where they are expected (our home directory) 
+# Now let's symlinc all our dotfiles to the directory where they are expected (our home directory) 
 for DIR in $DIRECTORY/config/system/.{zshrc,bash_profile,bashrc,logging,exports,aliases,functions,prompt,mansettings,olhaaqui}; do
   [ -f "$DIR" ] && ln -sfv $DIR ~
 done
 
-# Symlink all git configuration files 
+# Symlink all git configuration files to our home directory
 ln -sfv $DIRECTORY/config/git/.gitignore_global ~
 ln -sfv $DIRECTORY/config/git/.gitconfig ~
 
@@ -37,8 +37,8 @@ if ! source $DIRECTORY/config/mac/osx; then
   log.fail "Failed to source config/mac/osx configuration!"
 fi
 
-# Install brew and apps
-if ! source $DIRECTORY/install/setup.sh; then
+# Install brew and all apps on Brewfile, Caskfile and Masfile
+if ! source $DIRECTORY/install/apps; then
    log.fail "Failed to source install/apps instalation!"
 fi
 
