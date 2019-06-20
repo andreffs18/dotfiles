@@ -39,7 +39,6 @@ alias delds="find . -type f -name '*.DS_Store' -ls -delete"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
 # Application shortcuts
-alias st2='open $1 -a Sublime\ Text\ 2'
 alias md='open $1 -a MacDown'
 alias vs='open $1 -a Visual\ Studio\ Code'
 

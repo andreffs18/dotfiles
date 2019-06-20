@@ -50,7 +50,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting)
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 # TODO: Look into theses plugins:
 # - https://github.com/jonmosco/kube-ps1  (Kubectl prompt)
@@ -70,6 +70,4 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-
 source ~/.bash_profile
-

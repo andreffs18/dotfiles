@@ -33,9 +33,9 @@ ln -sfv $DIRECTORY/config/python/flake8 $CONFIG_DIRECTORY
 source ~/.logging
 
 # Setup MacOS settings for the first time
-# if ! source $DIRECTORY/config/mac/osx; then
-#   log.fail "Failed to source config/mac/osx configuration!"
-# fi
+if ! source $DIRECTORY/config/mac/osx; then
+  log.fail "Failed to source config/mac/osx configuration!"
+fi
 
 # Install brew and all apps on Brewfile, Caskfile and Masfile
 if ! source $DIRECTORY/install/apps; then
