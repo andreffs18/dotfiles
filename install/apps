@@ -4,7 +4,7 @@
 if test ! $(which brew); then
   echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-  log.info "Ruby already installed: \"$(ruby -v)\""
+  log.success "Ruby already installed: \"$(ruby -v)\""
 fi
 # Add ruby to $PATH
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
@@ -12,16 +12,16 @@ export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 # Update any recipes
 brew update
 
-log.info "1️⃣ ⚙️ Installing all Brewfile dependencies"
+log.info "1️⃣  ⚙️  Installing all Brewfile dependencies"
 # brew bundle --file=$DIRECTORY/install/Brewfile
-log.info "2️⃣ 🔨 Installing all Caskfile dependencies"
+log.info "2️⃣  🔨  Installing all Caskfile dependencies"
 # brew bundle --file=$DIRECTORY/install/Caskfile
-log.info "3️⃣ 🔧 Installing all Masfile dependencies"
+log.info "3️⃣  🔧  Installing all Masfile dependencies"
 # brew bundle --file=$DIRECTORY/install/Masfile
 
 # Remove brew and cask old formulas
 brew cleanup
-log.info "✅ All brew files installed!"
+log.info "✅  All brew files installed!"
 
 # Install oh-my-zsh framework
 log.info "Configuring oh-my-zsh framework..."
@@ -37,4 +37,4 @@ gem install lolcat --user-install
 echo "$(lolcat --version)" | lolcat
 
 # Reminder to install missing apps
-log.warning "Don't forget to install the following:\n👉 Exodus: https://www.exodus.io/download/\n👉 Final Cut Pro\n👉 Microsoft Excel/Word"
+log.warning "Don't forget to install the following:\n👉  Exodus: https://www.exodus.io/download/\n👉  Final Cut Pro\n👉  Microsoft Excel/Word"

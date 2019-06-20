@@ -43,9 +43,7 @@ if ! source $DIRECTORY/install/apps; then
 fi
 
 # Apply settings to all terminal sessions without need of a restart
-echo $SHELL
 if ! source ~/.zshrc; then
   log.fail "Failed to source .zshrc!"
 fi
-echo $SHELL
 log.success "Mac os configured!"
