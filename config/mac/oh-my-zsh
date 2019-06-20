@@ -6,8 +6,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # Setup defined shell on terminal
 chsh -s $(which zsh)
 
-# Replace installed .zshrc file with my own
-# ~/.zshrc
+# Overwrite installed .zshrc from oh-my-zsh with my own
+ln -sfv $DIRECTORY/config/system/.zshrc ~
 
 # Print zsh version
 log.success "$(zsh --version)"
