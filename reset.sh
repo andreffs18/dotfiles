@@ -14,7 +14,7 @@ rm ~/.config/flake8
 echo "❎  Removed python config/flake8 configuration"
 
 # Remove oh-my-zsh framework
-rm ~/.oh-my-zsh
+rm -rf ~/.oh-my-zsh
 echo "❎  Removed oh-my-zsh framework"
 
 echo "🗑  and I think that's it!"
