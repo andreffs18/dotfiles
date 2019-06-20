@@ -11,6 +11,7 @@ alias l="ls -lF ${colorflag}"                              # List all files colo
 alias la="ls -lAF ${colorflag}"                            # List all files colorized in long format, excluding . and ..
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"  # List only directories
 alias ls="command ls ${colorflag}"                         # Always use color output for `ls`
+alias lls="ls -lhFAG"
 
 # Directory shortcut
 alias desktop="cd ~/Desktop/"
