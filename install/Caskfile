@@ -37,3 +37,5 @@ cask "recordit"
 cask "logitech-options"
 # Keystroke Visualizer. Good for presentations (https://github.com/sdeken/keycastr)
 cask "keycastr"
+# Messaging app for multiple services 
+cask "franz"
