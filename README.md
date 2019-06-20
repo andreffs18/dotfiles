@@ -18,14 +18,11 @@ $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/mas
 > Note that this will only delete the ~/.dotfiles folder and all symlinks. All installed apps will still be installed.
 
 
-
 ## Functionality
-- Focus functionality (WIP): Alias to start focus (pomodoro + focus screen + spotify platlist + turn off notifications)
+- Focus functionality ```$ focus``` to start a 25 minute pomodoro + focus screen + spotify platlist + turn off notifications.
+- zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) framework and [pure prompt](https://github.com/sindresorhus/pure) theme
+- [iterm2](https://www.iterm2.com/) and [kitty](https://sw.kovidgoyal.net/kitty/index.html) terminal (with [kitty-snazzy](https://github.com/connorholyday/kitty-snazzy) theme)
 - Manage credentials https://keybase.io/docs/command_line or https://bitwarden.com/
-- [zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) shell with pure prompt https://github.com/sindresorhus/pure
-- Install kitty terminal https://sw.kovidgoyal.net/kitty/#tabs-and-windows
-- Other brewfile examples https://github.com/driesvints/dotfiles/blob/master/Brewfile
-- 
 
 ## Credits
 - Amazing OpenSource ["Mac Setup guide"](https://sourabhbajaj.com/mac-setup/), https://github.com/sb2nov/mac-setup/

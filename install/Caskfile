@@ -9,6 +9,7 @@ cask "evernote"
 cask "megasync"
 
 # Development
+cask "iterm2"
 cask "sublime-text"
 cask "visual-studio-code"
 cask "ngrok"
