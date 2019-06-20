@@ -1,8 +1,8 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 source ~/.logging
 
 # Load all dotfiles one by one
-for DOTFILE in .{exports,aliases,functions,prompt,mansettings}; do
+for DOTFILE in ~/.{exports,aliases,functions,prompt,mansettings}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
