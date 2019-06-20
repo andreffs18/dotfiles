@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Download oh-my-zsh framework
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --skip-chsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) -s --unattended"
 
 # Setup defined shell on terminal
 chsh -s $(which zsh)
