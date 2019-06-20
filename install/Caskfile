@@ -35,3 +35,5 @@ cask "zoomus"
 cask "recordit"
 # Logitech MX Master 2S drivers
 cask "logitech-options"
+# Keystroke Visualizer. Good for presentations (https://github.com/sdeken/keycastr)
+cask "keycastr"

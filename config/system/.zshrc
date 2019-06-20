@@ -55,6 +55,13 @@ ZSH_THEME="robbyrussell"
 # plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting)
 plugins=(git)
 
+# TODO: Look into theses plugins:
+# - https://github.com/jonmosco/kube-ps1  (Kubectl prompt)
+# - https://github.com/zpm-zsh/tmux  (Setup tmux on every ssh)
+# - https://github.com/mattbangert/kubectl-zsh-plugin  (Kubectl alias)
+# - https://github.com/unixorn/git-extra-commands (extra utils git command)
+# - https://github.com/tj/git-extras (extra utils git command)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

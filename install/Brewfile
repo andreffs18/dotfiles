@@ -1,20 +1,23 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
 
+# Interactive process viewer dashboard
+brew "htop"
 # Display directories as trees (https://www.geeksforgeeks.org/tree-command-unixlinux/) 
 brew "tree"
-
 # Display process as trees (https://www.howtoforge.com/linux-pstree-command/) 
 brew "pstree"
-
 # Download files over network (https://www.computerhope.com/unix/wget.htm)
 brew "wget"
-
 # Tool for managing dock items (https://github.com/chilcote/outset/wiki/Dockutil)
 brew "dockutil"
-
 # Install ZShell (https://sourabhbajaj.com/mac-setup/iTerm/zsh.html)
 brew "zsh"
-
+# Install node
+brew "node"
+# Get lightweight comand line json processor
+brew "jq"
+# Interactive terminal for tracking cryptocurrencies (https://cointop.sh)
+brew "cointop"
 # Mac App Store command-line interface (https://github.com/mas-cli/mas)
 brew "mas"

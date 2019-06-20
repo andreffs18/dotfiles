@@ -17,19 +17,22 @@ brew bundle --file=$DIRECTORY/install/Caskfile
 log.info "##### Installing all Masfile dependencies #####"
 brew bundle --file=$DIRECTORY/install/Masfile
 
-log.info "Setup packages:"
-
-log.info "$ zsh --version"
-log.success "$(zsh --version)"
-source $DIRECTORY/config/mac/zsh
-
-log.info "$ dockutil --version" 
-log.success "$(dockutil --version)"
-source $DIRECTORY/config/mac/dockutil
-
 # Remove brew and cask old formulas
 brew cleanup
 brew cask cleanup
+
+# Install oh-my-zsh framework
+log.info "Configuring oh-my-zsh framework..."
+source $DIRECTORY/config/mac/oh-my-zsh
+
+# Setup dock apps
+log.info "Configure dock shortcuts..." 
+source $DIRECTORY/config/mac/dockutil
+
+# Install Lolcat 😂 (https://github.com/busyloop/lolcat)
+log.info "Installing lolcat..."
+gem install lolcat
+echo "$(lolcat --version)" | lolcat
 
 # Reminder to install missing apps
 log.warning "Don't forget to install the following:\n˲ Exodus: https://www.exodus.io/download/\n˲ Final Cut Pro\n˲ Microsoft Excel/Word"
