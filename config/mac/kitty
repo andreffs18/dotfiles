@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Download snazzy theme
+curl -o ~/.config/kitty/snazzy.conf https://raw.githubusercontent.com/connorholyday/kitty-snazzy/master/snazzy.conf
+
+# Add snazzy.conf to bottom of kitty config file
+echo "include snazzy.conf" >> ~/.config/kitty/kitty.conf
+
+# Print kitty version
+log.success "Installed snazzy theme for kitty!"
