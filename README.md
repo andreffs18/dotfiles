@@ -10,6 +10,14 @@ To setup a brand new mac os you just need to run the following one-liner:
 $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/master/install.sh`"
 ``` 
 
+In case you want to revert this installation just run the "reset.sh" script:
+
+```shell 
+$ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/master/reset.sh`"
+``` 
+> Note that this will only delete the ~/.dotfiles folder and all symlinks. All installed apps will still be installed.
+
+
 
 ## Functionality
 - Focus functionality (WIP): Alias to start focus (pomodoro + focus screen + spotify platlist + turn off notifications)
