@@ -13,11 +13,11 @@ export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')"
 brew update
 
 log.info "1️⃣⚙️Installing all Brewfile dependencies"
-brew bundle --file=$DIRECTORY/install/Brewfile
+# brew bundle --file=$DIRECTORY/install/Brewfile
 log.info "2️⃣🔨Installing all Caskfile dependencies"
-brew bundle --file=$DIRECTORY/install/Caskfile
+# brew bundle --file=$DIRECTORY/install/Caskfile
 log.info "3️⃣🔧Installing all Masfile dependencies"
-brew bundle --file=$DIRECTORY/install/Masfile
+# brew bundle --file=$DIRECTORY/install/Masfile
 
 # Remove brew and cask old formulas
 brew cleanup
