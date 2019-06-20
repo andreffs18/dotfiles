@@ -15,5 +15,4 @@ dockutil --add "~/Downloads" --view fan
 # Another alternative would be to just kill the Dock itself after all changes were made
 # killall Dock
 
-
-log.success "$(dockutil --version)"
+log.success "Dock $(dockutil --version) shortcuts configured!"

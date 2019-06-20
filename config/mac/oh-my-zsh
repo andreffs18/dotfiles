@@ -10,4 +10,4 @@ chsh -s $(which zsh)
 ln -sfv $DIRECTORY/config/system/.zshrc ~
 
 # Print zsh version
-log.success "$(zsh --version)"
+log.success "Installed oh-my-zsh on zsh $(zsh --version)"
