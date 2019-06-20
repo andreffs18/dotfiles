@@ -50,12 +50,19 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting)
-plugins=(git zsh-syntax-highlighting)
+plugins=(
+    git 
+    zsh-syntax-highlighting 
+    zsh-autosuggestions 
+    zsh-completions 
+    tmux 
+    kubectl-zsh-plugin
+)
+
+autoload -U compinit && compinit
 
 # TODO: Look into theses plugins:
 # - https://github.com/jonmosco/kube-ps1  (Kubectl prompt)
-# - https://github.com/zpm-zsh/tmux  (Setup tmux on every ssh)
-# - https://github.com/mattbangert/kubectl-zsh-plugin  (Kubectl alias)
 # - https://github.com/unixorn/git-extra-commands (extra utils git command)
 # - https://github.com/tj/git-extras (extra utils git command)
 

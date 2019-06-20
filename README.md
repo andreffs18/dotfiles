@@ -3,7 +3,6 @@ My configuration files.
 
 
 ## Installation
-
 To setup a brand new mac os you just need to run the following one-liner:
 
 ```shell 
@@ -22,7 +21,10 @@ $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/mas
 - Focus functionality ```$ focus``` to start a 25 minute pomodoro + focus screen + spotify platlist + turn off notifications.
 - zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) framework and [pure prompt](https://github.com/sindresorhus/pure) theme
 - [iterm2](https://www.iterm2.com/) and [kitty](https://sw.kovidgoyal.net/kitty/index.html) terminal (with [kitty-snazzy](https://github.com/connorholyday/kitty-snazzy) theme)
+
+## Future
 - Manage credentials https://keybase.io/docs/command_line or https://bitwarden.com/
+
 
 ## Credits
 - Amazing OpenSource ["Mac Setup guide"](https://sourabhbajaj.com/mac-setup/), https://github.com/sb2nov/mac-setup/
