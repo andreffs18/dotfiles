@@ -33,7 +33,7 @@ source $DIRECTORY/config/mac/kitty
 
 # Install pure prompt theme
 log.info "Installing pure prompt theme..."
-source $DIRECTORY/config/mac/pureprompt
+source $DIRECTORY/config/mac/pure-prompt
 
 # Setup dock apps
 log.info "Configure dock shortcuts..." 
