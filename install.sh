@@ -13,7 +13,7 @@ else
 fi
 
 # Now let's symlinc all our dotfiles to the directory where they are expected (our home directory) 
-for DIR in $DIRECTORY/config/system/.{zshrc,bash_profile,bashrc,logging,exports,aliases,functions,prompt,mansettings,olhaaqui}; do
+for DIR in $DIRECTORY/config/system/.{zshrc,bash_profile,bashrc,logging,exports,aliases,functions,mansettings,olhaaqui}; do
   [ -f "$DIR" ] && ln -sfv $DIR ~
 done
 

@@ -4,7 +4,7 @@
 rm -rf ~/.dotfiles
 echo "❎  ~/.dotfiles folder"
 # Now, remove all symbolic links 
-for DIR in ~/.{aliases,bash_profile,bashrc,dockutil,exports,functions,gitconfig,gitignore_global,logging,mansettings,olhaaqui,osx,prompt,zshrc}; do
+for DIR in ~/.{aliases,bash_profile,bashrc,dockutil,exports,functions,gitconfig,gitignore_global,logging,mansettings,olhaaqui,osx,zshrc}; do
   rm $DIR
   echo "❎  Removed symlink $DIR"
 done
