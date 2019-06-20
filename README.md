@@ -19,8 +19,8 @@ $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/mas
 
 ## Functionality
 - Focus functionality ```$ focus``` to start a 25 minute pomodoro + focus screen + spotify platlist + turn off notifications.
-- zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) framework and [pure prompt](https://github.com/sindresorhus/pure) theme
-- [iterm2](https://www.iterm2.com/) and [kitty](https://sw.kovidgoyal.net/kitty/index.html) terminal (with [kitty-snazzy](https://github.com/connorholyday/kitty-snazzy) theme)
+- zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) framework and [pure prompt](https://github.com/sindresorhus/pure) theme.
+- [kitty](https://sw.kovidgoyal.net/kitty/index.html) terminal with [snazzy](https://github.com/connorholyday/kitty-snazzy) color scheme.
 
 ## Future
 - Manage credentials https://keybase.io/docs/command_line or https://bitwarden.com/

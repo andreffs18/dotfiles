@@ -27,6 +27,14 @@ log.info "✅  All brew files installed!"
 log.info "Configuring oh-my-zsh framework..."
 source $DIRECTORY/config/mac/oh-my-zsh
 
+# Install kitty terminal
+log.info "Configuring kitty theme..."
+source $DIRECTORY/config/mac/kitty
+
+# Install pure prompt theme
+log.info "Installing pure prompt theme..."
+source $DIRECTORY/config/mac/pureprompt
+
 # Setup dock apps
 log.info "Configure dock shortcuts..." 
 source $DIRECTORY/config/mac/dockutil
