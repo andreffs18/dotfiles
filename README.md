@@ -3,7 +3,7 @@ My configuration files.
 
 
 ## Installation
-To setup a brand new mac os you just need to run the following one-liner:
+To setup a brand new macOS you just need to run the following one-liner:
 
 ```shell 
 $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/master/install.sh`"
@@ -14,8 +14,9 @@ In case you want to revert this installation just run the "reset.sh" script:
 ```shell 
 $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/master/reset.sh`"
 ``` 
-> Note that this will only delete the ~/.dotfiles folder and all symlinks. All installed apps will still be installed.
+> Note that this will only delete the `~/.dotfiles` folder and all symlinks. All installed apps will still be installed.
 
+As this was tested on a macOS Sierra (10.12), I notice that the installation will partially fail since some apps are only available from macOS High Sierra (10.13). Make sure you have you're mac updated before running this.
 
 ## Functionality
 - Focus functionality ```$ focus``` to start a 25 minute pomodoro + focus screen + spotify platlist + turn off notifications.
