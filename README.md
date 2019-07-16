@@ -25,7 +25,7 @@ As this was tested on a macOS Sierra (10.12), I notice that the installation wil
 
 ## Future
 - Manage credentials https://keybase.io/docs/command_line or https://bitwarden.com/
-
+- Add dotfiles as brew tap so we can install from [```"$ brew install andreffs18-dotfiles"```](https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap).
 
 ## Credits
 - Amazing OpenSource ["Mac Setup guide"](https://sourabhbajaj.com/mac-setup/), https://github.com/sb2nov/mac-setup/
