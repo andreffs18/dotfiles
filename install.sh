@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 DIRECTORY=~/.dotfiles
 
+
+# Before everything, let's install the latest version of xcode
+# if [ "$(xcode-select -p 1>/dev/null;echo $?)" -eq "0" ]; then
+if [[ ! "$(xcode-select -p)" ]]; then 
+  echo "🖥  Installing xcode ..."
+	xcode-select --install
+fi
+
 # Let's create the ~/.dotfiles folder to store cloned dotfiles
 if [ -d "$DIRECTORY" ]; then
   echo "Directory exists. Just pulling from repository..."
@@ -42,8 +50,6 @@ if ! source $DIRECTORY/install/apps; then
    log.fail "Failed to source install/apps instalation!"
 fi
 
-# Apply settings to all terminal sessions without need of a restart
-if ! source ~/.zshrc; then
-  log.fail "Failed to source .zshrc!"
-fi
-log.success "Mac os configured!"
+# Update mac os software and restart mac
+log.success "Mac os configured! Updating software and restarting afterwards! 🔮"
+sudo softwareupdate -i -a --restart

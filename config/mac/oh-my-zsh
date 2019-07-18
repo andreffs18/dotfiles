@@ -9,11 +9,10 @@ chsh -s $(which zsh)
 # Overwrite installed .zshrc from oh-my-zsh with my own
 ln -sfv $DIRECTORY/config/system/.zshrc ~
 
-# Download plugins
+# Download plugins (DON'T FORGET, in case you want to add more, to add them to list of "plugins" on /config/system/.zshrc!)
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zsh/custom/plugins/zsh-completions
-git clone https://github.com/zpm-zsh/tmux.git ~/.oh-my-zsh/custom/plugins/tmux
 git clone https://github.com/mattbangert/kubectl-zsh-plugin.git ~/.oh-my-zsh/custom/plugins/kubectl-zsh-plugin
 
 # Print zsh version

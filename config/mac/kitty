@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
+# Create directory if not there already
+KITTY_DIRECTORY=~/.config/kitty
+if [ ! -d "$KITTY_DIRECTORY" ]; then
+  mkdir "$KITTY_DIRECTORY";
+fi
+
 # Download snazzy theme
-curl -o ~/.config/kitty/snazzy.conf https://raw.githubusercontent.com/connorholyday/kitty-snazzy/master/snazzy.conf
+curl -o $KITTY_DIRECTORY/snazzy.conf https://raw.githubusercontent.com/connorholyday/kitty-snazzy/master/snazzy.conf
 
 # Add snazzy.conf to bottom of kitty config file
-echo "include snazzy.conf" >> ~/.config/kitty/kitty.conf
+echo "include snazzy.conf" >> $KITTY_DIRECTORY/kitty.conf
 
 # Print kitty version
 log.success "Installed snazzy theme for kitty!"
