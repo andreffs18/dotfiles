@@ -4,7 +4,7 @@
 if test ! $(which brew); then
   echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-  log.success "Ruby already installed: \"$(ruby -v)\""
+  log.success "Homebrew already installed: \"$(brew -v)\""
 fi
 # Add ruby to $PATH
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
