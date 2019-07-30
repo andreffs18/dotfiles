@@ -22,7 +22,6 @@ cask "pycharm"
 cask "rubymine"
 
 # Media & Download
-cask "utorrent"
 cask "spotify"
 cask "vlc"
 cask "calibre"  # E-book converter/manager 

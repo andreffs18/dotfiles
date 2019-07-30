@@ -45,4 +45,4 @@ gem install lolcat --user-install
 echo "$(lolcat --version)" | lolcat
 
 # Reminder to install missing apps
-log.warning "Don't forget to install the following:\n👉  Exodus: https://www.exodus.io/download/\n👉  Final Cut Pro\n👉  Microsoft Excel/Word"
+log.warning "Don't forget to install the following:\n👉  Exodus: https://www.exodus.io/download/\n👉  Final Cut Pro\n👉  Microsoft Excel/Word\n👉  uTorrent"
