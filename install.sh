@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 DIRECTORY=~/.dotfiles
+APPLE_ID=andreffs18@gmail.com
 
-
-# Before everything, let's install the latest version of xcode
+# Before everything, let's install the latest version of xcode and SignIn into appstore
 # if [ "$(xcode-select -p 1>/dev/null;echo $?)" -eq "0" ]; then
+# You can get more info about xcode here https://developer.apple.com/library/archive/technotes/tn2339/_index.html
 if [[ ! "$(xcode-select -p)" ]]; then 
   echo "🖥  Installing xcode ..."
 	xcode-select --install
