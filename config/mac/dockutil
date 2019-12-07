@@ -5,8 +5,11 @@ dockutil --no-restart --remove all
 # The "--no-restart" flag is to prevent MacOS dock from restarting each change.
 dockutil --no-restart --add "/Applications/Google Chrome.app"
 dockutil --no-restart --add "/Applications/Franz.app"
-dockutil --no-restart --add "/Applications/iTerm.app"
+dockutil --no-restart --add "/Applications/Utilities/Terminal.app"
+# dockutil --no-restart --add "/Applications/iTerm.app"
 dockutil --no-restart --add "/Applications/Visual Studio Code.app"
+dockutil --no-restart --add "/Applications/Evernote.app"
+dockutil --no-restart --add "/Applications/PyCharm.app"
 dockutil --no-restart --add "/Applications/Spotify.app"
 
 # We just don't put it in the last command to apply all changes.

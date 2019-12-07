@@ -56,7 +56,6 @@ plugins=(
     zsh-syntax-highlighting 
     zsh-autosuggestions 
     zsh-completions 
-    kubectl-zsh-plugin
 )
 
 autoload -U compinit && compinit
@@ -65,7 +64,6 @@ autoload -U compinit && compinit
 # - https://github.com/jonmosco/kube-ps1  (Kubectl prompt)
 # - https://github.com/unixorn/git-extra-commands (extra utils git command)
 # - https://github.com/tj/git-extras (extra utils git command)
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

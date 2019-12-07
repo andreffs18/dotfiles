@@ -2,12 +2,15 @@
 DIRECTORY=~/.dotfiles
 APPLE_ID=andreffs18@gmail.com
 
+
 # Before everything, let's install the latest version of xcode and SignIn into appstore
 # if [ "$(xcode-select -p 1>/dev/null;echo $?)" -eq "0" ]; then
 # You can get more info about xcode here https://developer.apple.com/library/archive/technotes/tn2339/_index.html
-if [[ ! "$(xcode-select -p)" ]]; then 
-  echo "🖥  Installing xcode ..."
-	xcode-select --install
+if [[ "$(xcode-select --print-path > /dev/null 2>&1; echo $?)" -ne 0 ]]; then 
+  echo "🖥  Xcode not found... installing it!"
+  echo "🚨 (re-run this script after xcode installation is complete) 🚨"
+  xcode-select --install  >/dev/null 2>&1
+  exit 1
 fi
 
 # Let's create the ~/.dotfiles folder to store cloned dotfiles
@@ -42,14 +45,10 @@ ln -sfv $DIRECTORY/config/python/flake8 $CONFIG_DIRECTORY
 source ~/.logging
 
 # Setup MacOS settings for the first time
-if ! source $DIRECTORY/config/mac/osx; then
-  log.fail "Failed to source config/mac/osx configuration!"
-fi
+source $DIRECTORY/config/mac/osx
 
 # Install brew and all apps on Brewfile, Caskfile and Masfile
-if ! source $DIRECTORY/install/apps; then
-   log.fail "Failed to source install/apps instalation!"
-fi
+source $DIRECTORY/install/apps
 
 # Update mac os software and restart mac
 log.success "Mac os configured! Updating software and restarting afterwards! 🔮"

@@ -6,10 +6,6 @@ for DOTFILE in ~/.{exports,aliases,functions,mansettings}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
-# Setup auto complete for kubectl client
-# source <(kubectl completion zsh)
-# security find-generic-password -wa Unbabel  
-
 # Welcome message
 source ~/.olhaaqui | lolcat
 

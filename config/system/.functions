@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-log.warning "TODO: Test all functions ..."
 
 # Remove all runnning processes for given name
 # eg: $ killps chrome
@@ -27,13 +26,11 @@ function gitcp(){
 }
 
 
-# Focus function that does the following:
+# WIP: Focus function that does the following:
 # - Turn on "No Disturb Mode" on mac
 # - Open Pomodor app with 25 minute
 # - Setup alarm for 5 minute break
 # - Start spotify "focus" playlist
-function focus(){
-
-}
+# function focus(){}
 
 log.success ".functions loaded with success!"

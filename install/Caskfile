@@ -10,7 +10,6 @@ cask "megasync"
 
 # Development
 cask "iterm2"
-cask "kitty"
 cask "sublime-text"
 cask "visual-studio-code"
 cask "ngrok"
@@ -20,6 +19,7 @@ cask "postico"
 cask "robo-3t"
 cask "pycharm"
 cask "rubymine"
+cask "clockify"
 
 # Media & Download
 cask "spotify"
@@ -30,8 +30,6 @@ cask "calibre"  # E-book converter/manager
 cask "google-chrome"
 # App to make the color of your computer's display adapt to the time of day (https://justgetflux.com/)
 cask "flux"  
-# Screen/Video sharing (https://zoom.us/)
-cask "zoomus" 
 # Record fast screencasts (http://recordit.co/)
 cask "recordit"
 # Logitech MX Master 2S drivers

@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 
 # Install brew package manager
-if test ! $(which brew); then
+if [[ $(which -s brew) != 0 ]]; then
   echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-  log.success "Homebrew already installed: \"$(brew -v)\""
+  log.success "✅  Homebrew already installed: $(brew -v)"
 fi
-# Add ruby to $PATH
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
-# Update any recipes
+# Install brew and all apps on Brewfile, Caskfile and Masfile
 brew update
 
 log.info "1️⃣  ⚙️  Installing all Brewfile dependencies"
@@ -18,36 +16,31 @@ brew bundle --file=$DIRECTORY/install/Brewfile
 log.info "2️⃣  🔨  Installing all Caskfile dependencies"
 brew bundle --file=$DIRECTORY/install/Caskfile
 
-log.info "3️⃣  🔧  Installing all Masfile dependencies"
-
 # Note: `Brewfile` instaled "mas" (Mac AppStore Client). We need to signin so we can install Masfile dependencies
-mas signin $APPLE_ID
-brew bundle --file=$DIRECTORY/install/Masfile
+# Also, only OS version 10.13.* can use this command, so we restrict it for later versions.
+os_ver=${1:-$(sw_vers -productVersion)}
+if [[ "$os_ver" == 10.12.* ]]; then
+  log.info "3️⃣  🔧  Installing all Masfile dependencies"
+  mas signin $APPLE_ID
+  brew bundle --file=$DIRECTORY/install/Masfile
+fi
 
 # Remove brew and cask old formulas
 brew cleanup
-log.info "✅  All brew files installed!"
+log.success "✅  All brew files installed!"
 
 # Install oh-my-zsh framework
-log.info "Configuring oh-my-zsh framework..."
 source $DIRECTORY/config/mac/oh-my-zsh
 
-# Install kitty terminal
-log.info "Configuring kitty theme..."
-source $DIRECTORY/config/mac/kitty
-
 # Install pure prompt theme
-log.info "Installing pure prompt theme..."
 source $DIRECTORY/config/mac/pure-prompt
 
 # Setup dock apps
-log.info "Configure dock shortcuts..." 
 source $DIRECTORY/config/mac/dockutil
 
 # Install Lolcat 😂 (https://github.com/busyloop/lolcat)
-log.info "Installing lolcat..."
-gem install lolcat --user-install
-echo "$(lolcat --version)" | lolcat
+sudo gem install lolcat
+log.success "$(lolcat --version)" | lolcat
 
 # Reminder to install missing apps
-log.warning "Don't forget to install the following:\n👉  Exodus: https://www.exodus.io/download/\n👉  Final Cut Pro\n👉  Microsoft Excel/Word\n👉  uTorrent"
+log.warning "Don't forget to install the following:\n👉  Exodus: https://www.exodus.io/download/\n👉  Final Cut Pro\n👉  uTorrent"
