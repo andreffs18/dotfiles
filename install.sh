@@ -2,9 +2,7 @@
 DIRECTORY=~/.dotfiles
 APPLE_ID=andreffs18@gmail.com
 
-
 # Before everything, let's install the latest version of xcode and SignIn into appstore
-# if [ "$(xcode-select -p 1>/dev/null;echo $?)" -eq "0" ]; then
 # You can get more info about xcode here https://developer.apple.com/library/archive/technotes/tn2339/_index.html
 if [[ "$(xcode-select --print-path > /dev/null 2>&1; echo $?)" -ne 0 ]]; then 
   echo "🖥  Xcode not found... installing it!"

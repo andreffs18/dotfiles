@@ -17,9 +17,6 @@ $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/mas
 
 As this was tested on a macOS Sierra (10.12), I notice that the installation will partially fail since some apps are only available from macOS High Sierra (10.13). Make sure you have you're mac updated before running this.
 
-After running the installation script, proceed to add `~/.dotfiles/config/mac/terminal` profile to Terminal list of profiles and set it as  **default**. 
-
-
 ## Functionality
 <!-- - Focus functionality ```$ focus``` to start a 25 minute pomodoro + focus screen + spotify platlist + turn off notifications. -->
 - zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) framework and [pure prompt](https://github.com/sindresorhus/pure) theme.
