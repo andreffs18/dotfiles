@@ -24,6 +24,7 @@ To finish the installation, don't forget to configure the custom Terminal profil
 <!-- - Focus functionality ```$ focus``` to start a 25 minute pomodoro + focus screen + spotify platlist + turn off notifications. -->
 - Custom Terminal and iTerm configurations: zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) framework and [pure prompt](https://github.com/sindresorhus/pure) theme.
 - Prefered IDE's for development: [PyCharm](https://www.jetbrains.com/pycharm/), [RubyMine](https://www.jetbrains.com/ruby/), [VisualStudio Code](https://code.visualstudio.com/) and [SublimeText](https://www.sublimetext.com/).
+- kubectl utils like: [kube-ps1](https://github.com/jonmosco/kube-ps1) prompt and [kubectx](https://github.com/ahmetb/kubectx) to quickly switch between contexts.
 
 
 ## Future
