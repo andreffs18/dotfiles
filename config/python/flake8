@@ -1,3 +1,4 @@
 [flake8]
 max-line-length = 120
-ignore = E704
+# List of rules:  https://lintlyci.github.io/Flake8Rules/
+ignore = E704  # Multiple statements on one line

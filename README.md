@@ -17,9 +17,14 @@ $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/mas
 
 As this was tested on a macOS Sierra (10.12), I notice that the installation will partially fail since some apps are only available from macOS High Sierra (10.13). Make sure you have you're mac updated before running this.
 
+To finish the installation, don't forget to configure the custom Terminal profile by importing the **/dotfiles/config/mac/terminal** file into **Terminal > Preferences > Profiles > Import**. Lastly, on the General Tab, change the **"Shells open with:"** to "Command: ```/bin/zsh```"
+
+
 ## Functionality
 <!-- - Focus functionality ```$ focus``` to start a 25 minute pomodoro + focus screen + spotify platlist + turn off notifications. -->
-- zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) framework and [pure prompt](https://github.com/sindresorhus/pure) theme.
+- Custom Terminal and iTerm configurations: zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) framework and [pure prompt](https://github.com/sindresorhus/pure) theme.
+- Prefered IDE's for development: [PyCharm](https://www.jetbrains.com/pycharm/), [RubyMine](https://www.jetbrains.com/ruby/), [VisualStudio Code](https://code.visualstudio.com/) and [SublimeText](https://www.sublimetext.com/).
+
 
 ## Future
 - Manage credentials https://keybase.io/docs/command_line or https://bitwarden.com/
@@ -46,10 +51,10 @@ If you want to have your own dotfiles and feel that this is a good example to st
 │   │   └── .gitignore_global
 │   ├── mac                     # General mac configs
 │   │   ├── dockutil            #  Setup mac dock layout (which apps should appear) 
-│   │   ├── kitty               #  Kitty terminal setup (theme mostly)
 │   │   ├── oh-my-zsh           #  Define zsh and setup plugins for Oh-My-Zsh framework
 │   │   ├── osx                 #  Mac Configuration (ui/ux, controls, shortcuts, etc)
-│   │   └── pure-prompt         #  Pure prompt theme for terminal
+│   │   ├── terminal            #  My terminal profile configuration
+│   │   └── pure-prompt         #  Pure prompt theme for zsh
 │   ├── python                  # Python Configuration
 │   │   └── flake8
 │   └── system                  # dotenv files folder
@@ -82,7 +87,7 @@ In the next two sections I try my best to explain what each script is doing. Hop
 - Git Clone / Git pull latest version of **dotfiles** repository
 - Simlynk all dotfiles to be accessible from home folder (`~/`)
 - Setup MacOS configuration (UI/UX, finder, keyboard, shortcuts, etc)
-- Install Homebrew & Mas Apps 
+- Install Homebrew & Cask Apps 
 - Finally, install any software updates that might exist and restart laptop
 
 
@@ -100,11 +105,11 @@ In the next two sections I try my best to explain what each script is doing. Hop
 After forking this repo, you should at least do the following:
 
 1. Change the `APPLE_ID` the top of the `install.sh` file. The one configured is spefically for my use case.
-2. Go through the `config/mac/osx` file and adjust the settings to your liking. You can find much more settings at []()
-3. Take a look at my `config/system/.aliases` and remove what you won't use. Most of them are just my personal taste. You might want to add your own there.
+2. Go through the `config/mac/osx` file and adjust the settings to your liking. You can find much more settings at [mathiasbynens](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) example.
+3. Take a look at my `config/system/.aliases` and remove what you won't use. Most of them are just for my personal taste. You might want to add your own there.
 4. If you need to tweek you `$PATH` you can take a look at `config/system/.exports`. All session variables are stored there. Feel free to change and explore other options.
-5. Update the dockutil file to configure you dock. Remove it completly if you prefer the default Dock from Mac.
-6. Check out the Homebre bundle files on the `install/` directory. You might what to add other apps to install on your machine. Search for those new apps online to check if is there a way to install them using Homebrew or Mas.
+5. Update the `config/mac/dockutil` file to configure you dock. Remove it completly if you prefer the default Dock from Mac.
+6. Check out the Homebrew bundle files on the `install/` directory. You might what to add other apps to install on your machine. Search for apps online to check if is there a way to install them using Homebrew or Mas.
 
 
 If you had any problems with it, feel free to drop me an email or open an issue. I'll try to answer withing a couple of days!
