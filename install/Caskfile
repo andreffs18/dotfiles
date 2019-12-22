@@ -3,10 +3,12 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
-# Storage
+# Storage & Explorers
 cask "dropbox"
 cask "evernote"
 cask "megasync"
+cask "android-file-transfer"
+cask "the-unarchive"
 
 # Development
 cask "pycharm"
@@ -25,6 +27,17 @@ cask "spotify"
 cask "vlc"
 cask "calibre"  # E-book converter/manager 
 
+# Quicklook plugins
+cask "qlcolorcode"
+cask "qlstephen"
+cask "qlmarkdown"
+cask "quicklook-json"
+cask "qlprettypatch"
+cask "quicklook-csv"
+cask "betterzip"
+cask "webpquicklook"
+cask "suspicious-package"
+
 # Browser 
 cask "google-chrome"
 # App to make the color of your computer's display adapt to the time of day (https://justgetflux.com/)
@@ -38,7 +51,9 @@ cask "keycastr"
 # Messaging app for multiple services 
 cask "franz"
 # Time management tracking
-cask "clockify"
+cask "timing"
+# Hold CMD a bit longer to show shortcuts
+cask "cheatsheet"
 # Password and Key managers
 cask "bitwarden" 
 cask "keybase"
