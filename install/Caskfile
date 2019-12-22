@@ -39,5 +39,6 @@ cask "keycastr"
 cask "franz"
 # Time management tracking
 cask "clockify"
-# Password manager
+# Password and Key managers
 cask "bitwarden" 
+cask "keybase"
