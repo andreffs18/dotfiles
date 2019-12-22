@@ -2,13 +2,16 @@
 # Mac App Store
 
 # Default presentation application from Apple
-mas 'Keynote', id: 409183694
+mas "Keynote", id: 409183694
 
 # Fancy wallpapers (https://unsplash.com/?utm_medium=referral&utm_source=mac-app-store&utm_campaign=wallpapers)
-mas 'Unsplash', id: 1284863847
+mas "Unsplash", id: 1284863847
 
 # App to keep mac awake (https://itunes.apple.com/pt/app/amphetamine/id937984704?mt=12)
 mas "Amphetamine", id: 937984704
 
 # Menu bar real-time crypto currency watcher (https://itunes.apple.com/us/app/coin-tick-menu-bar-crypto/id1141688067?mt=12)
-mas "Coin Tick", id: 1141688067
+mas "CoinTick", id: 1141688067
+
+# Easy n'quick way to annotate screenshots (https://apps.apple.com/us/app/annotate-capture-and-share/id918207447?mt=12)
+mas "Annotate", id: 918207447

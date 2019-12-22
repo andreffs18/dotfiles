@@ -19,9 +19,9 @@ brew "node"
 brew "jq"
 # Interactive terminal for tracking cryptocurrencies (https://cointop.sh)
 brew "cointop"
-# Mac App Store command-line interface (https://github.com/mas-cli/mas)
-brew "mas"
 # Kubectl utils: prompt & quickly switch contexts 
 brew "kubectl"
 brew "kubectx"
 brew "kube-ps1"
+# Mac App Store command-line interface (https://github.com/mas-cli/mas)
+brew "mas"

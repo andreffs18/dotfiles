@@ -23,7 +23,10 @@ if [[ "$os_ver" == 10.12.* ]]; then
   log.info "3️⃣  🔧  Installing all Masfile dependencies"
   mas signin $APPLE_ID
   brew bundle --file=$DIRECTORY/install/Masfile
-fi
+else
+  echo "⛔️ Not installing \`mas\` client! You need to manually install the following apps via AppStore: "
+  cat $DIRECTORY/install/Masfile | grep "mas" | awk '{print $2 " - " $4}' | sed -e 's/[,"]//g' | awk '{print "➡️  " $0}'
+fi  
 
 # Remove brew and cask old formulas
 brew cleanup

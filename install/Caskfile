@@ -3,12 +3,21 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
+# Productivity
+cask "evernote"
+cask "flux"  # makes the color of your computer's display adapt to the time of day (https://justgetflux.com/)
+cask "franz"  # messaging app for multiple services 
+cask "recordit"  # record fast screencasts (http://recordit.co/)
+cask "clockify"  # time management tracking app (https://clockify.me/)
+cask "cheatsheet"  # hold CMD a bit longer to show shortcuts
+cask "vanilla"  # hide menu bar icons (https://matthewpalmer.net/vanilla/)
+
 # Storage & Explorers
 cask "dropbox"
-cask "evernote"
 cask "megasync"
+cask "google-backup-and-sync"
 cask "android-file-transfer"
-cask "the-unarchive"
+cask "betterzip"  # replacement for "the-unarchive"
 
 # Development
 cask "pycharm"
@@ -16,8 +25,8 @@ cask "rubymine"
 cask "visual-studio-code"
 cask "sublime-text"
 cask "iterm2"
-cask "ngrok"
 cask "postman"
+cask "ngrok"
 cask "docker"
 cask "postico"
 cask "robo-3t"
@@ -25,35 +34,27 @@ cask "robo-3t"
 # Media & Download
 cask "spotify"
 cask "vlc"
-cask "calibre"  # E-book converter/manager 
+cask "calibre"  # e-book converter/manager 
 
 # Quicklook plugins
 cask "qlcolorcode"
 cask "qlstephen"
 cask "qlmarkdown"
-cask "quicklook-json"
 cask "qlprettypatch"
+cask "quicklook-json"
 cask "quicklook-csv"
-cask "betterzip"
 cask "webpquicklook"
 cask "suspicious-package"
 
 # Browser 
 cask "google-chrome"
-# App to make the color of your computer's display adapt to the time of day (https://justgetflux.com/)
-cask "flux"  
-# Record fast screencasts (http://recordit.co/)
-cask "recordit"
+# Bittorrent
+cask "transmission"
 # Logitech MX Master 2S drivers
-cask "logitech-options"
+cask "logitech-options"  
 # Keystroke Visualizer. Good for presentations (https://github.com/sdeken/keycastr)
-cask "keycastr"
-# Messaging app for multiple services 
-cask "franz"
-# Time management tracking
-cask "timing"
-# Hold CMD a bit longer to show shortcuts
-cask "cheatsheet"
+cask "keycastr"  
+
 # Password and Key managers
 cask "bitwarden" 
 cask "keybase"
