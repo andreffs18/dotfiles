@@ -1,9 +1,39 @@
-# Dotfiles
-My configuration files. It take the effort out of installing and configuring a new Mac manually. Enjoy! 😄
+<h1 align="center">
+  <a href="https://github.com/andreffs18/dotfiles">
+    <img src="https://repository-images.githubusercontent.com/8196606/94ea9d00-7b04-11e9-8de7-a7852d3ab92d" width="400">
+  </a>
+  <br><br>
+</h1>
+
+<h4 align="center">
+ It takes the effort out of installing and configuring a new Mac.<br>Enjoy! 😄
+</h4>
+
+<p align="center">  
+  <a href="https://twitter.com/andreffs18">
+    <img src="https://img.shields.io/badge/twitter-%40andreffs18-00ACEE.svg?style=flat-square" />
+  </a>
+</p>
+
+<div align="center">
+  <h4>
+    <a href="#installation">Installation</a> |
+    <a href="#functionality">Functionality</a> |
+    <a href="#copypaste-dotfiles">Copy&Paste</a> |
+    <a href="#credits">Credits</a>
+  </h4>
+</div>
+
+<div align="center">
+  <sub>Built with ❤︎ by
+  <a href="https://andreffs.com">André Silva</a>
+</div>
+<br>
+
 
 ## Installation
 
-The first ting we should do is to make sure we have our system updated! **Apple menu () > About This Mac > Software Update**
+The first thing we should do is to make sure we have our system updated: **Apple menu () > About This Mac > Software Update**
 
 Secondly, you just need to run the following one-liner:
 
@@ -18,19 +48,17 @@ $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/mas
 ``` 
 > Note that this will only delete the `~/.dotfiles` folder and all symlinks. All installed apps will still be installed.
 
-As this was tested on a macOS Sierra (10.12), I notice that the installation will partially fail since some apps are only available from macOS High Sierra (10.13). Make sure you have you're mac updated before running this.
-
-To finish the installation, don't forget to configure the custom Terminal profile by importing the **/dotfiles/config/mac/terminal** file into **Terminal > Preferences > Profiles > Import**. Lastly, on the General Tab, change the **"Shells open with:"** to "Command: ```/bin/zsh```"
+To complete the installation, don't forget to setup the custom Terminal profile by importing the **/dotfiles/config/mac/andresilva.terminal** file into **Terminal > Preferences > Profiles > Import**. Lastly, on the General Tab, change the **"Shells open with:"** to "Command: ```/bin/zsh```"
 
 
 ## Functionality
 <!-- - Focus functionality ```$ focus``` to start a 25 minute pomodoro + focus screen + spotify platlist + turn off notifications. -->
 - Custom Terminal and iTerm configurations: zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) framework and [pure prompt](https://github.com/sindresorhus/pure) theme.
 - Prefered IDE's for development: [PyCharm](https://www.jetbrains.com/pycharm/), [RubyMine](https://www.jetbrains.com/ruby/), [VisualStudio Code](https://code.visualstudio.com/) and [SublimeText](https://www.sublimetext.com/).
-- kubectl utils like: [kube-ps1](https://github.com/jonmosco/kube-ps1) prompt and [kubectx](https://github.com/ahmetb/kubectx) to quickly switch between contexts.
+- `kubectl` utils like: [kube-ps1](https://github.com/jonmosco/kube-ps1) prompt and [kubectx](https://github.com/ahmetb/kubectx) to quickly switch between contexts.
 
 
-## Future
+### Future
 - Manage credentials https://keybase.io/docs/command_line or https://bitwarden.com/
 - Add dotfiles as brew tap so we can install from [```"$ brew install andreffs18-dotfiles"```](https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap).
 - Presentation alias that setup computer wity keyscreen cast and twitter mentions
