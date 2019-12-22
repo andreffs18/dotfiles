@@ -2,7 +2,10 @@
 My configuration files. It take the effort out of installing and configuring a new Mac manually. Enjoy! 😄
 
 ## Installation
-To setup a brand new macOS you just need to run the following one-liner:
+
+The first ting we should do is to make sure we have our system updated! **Apple menu () > About This Mac > Software Update**
+
+Secondly, you just need to run the following one-liner:
 
 ```shell 
 $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/master/install.sh`"
