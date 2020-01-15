@@ -61,15 +61,11 @@ plugins=(
 autoload -U compinit && compinit
 
 # TODO: Look into theses plugins:
-# - https://github.com/jonmosco/kube-ps1  (Kubectl prompt)
 # - https://github.com/unixorn/git-extra-commands (extra utils git command)
 # - https://github.com/tj/git-extras (extra utils git command)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# Stop matching regex on shell
-# unsetopt nomatch
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

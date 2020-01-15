@@ -10,7 +10,6 @@ ln -sfv $DIRECTORY/config/system/.zshrc ~
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zsh/custom/plugins/zsh-completions
-# git clone https://github.com/mattbangert/kubectl-zsh-plugin.git ~/.oh-my-zsh/custom/plugins/kubectl-zsh-plugin
 
 # Print zsh version
 log.success "Installed oh-my-zsh on $(zsh --version)!"
