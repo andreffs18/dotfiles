@@ -10,8 +10,5 @@ mas "Unsplash", id: 1284863847
 # App to keep mac awake (https://itunes.apple.com/pt/app/amphetamine/id937984704?mt=12)
 mas "Amphetamine", id: 937984704
 
-# Menu bar real-time crypto currency watcher (https://itunes.apple.com/us/app/coin-tick-menu-bar-crypto/id1141688067?mt=12)
-mas "CoinTick", id: 1141688067
-
 # Easy n'quick way to annotate screenshots (https://apps.apple.com/us/app/annotate-capture-and-share/id918207447?mt=12)
 mas "Annotate", id: 918207447
