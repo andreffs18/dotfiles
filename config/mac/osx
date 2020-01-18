@@ -52,7 +52,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 30
 
 log.success "Configured Keyboard & Input settings!"
 
@@ -153,6 +153,10 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool true
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict General -bool true OpenWith -bool true Privileges -bool true
+
+# Hide "Guest User"
+defaults write com.apple.AppleFileServer guestAccess -bool NO 
+defaults write SystemConfiguration/com.apple.smb.server AllowGuestAccess -bool NO
 
 log.success "Configured Finder properties!"
 
