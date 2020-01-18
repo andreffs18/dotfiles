@@ -9,7 +9,6 @@ cask "flux"  # makes the color of your computer's display adapt to the time of d
 cask "franz"  # messaging app for multiple services 
 cask "recordit"  # record fast screencasts (http://recordit.co/)
 cask "clockify"  # time management tracking app (https://clockify.me/)
-cask "cheatsheet"  # hold CMD a bit longer to show shortcuts
 cask "vanilla"  # hide menu bar icons (https://matthewpalmer.net/vanilla/)
 
 # Storage & Explorers
