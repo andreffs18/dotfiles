@@ -44,7 +44,6 @@ alias vs='open $1 -a Visual\ Studio\ Code'
 
 # Git shortcuts
 alias g="git"
-alias go="g checkout $1 && git pull origin $1"
 alias gitrmerged='git branch --merged | grep -v "\*" | grep -v release | grep -v master | xargs -n 1 git branch -d'
 
 # Python shortcuts
