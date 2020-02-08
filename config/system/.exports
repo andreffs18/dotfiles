@@ -31,11 +31,17 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/bin"
 # Add ruby to $PATH
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
-
 # Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
 export PYTHONIOENCODING='UTF-8';
-
+# Add Go environments
+export GOPATH="$HOME/golang"
+export GOROOT="/usr/local/opt/go/libexec"
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$GOROOT/bin"
 # Postgres default Host configuration
 export PGHOST=localhost
+# Java configuration (for OpenAPI generator)
+export JAVA_HOME=`/usr/libexec/java_home`
+export PATH=${JAVA_HOME}/bin:$PATH
 
 log.success ".exports loaded with success!"

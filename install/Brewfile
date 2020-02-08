@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
+tap "heroku/brew"
 
 # Interactive process viewer dashboard
 brew "htop"
@@ -19,11 +20,16 @@ brew "node"
 brew "jq"
 # Interactive terminal for tracking cryptocurrencies (https://cointop.sh)
 brew "cointop"
-# Kubectl utils: prompt & quickly switch contexts 
+# Kubectl utils: prompt & quickly switch contexts
 brew "kubectl"
 brew "kubectx"
 brew "kube-ps1"
+brew "minikube"
 # Mac App Store command-line interface (https://github.com/mas-cli/mas)
 brew "mas"
 # GoLang programming language
 brew "golang"
+# Install OpenAPI generator (Swagger)
+brew "openapi-generator"
+# Heroku toolkit
+brew "heroku"
