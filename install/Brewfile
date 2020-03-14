@@ -2,6 +2,8 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "heroku/brew"
 
+# Watch command every X seconds
+brew "watch"
 # Interactive process viewer dashboard
 brew "htop"
 # Display directories as trees (https://www.geeksforgeeks.org/tree-command-unixlinux/) 

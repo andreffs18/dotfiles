@@ -10,6 +10,12 @@
 </h4>
 
 <p align="center">  
+  <a href="#">
+    <img src="https://img.shields.io/github/last-commit/andreffs18/dotfiles?style=flat-square" />
+  </a>
+  <a href="https://github.com/andreffs18/dotfiles/blob/master/LICENSE.md">
+    <img src="https://img.shields.io/github/license/andreffs18/dotfiles?color=yellow&style=flat-square" />
+  </a>
   <a href="https://twitter.com/andreffs18">
     <img src="https://img.shields.io/badge/twitter-%40andreffs18-00ACEE.svg?style=flat-square" />
   </a>
