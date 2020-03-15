@@ -26,6 +26,32 @@ function gitcp(){
 }
 
 
+# Select random emoji and display it as "Hello" screen.
+function olhaaqui(){
+  EMOJIES=(✅ 💩 🚀 👁‍🗨 ❗️ 😭 🎉 😘 👋 ⚡️)
+  # Get random emoji from list
+  EMOJI=${EMOJIES[$RANDOM % ${#EMOJIES[@]}]}
+  # Check if emoji was previously used. If so use that, otherwise, download it.
+  OLD_PWD=$(PWD)
+  cd ~/
+  if [ ! -f "$EMOJI.txt" ] ; then
+    echo "Downloading \"$EMOJI\"..."
+    # Download image using Emoji API
+    wget --quiet "https://xn--i-7iq.ws/emoji-image/$EMOJI.png?format\=emojione\&ar\=1x1" -O $EMOJI.png
+    # Convert image from .png to .jpg
+    convert $EMOJI.png $EMOJI.jpg
+    # Convert image to ascii art
+    jp2a --size=96x46 $EMOJI.jpg --output=$EMOJI.txt
+    # Replace all border "M" characters with empty space
+    sed -i.bak "s/M/ /g" $EMOJI.txt
+    # Delete temp files
+    rm $EMOJI.png $EMOJI.jpg $EMOJI.txt.bak
+  fi
+  cd $OLD_PWD
+  # Print image
+  cat ~/$EMOJI.txt | lolcat
+}
+
 # WIP: Focus function that does the following:
 # - Turn on "No Disturb Mode" on mac
 # - Open Pomodor app with 25 minute

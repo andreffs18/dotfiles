@@ -62,12 +62,12 @@ To complete the installation, don't forget to setup the custom Terminal profile 
 - Custom Terminal and iTerm configurations: zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) framework and [pure prompt](https://github.com/sindresorhus/pure) theme.
 - Prefered IDE's for development: [PyCharm](https://www.jetbrains.com/pycharm/), [RubyMine](https://www.jetbrains.com/ruby/), [VisualStudio Code](https://code.visualstudio.com/) and [SublimeText](https://www.sublimetext.com/).
 - `kubectl` utils like: [kube-ps1](https://github.com/jonmosco/kube-ps1) prompt and [kubectx](https://github.com/ahmetb/kubectx) to quickly switch between contexts.
-
+- Random emoji "Hello screen" animation.
 
 ### Future
 - Manage credentials https://keybase.io/docs/command_line or https://bitwarden.com/
 - Add dotfiles as brew tap so we can install from [```"$ brew install andreffs18-dotfiles"```](https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap).
-- Presentation alias that setup computer wity keyscreen cast and twitter mentions
+- Presentation alias that setup computer with key screen cast and twitter mentions.
 
 ## Copy&Paste Dotfiles
 

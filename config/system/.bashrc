@@ -7,5 +7,5 @@ for DOTFILE in ~/.{exports,aliases,functions,mansettings}; do
 done
 
 # Welcome message
-source ~/.olhaaqui | lolcat
+olhaaqui
 
