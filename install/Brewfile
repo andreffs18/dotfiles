@@ -38,3 +38,5 @@ brew "heroku"
 # For emoji animation on terminal startup
 brew install jp2a
 brew install imagemagick
+# For GPG management
+brew install gpg

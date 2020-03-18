@@ -57,3 +57,4 @@ cask "keycastr"
 # Password and Key managers
 cask "bitwarden" 
 cask "keybase"
+cask "gpg-suite"
