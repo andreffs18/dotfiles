@@ -14,6 +14,10 @@ export HISTFILESIZE="${HISTSIZE}";
 export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';
 
+# In order to use GPG commit verification
+# Referenced on issue https://github.com/keybase/keybase-issues/issues/2798
+export GPG_TTY=$(tty)
+
 # Configuration for all Executable Paths
 export PATH="$PATH:/usr/local/bin"
 # Mysql path

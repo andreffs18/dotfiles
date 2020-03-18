@@ -1,21 +1,17 @@
 [user]
 	name = andreffs18
 	email = andreffs18@gmail.com
-
+	signingkey = CF17BC95
 [github]
 	user = andreffs18
-
 [push]
 	default = simple
-
 [core]
 	excludesfile = ~/.gitignore_global
-
 [diff]
 	tool = vimdiff
 [difftool]
 	prompt = false
-
 [color]
 	ui = auto
 [color "branch"]
@@ -36,3 +32,5 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+[commit]
+	gpgsign = true
