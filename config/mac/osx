@@ -269,4 +269,9 @@ if [ ! -d ~/work ]; then
 	mkdir ~/work
 fi;
 
+# Create projects folder in home directory
+if [ ! -d ~/projects ]; then
+	mkdir ~/projects
+fi;
+
 log.success "Configured Extras settings!"

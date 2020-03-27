@@ -36,7 +36,9 @@ brew "openapi-generator"
 # Heroku toolkit
 brew "heroku"
 # For emoji animation on terminal startup
-brew install jp2a
-brew install imagemagick
+brew "jp2a"
+brew "imagemagick"
 # For GPG management
-brew install gpg
+brew "gpg"
+# Add exercism client
+brew "exercism"
