@@ -38,12 +38,18 @@ source $DIRECTORY/config/mac/oh-my-zsh
 # Install pure prompt theme
 source $DIRECTORY/config/mac/pure-prompt
 
+# Setup keybase
+source $DIRECTORY/config/mac/keybase
+
 # Setup dock apps
 source $DIRECTORY/config/mac/dockutil
+
+# Setup Exercism
+source $DIRECTORY/config/mac/exercism
 
 # Install Lolcat 😂 (https://github.com/busyloop/lolcat)
 sudo gem install lolcat
 log.success "$(lolcat --version)" | lolcat
 
 # Reminder to install missing apps
-log.warning "Don't forget to install the following:\n👉  Exodus: https://www.exodus.io/download/\n👉  Final Cut Pro\n👉  uTorrent"
+log.warning "Don't forget to install the following:\n👉  Exodus: https://www.exodus.io/download/\n👉  Final Cut Pro\n"
