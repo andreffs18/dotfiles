@@ -52,6 +52,14 @@ function olhaaqui(){
   cat ~/$EMOJI.txt | lolcat
 }
 
+# Shortcut to get a random article from my Feedly account
+# from the "Saved for Later" tag
+# eg: $ sfl
+function sfl(){
+	python3 $HOME/.dotfiles/bin/feedly_read_later.py
+}
+
+
 # WIP: Focus function that does the following:
 # - Turn on "No Disturb Mode" on mac
 # - Open Pomodor app with 25 minute

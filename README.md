@@ -63,9 +63,10 @@ To complete the installation, don't forget to setup the custom Terminal profile 
 - Prefered IDE's for development: [PyCharm](https://www.jetbrains.com/pycharm/), [RubyMine](https://www.jetbrains.com/ruby/), [VisualStudio Code](https://code.visualstudio.com/) and [SublimeText](https://www.sublimetext.com/).
 - `kubectl` utils like: [kube-ps1](https://github.com/jonmosco/kube-ps1) prompt and [kubectx](https://github.com/ahmetb/kubectx) to quickly switch between contexts.
 - Random emoji "Hello screen" animation.
+- Util to open random Feedly "Saved for later" article 🤓
+- Manage personal secrets using [Keybase](https://keybase.io/docs/command_line) command line tools
 
 ### Future
-- Manage credentials https://keybase.io/docs/command_line or https://bitwarden.com/
 - Add dotfiles as brew tap so we can install from [```"$ brew install andreffs18-dotfiles"```](https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap).
 - Presentation alias that setup computer with key screen cast and twitter mentions.
 
