@@ -31,8 +31,7 @@
 </div>
 
 <div align="center">
-  <sub>Built with ❤︎ by
-  <a href="https://andreffs.com">André Silva</a>
+  <sub>Built with ❤︎ by <a href="https://andreffs.com">André Silva</a></sub>
 </div>
 <br>
 
@@ -69,6 +68,7 @@ To complete the installation, don't forget to setup the custom Terminal profile 
 ### Future
 - Add dotfiles as brew tap so we can install from [```"$ brew install andreffs18-dotfiles"```](https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap).
 - Presentation alias that setup computer with key screen cast and twitter mentions.
+- `npm` usefull packages installation like, [terminalizer](https://github.com/faressoft/terminalizer) and [@vue/cli](https://cli.vuejs.org/guide/installation.html).
 
 ## Copy&Paste Dotfiles
 
