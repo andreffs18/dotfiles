@@ -28,28 +28,31 @@ function gitcp(){
 
 # Select random emoji and display it as "Hello" screen.
 function olhaaqui(){
+  FOLDER=~/.emoji
+  # Create folder if doesnt exist
+  mkdir -p $FOLDER
   EMOJIES=(✅ 💩 🚀 👁‍🗨 ❗️ 😭 🎉 😘 👋 ⚡️)
   # Get random emoji from list
   EMOJI=${EMOJIES[$RANDOM % ${#EMOJIES[@]}]}
   # Check if emoji was previously used. If so use that, otherwise, download it.
   OLD_PWD=$(PWD)
   cd ~/
-  if [ ! -f "$EMOJI.txt" ] ; then
+  if [ ! -f "$FOLDER/$EMOJI.txt" ] ; then
     echo "Downloading \"$EMOJI\"..."
     # Download image using Emoji API
-    wget --quiet "https://xn--i-7iq.ws/emoji-image/$EMOJI.png?format\=emojione\&ar\=1x1" -O $EMOJI.png
+    wget --quiet "https://xn--i-7iq.ws/emoji-image/$EMOJI.png?format\=emojione\&ar\=1x1" -O $FOLDER/$EMOJI.png
     # Convert image from .png to .jpg
-    convert $EMOJI.png $EMOJI.jpg
+    convert $FOLDER/$EMOJI.png $FOLDER/$EMOJI.jpg
     # Convert image to ascii art
-    jp2a --size=96x46 $EMOJI.jpg --output=$EMOJI.txt
+    jp2a --size=96x46 $FOLDER/$EMOJI.jpg --output=$FOLDER/$EMOJI.txt
     # Replace all border "M" characters with empty space
-    sed -i.bak "s/M/ /g" $EMOJI.txt
+    sed -i.bak "s/M/ /g" $FOLDER/$EMOJI.txt
     # Delete temp files
-    rm $EMOJI.png $EMOJI.jpg $EMOJI.txt.bak
+    rm $FOLDER/$EMOJI.png $FOLDER/$EMOJI.jpg $FOLDER/$EMOJI.txt.bak
   fi
   cd $OLD_PWD
   # Print image
-  cat ~/$EMOJI.txt | lolcat
+  cat $FOLDER/$EMOJI.txt | lolcat
 }
 
 # Shortcut to get a random article from my Feedly account
