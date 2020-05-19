@@ -25,7 +25,7 @@ if not response.ok:
     print(
         f'🙅‍♂️ {response.json()["errorMessage"].title()}.\n'
         'To refresh "FEEDLY_TOKEN" go to https://feedly.com/v3/auth/dev.\n'
-        "Don't forget to `export FEEDLY_TOKEN=...` after 👍"
+        "Don't forget to run `$ update_feedly_token \"FEEDLY_TOKEN\"` after 👍"
     )
     sys.exit(1)
 
