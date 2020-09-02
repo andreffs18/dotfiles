@@ -29,13 +29,17 @@ request.headers.update(
     {"Content-Type": "application/json", "Authorization": f"OAuth {FEEDLY_TOKEN}"}
 )
 
-response = request.get(FEEDLY_URL + "/profile")
-if not response.ok:
-    print(
-        f'🙅‍♂️ {response.json()["errorMessage"].title()}.\n'
-        'To refresh "FEEDLY_TOKEN" go to https://feedly.com/v3/auth/dev.\n'
-        "Don't forget to run `$ update_feedly_token \"FEEDLY_TOKEN\"` after 👍"
-    )
+try:
+    response = request.get(FEEDLY_URL + "/profile")
+    if not response.ok:
+        print(
+            f'🙅‍♂️ {response.json()["errorMessage"].title()}.\n'
+            'To refresh "FEEDLY_TOKEN" go to https://feedly.com/v3/auth/dev.\n'
+            "Don't forget to run `$ update_feedly_token \"FEEDLY_TOKEN\"` after 👍"
+        )
+        sys.exit(1)
+except Exception as e:
+    print(f'🙅‍♂️ Something wrong happend: {str(e)}')
     sys.exit(1)
 
 stream_id = f'user/{response.json()["id"]}/tag/global.saved'
