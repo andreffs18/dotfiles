@@ -21,6 +21,7 @@ cask "betterzip"  # replacement for "the-unarchive"
 # Development
 cask "pycharm"
 cask "rubymine"
+cask "goland"
 cask "visual-studio-code"
 cask "sublime-text"
 cask "iterm2"
