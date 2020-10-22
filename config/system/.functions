@@ -57,7 +57,7 @@ function olhaaqui(){
 
 # Shortcut to get a random article from my Feedly account from the "Saved for Later" tag
 function sfl(){
-	python3 $HOME/.dotfiles/bin/feedly_read_later.py
+	python3 $HOME/.dotfiles/bin/feedly_read_later.py $@
 }
 
 # Utility to update FEEDLY_TOKEN and push it to keybase

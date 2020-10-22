@@ -48,12 +48,17 @@ continuation = ""
 articles = []
 while True:
     # Query feedly API to get all Saved articles, and parse all Article ids, storing them in `articles` variable.
-    response = request.get(
-        FEEDLY_URL
-        + f"/streams/contents?streamId={stream_id}&continuation={continuation}"
-    )
-    items = response.json()["items"]
-    articles.extend([item.get("id") for item in items])
+    try:
+        response = request.get(
+            FEEDLY_URL
+            + f"/streams/contents?streamId={stream_id}&continuation={continuation}"
+        )
+        items = response.json()["items"]
+        articles.extend([item.get("id") for item in items])
+    except:
+        # Might have hit the threshold of requests. Stop fetching and just use the ones we already have
+        break
+
     # Then check if is there any more pages left, if not, then break out of the while loop.
     try:
         continuation = response.json()["continuation"]
@@ -64,5 +69,11 @@ while True:
 # Print message and sleep for a second so we can read it. Finally open page on a web browser.
 print(f'\n✅ Found {len(articles)} articles in "Saved for later"!')
 time.sleep(1)
-if articles:
-    webbrowser.open(f"https://feedly.com/i/entry/{random.choice(articles)}")
+
+# Get article count if given, get only 1 otherwise
+count = int(sys.argv[1] if len(sys.argv) > 1 else 1)
+for _ in range(count):
+    if articles:
+        article = random.choice(articles)
+        webbrowser.open(f"https://feedly.com/i/entry/{article}")
+        articles.remove(article)
