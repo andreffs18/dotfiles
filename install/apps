@@ -2,7 +2,8 @@
 
 # Install brew package manager
 if [[ $(which -s brew) != 0 ]]; then
-  echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  # echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   log.success "✅  Homebrew already installed: $(brew -v)"
 fi
