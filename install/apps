@@ -8,11 +8,8 @@ else
   log.success "✅  Homebrew already installed: $(brew -v)"
 fi
 
-# Fix "shallow clone" taps
-git -C /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core fetch --unshallow
-git -C /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask fetch --unshallow
 # Install brew and all apps on Brewfile, Caskfile and Masfile
-brew update
+brew update-reset
 
 log.info "1️⃣  ⚙️  Installing all Brewfile dependencies"
 brew bundle --file=$DIRECTORY/install/Brewfile
