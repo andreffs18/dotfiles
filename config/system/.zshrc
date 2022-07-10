@@ -84,3 +84,24 @@ pastefinish() {
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
+
+
+# Pure Prompt Configuration
+# more can be found here: https://github.com/sindresorhus/pure#getting-started
+autoload -U promptinit; promptinit
+
+# optionally define some options
+PURE_CMD_MAX_EXEC_TIME=10
+# change the path color
+zstyle :prompt:pure:path color white
+# change the color for both  and
+zstyle :prompt:pure:prompt:success color green
+zstyle :prompt:pure:prompt:error color red
+prompt pure
+
+# Add kube cluster and namespace context to prompt
+#source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+#PROMPT=' '
+
+
+
