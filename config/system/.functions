@@ -31,9 +31,11 @@ function olhaaqui(){
   FOLDER=~/.emoji
   # Create folder if doesnt exist
   mkdir -p $FOLDER
-  EMOJIES=(✅ 💩 🚀 👁‍🗨 ❗️ 😭 🎉 😘 👋 ⚡️)
+  EMOJIES=(💩 🚀 ❗️ 😭 🎉 🎁 😘 👋 💎 🤖 🇵🇹)
   # Get random emoji from list
-  EMOJI=${EMOJIES[$RANDOM % ${#EMOJIES[@]}]}
+  INDEX=$(expr $RANDOM % ${#EMOJIES[@]}) # get index between [0, len(emojies)]
+  INDEX=$(($INDEX>0 ? $INDEX : 1)) # max(index, 1)
+  EMOJI=${EMOJIES[$INDEX]}
   # Check if emoji was previously used. If so use that, otherwise, download it.
   OLD_PWD=$(PWD)
   cd ~/
