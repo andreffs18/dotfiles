@@ -2,8 +2,8 @@
 
 # Remove all runnning processes for given name
 # eg: $ killps chrome
-function killps(){ 
-    ps -ef | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9; 
+function killps(){
+    ps -ef | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9;
 }
 
 
@@ -91,7 +91,7 @@ function jwt_decode(){
 # Function to generate passwords with given length:
 # $ pwdgen 22
 function pwdgen(){
-  perl -pe 'binmode(STDIN, ":bytes"); tr/A-Za-z0-9_\!\@\#\$\%\^\&\*\(\)-+=//dc;' < /dev/urandom | head -c $0
+  perl -pe 'binmode(STDIN, ":bytes"); tr/A-Za-z0-9_\!\@\#\$\%\^\&\*\(\)-+=//dc;' < /dev/urandom | head -c $1
 }
 
 log.success ".functions loaded with success!"
