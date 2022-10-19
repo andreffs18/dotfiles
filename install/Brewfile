@@ -31,6 +31,8 @@ brew "minikube"
 brew "mas"
 # GoLang programming language
 brew "golang"
+# Python 3 version
+brew "python3"
 # Install OpenAPI generator (Swagger)
 brew "openapi-generator"
 # Heroku toolkit
@@ -42,3 +44,5 @@ brew "imagemagick"
 brew "gpg"
 # Add exercism client
 brew "exercism"
+# Add "AWS Authenticator" (useful for work)
+brew "aws-iam-authenticator"
