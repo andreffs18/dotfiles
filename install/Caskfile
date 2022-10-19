@@ -6,10 +6,12 @@ tap "homebrew/cask-versions"
 # Productivity
 cask "evernote"
 cask "flux"  # makes the color of your computer's display adapt to the time of day (https://justgetflux.com/)
-cask "franz"  # messaging app for multiple services 
+cask "franz"  # messaging app for multiple services
 cask "recordit"  # record fast screencasts (http://recordit.co/)
+cask "kap"  # screen recording (https://getkap.co/)
 cask "clockify"  # time management tracking app (https://clockify.me/)
 cask "vanilla"  # hide menu bar icons (https://matthewpalmer.net/vanilla/)
+
 
 # Storage & Explorers
 cask "dropbox"
