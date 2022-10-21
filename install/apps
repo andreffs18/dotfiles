@@ -11,6 +11,15 @@ fi
 # Install brew and all apps on Brewfile, Caskfile and Masfile
 brew update-reset
 
+# Update all brew Taps, with "unshallow" clone
+BREW_TAPS_DIR="/usr/local/Homebrew/Library/Taps/homebrew"
+for folder in $(ls $BREW_TAPS_DIR); do
+  FOLDER_PATH="$BREW_TAPS_DIR/$folder"
+  log.info "⏳ Deep update brew Tap $FOLDER_PATH..."
+  git -C "$FOLDER_PATH" fetch --depth=9999;
+  git -C "$FOLDER_PATH" fetch --unshallow;
+done
+
 log.info "1️⃣  ⚙️  Installing all Brewfile dependencies"
 brew bundle install --no-upgrade --verbose --file=$DIRECTORY/install/Brewfile
 
@@ -27,7 +36,10 @@ if [[ "$os_ver" == 10.12.* ]]; then
 else
   echo "⛔️ Not installing \`mas\` client! You need to manually install the following apps via AppStore: "
   cat $DIRECTORY/install/Masfile | grep "mas" | awk '{print $2 " - " $4}' | sed -e 's/[,"]//g' | awk '{print "➡️  " $0}'
-fi  
+fi
+
+# Finally just upgrade everything (Taps and Formulas)
+brew upgrade
 
 # Remove brew and cask old formulas
 brew cleanup

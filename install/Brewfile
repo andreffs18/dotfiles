@@ -6,9 +6,9 @@ tap "heroku/brew"
 brew "watch"
 # Interactive process viewer dashboard
 brew "htop"
-# Display directories as trees (https://www.geeksforgeeks.org/tree-command-unixlinux/) 
+# Display directories as trees (https://www.geeksforgeeks.org/tree-command-unixlinux/)
 brew "tree"
-# Display process as trees (https://www.howtoforge.com/linux-pstree-command/) 
+# Display process as trees (https://www.howtoforge.com/linux-pstree-command/)
 brew "pstree"
 # Download files over network (https://www.computerhope.com/unix/wget.htm)
 brew "wget"
@@ -46,3 +46,5 @@ brew "gpg"
 brew "exercism"
 # Add "AWS Authenticator" (useful for work)
 brew "aws-iam-authenticator"
+# ccat is the colorizing cat (https://github.com/owenthereal/ccat)
+brew "ccat"

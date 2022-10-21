@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-DIRECTORY=~/.dotfiles
-APPLE_ID=andreffs18@gmail.com
+export DIRECTORY=~/.dotfiles
+export APPLE_ID=andreffs18@gmail.com
 
 # Before everything, let's install the latest version of xcode and SignIn into appstore
 # You can get more info about xcode here https://developer.apple.com/library/archive/technotes/tn2339/_index.html
-if [[ "$(xcode-select --print-path > /dev/null 2>&1; echo $?)" -ne 0 ]]; then 
+if [[ "$(xcode-select --print-path > /dev/null 2>&1; echo $?)" -ne 0 ]]; then
   echo "🖥  Xcode not found... installing it!"
   echo "🚨 (re-run this script after xcode installation is complete) 🚨"
   xcode-select --install  >/dev/null 2>&1
@@ -22,7 +22,7 @@ else
   git clone https://github.com/andreffs18/dotfiles .
 fi
 
-# Now let's symlinc all our dotfiles to the directory where they are expected (our home directory) 
+# Now let's symlinc all our dotfiles to the directory where they are expected (our home directory)
 for DIR in $DIRECTORY/config/system/.*; do
   [ -f "$DIR" ] && ln -sfv $DIR ~
 done
@@ -36,7 +36,7 @@ CONFIG_DIRECTORY=~/.config
 if [ ! -d "$CONFIG_DIRECTORY" ]; then
   mkdir "$CONFIG_DIRECTORY";
 fi
-# Symlink python linting flake8 configuration 
+# Symlink python linting flake8 configuration
 ln -sfv $DIRECTORY/config/python/flake8 $CONFIG_DIRECTORY
 
 # Initialize Logging

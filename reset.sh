@@ -9,7 +9,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Let's start by removing the ~/.dotfiles directory!
 sudo rm -rf ~/.dotfiles
 echo "❎  ~/.dotfiles folder"
-# Now, remove all symbolic links 
+# Now, remove all symbolic links
 for DIR in ~/.{aliases,bash_profile,bashrc,dockutil,exports,functions,gitconfig,gitignore_global,logging,mansettings,olhaaqui,osx,zshrc}; do
   sudo rm $DIR
   echo "❎  Removed symlink $DIR"
