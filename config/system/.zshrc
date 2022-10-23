@@ -52,10 +52,10 @@ export ZSH=/Users/$USER/.oh-my-zsh
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting)
 plugins=(
-    git 
-    zsh-syntax-highlighting 
-    zsh-autosuggestions 
-    zsh-completions 
+    git
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    zsh-completions
 )
 
 autoload -U compinit && compinit
@@ -102,6 +102,3 @@ prompt pure
 # Add kube cluster and namespace context to prompt
 #source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 #PROMPT=' '
-
-
-

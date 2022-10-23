@@ -9,7 +9,7 @@
  It takes the effort out of installing and configuring a new Mac.<br>Enjoy! 😄
 </h4>
 
-<p align="center">  
+<p align="center">
   <a href="#">
     <img src="https://img.shields.io/github/last-commit/andreffs18/dotfiles?style=flat-square" />
   </a>
@@ -42,15 +42,15 @@ The first thing we should do is to make sure we have our system updated: **Apple
 
 Secondly, you just need to run the following one-liner:
 
-```shell 
+```shell
 $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/master/install.sh`"
-``` 
+```
 
 In case you want to revert this installation just run the "reset.sh" script:
 
-```shell 
+```shell
 $ bash -c "`curl -fsSL https://raw.githubusercontent.com/andreffs18/dotfiles/master/reset.sh`"
-``` 
+```
 > Note that this will only delete the `~/.dotfiles` folder and all symlinks. All installed apps will still be installed.
 
 To complete the installation, don't forget to setup the custom Terminal profile by importing the **/dotfiles/config/mac/andresilva.terminal** file into **Terminal > Preferences > Profiles > Import**. Lastly, on the General Tab, change the **"Shells open with:"** to "Command: ```/bin/zsh```"
@@ -89,7 +89,7 @@ If you want to have your own dotfiles and feel that this is a good example to st
 │   │   ├── .gitconfig
 │   │   └── .gitignore_global
 │   ├── mac                     # General mac configs
-│   │   ├── dockutil            #  Setup mac dock layout (which apps should appear) 
+│   │   ├── dockutil            #  Setup mac dock layout (which apps should appear)
 │   │   ├── oh-my-zsh           #  Define zsh and setup plugins for Oh-My-Zsh framework
 │   │   ├── osx                 #  Mac Configuration (ui/ux, controls, shortcuts, etc)
 │   │   ├── terminal            #  My terminal profile configuration
@@ -107,10 +107,10 @@ If you want to have your own dotfiles and feel that this is a good example to st
 │       ├── .olhaaqui
 │       └── .zshrc
 └── install                     # Folder for all apps installed via Homebrew and Mas.
-    ├── Brewfile                
-    ├── Caskfile                
-    ├── Masfile                 
-    └── apps                    # Shell script to start Homebrew installations 
+    ├── Brewfile
+    ├── Caskfile
+    ├── Masfile
+    └── apps                    # Shell script to start Homebrew installations
 ```
 
 #### Lifecycle
@@ -126,7 +126,7 @@ In the next two sections I try my best to explain what each script is doing. Hop
 - Git Clone / Git pull latest version of **dotfiles** repository
 - Simlynk all dotfiles to be accessible from home folder (`~/`)
 - Setup MacOS configuration (UI/UX, finder, keyboard, shortcuts, etc)
-- Install Homebrew & Cask Apps 
+- Install Homebrew & Cask Apps
 - Finally, install any software updates that might exist and restart laptop
 
 
@@ -134,7 +134,7 @@ In the next two sections I try my best to explain what each script is doing. Hop
 
 `reset.sh` does the following things, in the following order:
 - Recursivly remove all files from DOTFILES folder
-- Remove all symlinks created 
+- Remove all symlinks created
 - Remove configration files (just `~/config/flake8`)
 - Finally, delete **oh-my-zsh** package folder (`~/.oh-my-zsh`)
 
@@ -164,7 +164,3 @@ Enjoy your own Dotfiles!
 - The top 3 most forked repos: [Paul Irish](https://github.com/paulirish/dotfiles), [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) and [Lars Kappert](https://github.com/webpro/dotfiles)
 
 and many thanks to the unofficial [dotfiles](https://dotfiles.github.io/) page 👍.
-
-
-
-
