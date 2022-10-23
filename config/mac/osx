@@ -155,7 +155,7 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool true
 defaults write com.apple.finder FXInfoPanesExpanded -dict General -bool true OpenWith -bool true Privileges -bool true
 
 # Hide "Guest User"
-defaults write com.apple.AppleFileServer guestAccess -bool NO 
+defaults write com.apple.AppleFileServer guestAccess -bool NO
 defaults write SystemConfiguration/com.apple.smb.server AllowGuestAccess -bool NO
 
 log.success "Configured Finder properties!"
