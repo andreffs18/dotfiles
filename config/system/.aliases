@@ -64,4 +64,7 @@ alias pumpitup="osascript -e 'set volume output volume 100'"
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
 
+# [Unbabel] Login into ECR
+alias ecrlogin='aws ecr get-login-password --region us-east-1 | docker login -u AWS --password-stdin 506714715093.dkr.ecr.us-east-1.amazonaws.com'
+
 log.success ".aliases loaded with success!"
