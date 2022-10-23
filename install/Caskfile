@@ -16,7 +16,6 @@ cask "vanilla"  # hide menu bar icons (https://matthewpalmer.net/vanilla/)
 # Storage & Explorers
 cask "dropbox"
 cask "megasync"
-cask "google-backup-and-sync"
 cask "android-file-transfer"
 cask "betterzip"  # replacement for "the-unarchive"
 
@@ -36,7 +35,7 @@ cask "robo-3t"
 # Media & Download
 cask "spotify"
 cask "vlc"
-cask "calibre"  # e-book converter/manager 
+cask "calibre"  # e-book converter/manager
 
 # Quicklook plugins
 cask "qlcolorcode"
@@ -48,16 +47,16 @@ cask "quicklook-csv"
 cask "webpquicklook"
 cask "suspicious-package"
 
-# Browser 
+# Browser
 cask "google-chrome"
 # Bittorrent
 cask "transmission"
 # Logitech MX Master 2S drivers
-cask "logitech-options"  
+cask "logitech-options"
 # Keystroke Visualizer. Good for presentations (https://github.com/sdeken/keycastr)
-cask "keycastr"  
+cask "keycastr"
 
 # Password and Key managers
-cask "bitwarden" 
+cask "bitwarden"
 cask "keybase"
 cask "gpg-suite"

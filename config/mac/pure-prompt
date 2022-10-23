@@ -4,26 +4,26 @@
 npm install --global pure-prompt
 
 # Add configurations to our ~/.zshrc
-cat <<EOT >> ~/.zshrc
+cat << EOT >> ~/.zshrc
 
 # Pure Prompt Configuration
 # more can be found here: https://github.com/sindresorhus/pure#getting-started
-
 autoload -U promptinit; promptinit
 
 # optionally define some options
 PURE_CMD_MAX_EXEC_TIME=10
+
 # change the path color
 zstyle :prompt:pure:path color white
-# change the color for both `prompt:success` and `prompt:error`
+# change the color for both 'prompt:success' and 'prompt:error'
 zstyle :prompt:pure:prompt:success color green
 zstyle :prompt:pure:prompt:error color red
+
 prompt pure
 
 # Add kube cluster and namespace context to prompt
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-PROMPT='$(kube_ps1) '$PROMPT
-
+PROMPT='\$(kube_ps1) '\$PROMPT
 EOT
 
 log.success "Pure propmt configured!"

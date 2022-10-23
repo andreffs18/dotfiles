@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
+EXERCISM_DIR=/Users/$USER/MEGA/projects/exercism
 
 # Make sure exercism is installed
 if brew ls --versions exercism > /dev/null; then
     # The package is installed
     exercism version
     # Setup exercism on expected folder
-    exercism configure --token=$EXERCISM_TOKEN --workspace /Users/$USER/projects/Exercism
+    exercism configure --token=$EXERCISM_TOKEN --workspace $EXERCISM_DIR
     # Pull repo from github
-    git clone git@github.com:andreffs18/Exercism.git ~/projects
+    git clone git@github.com:andreffs18/Exercism.git $EXERCISM_DIR
 else
   log.fail "🥴 Exercism was not installed"
 fi
-
-

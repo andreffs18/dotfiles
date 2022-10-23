@@ -25,10 +25,10 @@ alias localip="ipconfig getifaddr en0"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
-# Show disk space 
+# Show disk space
 alias space="sudo du -hd 1 $1"
 # Reload every dotfile
-alias resource='echo "Source ~/.zshrc"; source ~/.zshrc; log.success "Re-Sourced 👍!";'
+alias resource='echo "Re-loading ~/.zshrc"; source ~/.zshrc; log.success "Re-loaded 👍!";'
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 # Recursively delete `.DS_Store` files
