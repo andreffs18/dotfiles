@@ -54,6 +54,9 @@ source $DIRECTORY/config/mac/pure-prompt
 # Setup keybase
 source $DIRECTORY/config/mac/keybase
 
+# Setup ssh
+source $DIRECTORY/config/mac/ssh
+
 # Setup dock apps
 source $DIRECTORY/config/mac/dockutil
 
