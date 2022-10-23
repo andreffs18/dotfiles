@@ -1,8 +1,3 @@
-tap "homebrew/cask"
-tap "homebrew/cask-drivers"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-
 # Productivity
 cask "evernote"
 cask "flux"  # makes the color of your computer's display adapt to the time of day (https://justgetflux.com/)
