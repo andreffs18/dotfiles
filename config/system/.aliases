@@ -47,9 +47,14 @@ alias md='open $1 -a MacDown'
 alias vs='open $1 -a Visual\ Studio\ Code'
 alias st2='open $1 -a Sublime\ Text'
 
-# Git shortcuts
+# Custom git shortcuts
 alias g="git"
 alias gitrmerged='git branch --merged | grep -v "\*" | grep -v release | grep -v master | xargs -n 1 git branch -d'
+alias git-authors='git log --pretty=format:"%an <%ae>" "." | sort | uniq -c | sort -nr'
+alias git-branch-name='echo "$(git rev-parse --abbrev-ref HEAD)" | tr -d "\n" | tr -d " "'
+alias git-lastest-tag='git fetch --all --tags --quiet && git describe --tags "$(git rev-list --tags --max-count=1)"'
+alias git-delete-dangling-commits='git reflog expire --expire-unreachable=now --all && git gc --prune=now'
+alias git-churn="~/.dotfiles/bin/git-churn"
 
 # Python shortcuts
 alias py="python manage.py runserver"
