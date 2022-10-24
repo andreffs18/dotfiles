@@ -96,4 +96,13 @@ function pwdgen(){
   perl -pe 'binmode(STDIN, ":bytes"); tr/A-Za-z0-9_\!\@\#\$\%\^\&\*\(\)-+=//dc;' < /dev/urandom | head -c $1
 }
 
+# Update local version of my dotfiles by pulling them from github and sources /apps folder
+function update_dotfiles(){
+  pushd ~/.dotfiles
+  ggpull || exit 1
+  source ~/.dotfiles/install/apps
+  popd
+  echo "✅ Updated ~/.dotfiles!"
+}
+
 log.success ".functions loaded with success!"
