@@ -16,6 +16,7 @@ export LC_ALL='en_US.UTF-8';
 
 # In order to use GPG commit verification
 # Referenced on issue https://github.com/keybase/keybase-issues/issues/2798
+# To configure follow: https://github.com/pstadler/keybase-gpg-github
 export GPG_TTY=$(tty)
 
 # Configuration for all Executable Paths
