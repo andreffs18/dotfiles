@@ -14,18 +14,6 @@ function findstr(){
 }
 
 
-# Shortcut to commit and push changes to current branch
-# eg: $ gitcp "This is a commit message"
-function gitcp(){
-	current_branch=$(git symbolic-ref HEAD --short)
-	echo "Commit Message: \"$1\"";
-	echo "origin->$current_branch";
-	git commit -am "$1";
-	git push origin $current_branch;
-	echo "Success!";
-}
-
-
 # Select random emoji and display it as "Hello" screen.
 function olhaaqui(){
   FOLDER=~/.emoji
