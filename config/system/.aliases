@@ -32,7 +32,7 @@ alias resource='echo "Re-loading ~/.zshrc"; source ~/.zshrc; log.success "Re-loa
 # Lock the screen (when going AFK)
 # Outdated: alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 # Source: https://apple.stackexchange.com/questions/406616/replacement-for-cgsession-suspend
-alias afk="pmset displaysleepnow"
+alias afk="pmset sleepnow"
 # Recursively delete `.DS_Store` files
 alias delds="find . -type f -name '*.DS_Store' -ls -delete"
 # Empty the Trash on all mounted volumes and the main HDD.
