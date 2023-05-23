@@ -63,14 +63,6 @@ EOM
   echo "✅ Updated Feedly Token with sucess! Open new tab to reload configuration."
 }
 
-# WIP: Focus function that does the following:
-# - Turn on "No Disturb Mode" on mac
-# - Open Pomodor app with 25 minute
-# - Setup alarm for 5 minute break
-# - Start spotify "focus" playlist
-# - Manage notifications (https://github.com/SeTeM/pync)
-# function focus(){}
-
 # Function to decode jwt tokens. Works like this:
 # $ jwt_decode eyJh....
 # Source: https://gist.github.com/thomasdarimont/46358bc8167fce059d83a1ebdb92b0e7

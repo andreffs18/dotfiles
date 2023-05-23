@@ -1,42 +1,27 @@
 #!/usr/bin/env bash
 
 # Install brew package manager
-if [[ $(which -s brew) != 0 ]]; then
-  # echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if [[ "$(which -s brew > /dev/null 2>&1; echo $?)" -ne 0 ]]; then
   echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
-  log.success "✅  Homebrew already installed: $(brew -v)"
+  log.success "✅  Homebrew already installed: $(brew -v), updating instead!"
+  brew update
 fi
 
 # Install brew and all apps on Brewfile, Caskfile and Masfile
 brew update-reset
 
-# Update all brew Taps, with "unshallow" clone
-BREW_TAPS_DIR="/usr/local/Homebrew/Library/Taps/homebrew"
-for folder in $(ls $BREW_TAPS_DIR); do
-  FOLDER_PATH="$BREW_TAPS_DIR/$folder"
-  log.info "⏳ Deep update brew Tap $FOLDER_PATH..."
-  git -C "$FOLDER_PATH" fetch --depth=9999;
-  git -C "$FOLDER_PATH" fetch --unshallow;
-done
+# Update all brew Taps
+brew tap heroku/brew
 
 log.info "1️⃣  ⚙️  Installing all Brewfile dependencies"
 brew bundle install --no-upgrade --verbose --file=$DIRECTORY/install/Brewfile
 
-log.info "2️⃣  🔨  Installing all Caskfile dependencies"
+log.info "2️⃣  ⚙️  Installing all Caskfile dependencies"
 brew bundle install --no-upgrade --verbose --file=$DIRECTORY/install/Caskfile
 
-# Note: `Brewfile` instaled "mas" (Mac AppStore Client). We need to signin so we can install Masfile dependencies
-# Also, only OS version 10.13.* can use this command, so we restrict it for later versions.
-os_ver=${1:-$(sw_vers -productVersion)}
-if [[ "$os_ver" == 10.12.* ]]; then
-  log.info "3️⃣  🔧  Installing all Masfile dependencies"
-  mas signin $APPLE_ID
-  brew bundle --file=$DIRECTORY/install/Masfile
-else
-  echo "⛔️ Not installing \`mas\` client! You need to manually install the following apps via AppStore: "
-  cat $DIRECTORY/install/Masfile | grep "mas" | awk '{print $2 " - " $4}' | sed -e 's/[,"]//g' | awk '{print "➡️  " $0}'
-fi
+log.info "3️⃣  ⚙️  Installing all Masfile dependencies"
+brew bundle install --no-upgrade --verbose --file=$DIRECTORY/install/Masfile
 
 # Finally just upgrade everything (Taps and Formulas)
 brew upgrade
@@ -44,28 +29,3 @@ brew upgrade
 # Remove brew and cask old formulas
 brew cleanup
 log.success "✅  All brew files installed!"
-
-# Install oh-my-zsh framework
-source $DIRECTORY/config/mac/oh-my-zsh
-
-# Install pure prompt theme
-source $DIRECTORY/config/mac/pure-prompt
-
-# Setup keybase
-source $DIRECTORY/config/mac/keybase
-
-# Setup ssh
-source $DIRECTORY/config/mac/ssh
-
-# Setup dock apps
-source $DIRECTORY/config/mac/dockutil
-
-# Setup Exercism
-source $DIRECTORY/config/mac/exercism
-
-# Install Lolcat 😂 (https://github.com/busyloop/lolcat)
-sudo gem install lolcat
-log.success "$(lolcat --version)" | lolcat
-
-# Reminder to install missing apps
-log.warning "Don't forget to install the following:\n👉  Exodus: https://www.exodus.io/download/\n👉  Final Cut Pro\n"

@@ -2,30 +2,23 @@
 cask "evernote"
 cask "flux"  # makes the color of your computer's display adapt to the time of day (https://justgetflux.com/)
 cask "franz"  # messaging app for multiple services
-cask "recordit"  # record fast screencasts (http://recordit.co/)
 cask "kap"  # screen recording (https://getkap.co/)
-cask "clockify"  # time management tracking app (https://clockify.me/)
-cask "vanilla"  # hide menu bar icons (https://matthewpalmer.net/vanilla/)
-
 
 # Storage & Explorers
 cask "dropbox"
 cask "megasync"
-cask "android-file-transfer"
-cask "betterzip"  # replacement for "the-unarchive"
+# cask "android-file-transfer"
+# cask "betterzip"  # replacement for "the-unarchive"
 
 # Development
 cask "pycharm"
-cask "rubymine"
-cask "goland"
 cask "visual-studio-code"
 cask "sublime-text"
-cask "iterm2"
 cask "postman"
 cask "ngrok"
 cask "docker"
-cask "postico"
-cask "robo-3t"
+cask "studio-3t"
+cask "tableplus"
 
 # Media & Download
 cask "spotify"
@@ -33,14 +26,14 @@ cask "vlc"
 cask "calibre"  # e-book converter/manager
 
 # Quicklook plugins
-cask "qlcolorcode"
-cask "qlstephen"
-cask "qlmarkdown"
-cask "qlprettypatch"
-cask "quicklook-json"
-cask "quicklook-csv"
-cask "webpquicklook"
-cask "suspicious-package"
+# cask "qlcolorcode"
+# cask "qlstephen"
+# cask "qlmarkdown"
+# cask "qlprettypatch"
+# cask "quicklook-json"
+# cask "quicklook-csv"
+# cask "webpquicklook"
+# cask "suspicious-package"
 
 # Browser
 cask "google-chrome"

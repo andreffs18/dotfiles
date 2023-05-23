@@ -52,20 +52,19 @@ export ZSH=/Users/$USER/.oh-my-zsh
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting)
 plugins=(
-    git 
-    zsh-syntax-highlighting 
-    zsh-autosuggestions 
-    zsh-completions 
+    git
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    zsh-completions
 )
 
 autoload -U compinit && compinit
 
-# TODO: Look into theses plugins:
-# - https://github.com/unixorn/git-extra-commands (extra utils git command)
-# - https://github.com/tj/git-extras (extra utils git command)
 source $ZSH/oh-my-zsh.sh
 
+##############################################################
 # User configuration
+##############################################################
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -84,24 +83,3 @@ pastefinish() {
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
-
-
-# Pure Prompt Configuration
-# more can be found here: https://github.com/sindresorhus/pure#getting-started
-autoload -U promptinit; promptinit
-
-# optionally define some options
-PURE_CMD_MAX_EXEC_TIME=10
-# change the path color
-zstyle :prompt:pure:path color white
-# change the color for both  and
-zstyle :prompt:pure:prompt:success color green
-zstyle :prompt:pure:prompt:error color red
-prompt pure
-
-# Add kube cluster and namespace context to prompt
-#source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-#PROMPT=' '
-
-
-
