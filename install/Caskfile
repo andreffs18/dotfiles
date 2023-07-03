@@ -3,6 +3,7 @@ cask "evernote"
 cask "flux"  # makes the color of your computer's display adapt to the time of day (https://justgetflux.com/)
 cask "franz"  # messaging app for multiple services
 cask "kap"  # screen recording (https://getkap.co/)
+cask "rectangle"  # Shortcuts for moving and sizing windows
 
 # Storage & Explorers
 cask "dropbox"
@@ -24,16 +25,6 @@ cask "tableplus"
 cask "spotify"
 cask "vlc"
 cask "calibre"  # e-book converter/manager
-
-# Quicklook plugins
-# cask "qlcolorcode"
-# cask "qlstephen"
-# cask "qlmarkdown"
-# cask "qlprettypatch"
-# cask "quicklook-json"
-# cask "quicklook-csv"
-# cask "webpquicklook"
-# cask "suspicious-package"
 
 # Browser
 cask "google-chrome"
