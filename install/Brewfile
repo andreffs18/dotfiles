@@ -1,3 +1,5 @@
+# Mac App Store command-line interface (https://github.com/mas-cli/mas)
+brew "mas"
 # Watch command every X seconds
 brew "watch"
 # Interactive process viewer dashboard
@@ -9,6 +11,8 @@ brew "pstree"
 # Download files over network (https://www.computerhope.com/unix/wget.htm)
 brew "wget"
 # Tool for managing dock items (https://github.com/chilcote/outset/wiki/Dockutil)
+# There has been an delay with pushing the latest version of dockutil
+# In case this fails, follow this https://github.com/kcrawford/dockutil/issues/127#issuecomment-1085973552
 brew "dockutil"
 # Install ZShell (https://sourabhbajaj.com/mac-setup/iTerm/zsh.html)
 brew "zsh"
@@ -16,15 +20,11 @@ brew "zsh"
 brew "node"
 # Get lightweight comand line json processor
 brew "jq"
-# Interactive terminal for tracking cryptocurrencies (https://cointop.sh)
-brew "cointop"
 # Kubectl utils: prompt & quickly switch contexts
 brew "kubectl"
 brew "kubectx"
 brew "kube-ps1"
 brew "minikube"
-# Mac App Store command-line interface (https://github.com/mas-cli/mas)
-brew "mas"
 # GoLang programming language
 brew "golang"
 # Python 3 version

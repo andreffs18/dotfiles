@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-COMPUTER_NAME="$USER"
 
 # Quit "System Preferences" if it's already open
 osascript -e 'tell application "System Preferences" to quit'
@@ -15,10 +14,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "$COMPUTER_NAME"
-sudo scutil --set HostName "$COMPUTER_NAME"
-sudo scutil --set LocalHostName "$COMPUTER_NAME"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$COMPUTER_NAME"
+sudo scutil --set ComputerName "$USER"
+sudo scutil --set HostName "$USER"
+sudo scutil --set LocalHostName "$USER"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$USER"
 
 # Set language and text formats
 defaults write NSGlobalDomain AppleLanguages -array "en" "pt"
@@ -27,6 +26,7 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Set the timezone (see `sudo systemsetup -listtimezones` for other values)
+# (NOTE: This will throw an error but it will work. _macOS being macOS_)
 sudo systemsetup -settimezone "Europe/Lisbon" > /dev/null
 
 # Disable audio feedback when volume is changed
@@ -155,7 +155,7 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool true
 defaults write com.apple.finder FXInfoPanesExpanded -dict General -bool true OpenWith -bool true Privileges -bool true
 
 # Hide "Guest User"
-defaults write com.apple.AppleFileServer guestAccess -bool NO 
+defaults write com.apple.AppleFileServer guestAccess -bool NO
 defaults write SystemConfiguration/com.apple.smb.server AllowGuestAccess -bool NO
 
 log.success "Configured Finder properties!"

@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-source ~/.logging
 
 # Load all dotfiles one by one
-for DOTFILE in ~/.{exports,aliases,functions,mansettings}; do
-  [ -f "$DOTFILE" ] && source "$DOTFILE"
-done
+# (~/.logging takes precendence since all other alias depend on it)
+source ~/.logging
 
-# Welcome message
-olhaaqui
-
+source ~/.aliases
+source ~/.functions
+source ~/.global_exports
+source ~/.mansettings

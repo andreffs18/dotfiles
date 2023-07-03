@@ -5,3 +5,5 @@ if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
 
+# Welcome message
+olhaaqui

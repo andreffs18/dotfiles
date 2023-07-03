@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+export DIRECTORY=~/.dotfiles
+export APPLE_ID=andreffs18@gmail.com
+export REPOSITORY=https://github.com/andreffs18/dotfiles
+
 # Make vim the default editor.
 export EDITOR='vim';
 
@@ -22,35 +26,35 @@ export GPG_TTY=$(tty)
 # Configuration for all Executable Paths
 export PATH="$PATH:/usr/local/bin"
 # Mysql path
-export PATH="$PATH:/usr/local/mysql/bin"
-export PATH="$PATH:/usr/local/mysql/support-files/bin"
+# export PATH="$PATH:/usr/local/mysql/bin"
+# export PATH="$PATH:/usr/local/mysql/support-files/bin"
 # Mongo path
-export PATH="$PATH:/usr/local/opt/mongodb32/bin/"
+# export PATH="$PATH:/usr/local/opt/mongodb32/bin/"
 # PHP path
-export PATH="$PATH:/usr/local/php5/bin"
+# export PATH="$PATH:/usr/local/php5/bin"
 # OpenSSL 1.0.2 path
-export PATH="$PATH:/usr/local/opt/openssl/bin"
+# export PATH="$PATH:/usr/local/opt/openssl/bin"
 # RVM path (for scripting)
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
 # Kube authenticator path
 export PATH="$PATH:$HOME/bin"
 # Add ruby to $PATH
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+# export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 # Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
-export PYTHONIOENCODING='UTF-8';
+#export PYTHONIOENCODING='UTF-8';
 
 # Add Go environments
-export GOPATH="$HOME/golang"
-export GOROOT="/usr/local/opt/go/libexec"
-export PATH="$PATH:$GOPATH/bin"
-export PATH="$PATH:$GOROOT/bin"
+# export GOPATH="$HOME/golang"
+# export GOROOT="/usr/local/opt/go/libexec"
+# export PATH="$PATH:$GOPATH/bin"
+# export PATH="$PATH:$GOROOT/bin"
 
 # Postgres default Host configuration
-export PGHOST=localhost
+# export PGHOST=localhost
 
 # Java configuration (for OpenAPI generator)
-export JAVA_HOME=`/usr/libexec/java_home`
-export PATH=$JAVA_HOME/bin:$PATH
+# export JAVA_HOME=`/usr/libexec/java_home`
+# export PATH=$JAVA_HOME/bin:$PATH
 
-log.success ".exports loaded with success!"
+log.success ".global_exports loaded with success!"

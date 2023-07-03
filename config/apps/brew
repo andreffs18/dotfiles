@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Add homebrew envs to terminal session
+cat << EOT >> ~/.zshrc
+
+# Brew Configuration
+$(/usr/local/bin/brew shellenv)
+EOT
+
+log.success "Brew configured!"
