@@ -2,6 +2,7 @@
 	name = andreffs18
 	email = andreffs18@gmail.com
 	signingkey = CF17BC95
+	# signingkey = A5716E67AC9989BF0C4975061E284C971A33A33D
 [github]
 	user = andreffs18
 [push]
@@ -33,4 +34,6 @@
 	newNormal = green bold
 	newHighlight = green bold 22
 [commit]
-	gpgsign = true
+	gpgsign = false # true
+[gpg]
+	program = /usr/local/bin/gpg
