@@ -24,9 +24,9 @@ function olhaaqui(){
   INDEX=$(expr $RANDOM % ${#EMOJIES[@]}) # get index between [0, len(emojies)]
   INDEX=$(($INDEX>0 ? $INDEX : 1)) # max(index, 1)
   EMOJI=${EMOJIES[$INDEX]}
+
   # Check if emoji was previously used. If so use that, otherwise, download it.
-  OLD_PWD=$(PWD)
-  cd ~/
+  pushd ~/ > /dev/null
   if [ ! -f "$FOLDER/$EMOJI.txt" ] ; then
     echo "Downloading \"$EMOJI\"..."
     # Download image using Emoji API
@@ -40,12 +40,14 @@ function olhaaqui(){
     # Delete temp files
     rm $FOLDER/$EMOJI.png $FOLDER/$EMOJI.jpg $FOLDER/$EMOJI.txt.bak
   fi
-  cd $OLD_PWD
+  popd > /dev/null
+
   # Print image
   cat $FOLDER/$EMOJI.txt | lolcat
 }
 
 # Shortcut to get a random article from my Feedly account from the "Saved for Later" tag
+# eg: $ sfl 10
 function sfl(){
 	python3 $HOME/.dotfiles/bin/feedly_read_later.py $@
 }
@@ -64,9 +66,9 @@ EOM
 }
 
 # Function to decode jwt tokens. Works like this:
-# $ jwt_decode eyJh....
+# $ jwtd eyJh....
 # Source: https://gist.github.com/thomasdarimont/46358bc8167fce059d83a1ebdb92b0e7
-function jwt_decode(){
+function jwtd(){
   jq -R 'split(".") | .[1] | @base64d | fromjson' <<< "$1"
 }
 
