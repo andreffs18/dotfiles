@@ -40,7 +40,8 @@ brew "imagemagick"
 brew "gpg"
 # Add exercism client
 brew "exercism"
-# Add "AWS Authenticator" (useful for work)
+# Add aws client app and "aws Authenticator" (useful for work)
+brew "awscli"
 brew "aws-iam-authenticator"
 # ccat is the colorizing cat (https://github.com/owenthereal/ccat)
 brew "ccat"
