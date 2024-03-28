@@ -25,10 +25,6 @@ brew "kubectl"
 brew "kubectx"
 brew "kube-ps1"
 brew "minikube"
-# GoLang programming language
-brew "golang"
-# Python 3 version
-brew "python3"
 # Install OpenAPI generator (Swagger)
 brew "openapi-generator"
 # Heroku toolkit
