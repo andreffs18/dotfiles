@@ -19,14 +19,14 @@ function olhaaqui(){
   FOLDER=~/.emoji
   # Create folder if doesnt exist
   mkdir -p $FOLDER
-  EMOJIES=(💩 🚀 ❗️ 😭 🎉 🎁 😘 👋 💎 🤖 🇵🇹)
+  EMOJIES=(💩 🚀 ❗️ 😭 🎉 🎁 😘 👋 💎 🤖 🐇 🇵🇹)
   # Get random emoji from list
   INDEX=$(expr $RANDOM % ${#EMOJIES[@]}) # get index between [0, len(emojies)]
   INDEX=$(($INDEX>0 ? $INDEX : 1)) # max(index, 1)
   EMOJI=${EMOJIES[$INDEX]}
 
   # Check if emoji was previously used. If so use that, otherwise, download it.
-  pushd ~/ > /dev/null
+  pushd ~/ &>/dev/null
   if [ ! -f "$FOLDER/$EMOJI.txt" ] ; then
     echo "Downloading \"$EMOJI\"..."
     # Download image using Emoji API
@@ -40,7 +40,7 @@ function olhaaqui(){
     # Delete temp files
     rm $FOLDER/$EMOJI.png $FOLDER/$EMOJI.jpg $FOLDER/$EMOJI.txt.bak
   fi
-  popd > /dev/null
+  popd &>/dev/null || true
 
   # Print image
   cat $FOLDER/$EMOJI.txt | lolcat
