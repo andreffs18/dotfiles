@@ -24,7 +24,7 @@ export LC_ALL='en_US.UTF-8';
 export GPG_TTY=$(tty)
 
 # Configuration for all Executable Paths
-export PATH="$PATH:/usr/local/bin"
+# export PATH="$PATH:/usr/local/bin"
 # Mysql path
 # export PATH="$PATH:/usr/local/mysql/bin"
 # export PATH="$PATH:/usr/local/mysql/support-files/bin"
@@ -37,7 +37,7 @@ export PATH="$PATH:/usr/local/bin"
 # RVM path (for scripting)
 # export PATH="$PATH:$HOME/.rvm/bin"
 # Kube authenticator path
-export PATH="$PATH:$HOME/bin"
+# export PATH="$PATH:$HOME/bin"
 # Add ruby to $PATH
 # export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
