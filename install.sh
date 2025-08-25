@@ -88,7 +88,7 @@ if prompt_user "Configure Homebrew settings?"; then
 fi
 
 if prompt_user "Install Pure prompt theme?"; then
-  if ! whence -w prompt >/dev/null; then
+  if ! command -v prompt >/dev/null 2>&1; then
     # `prompt` command not available → run your Pure prompt setup
     source "$DIRECTORY/config/apps/pure-prompt.sh"
   else
