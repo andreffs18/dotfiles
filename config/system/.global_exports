@@ -46,9 +46,16 @@ export GPG_TTY=$(tty)
 
 # Add Go environments
 # export GOPATH="$HOME/golang"
-# export GOROOT="/usr/local/opt/go/libexec"
 # export PATH="$PATH:$GOPATH/bin"
 # export PATH="$PATH:$GOROOT/bin"
+# GO PATH
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
+
+# export PATH="$PATH:$HOME/.rd/bin"
+
 
 # Postgres default Host configuration
 # export PGHOST=localhost
