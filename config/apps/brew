@@ -3,7 +3,7 @@
 cat << EOT >> ~/.zshrc
 
 # Brew Configuration
-$(/usr/local/bin/brew shellenv)
+$($(which brew) shellenv)
 EOT
 
 log.success "Brew configured!"
