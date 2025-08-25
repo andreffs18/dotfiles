@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 export DIRECTORY=~/.dotfiles
 export APPLE_ID=andreffs18@gmail.com
-export REPOSITORY=https://github.com/andreffs18/dotfiles
+export REPOSITORY=git@github.com:andreffs18/dotfiles.git
 
 # Helper function to prompt user for confirmation
 prompt_user() {
