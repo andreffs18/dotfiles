@@ -8,8 +8,6 @@ cask "rectangle"  # Shortcuts for moving and sizing windows
 # Storage & Explorers
 cask "dropbox"
 cask "megasync"
-# cask "android-file-transfer"
-# cask "betterzip"  # replacement for "the-unarchive"
 
 # Development
 cask "pycharm"
@@ -24,7 +22,6 @@ cask "tableplus"
 # Media & Download
 cask "spotify"
 cask "vlc"
-cask "calibre"  # e-book converter/manager
 
 # Browser
 cask "google-chrome"

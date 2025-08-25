@@ -14,13 +14,13 @@ brew update-reset
 # Update all brew Taps
 brew tap heroku/brew
 
-log.info "1️⃣  ⚙️  Installing all Brewfile dependencies"
+log.info "1️⃣ ⚙️  Installing all Brewfile dependencies"
 brew bundle install --no-upgrade --verbose --file=$DIRECTORY/install/Brewfile
 
-log.info "2️⃣  ⚙️  Installing all Caskfile dependencies"
+log.info "2️⃣ ⚙️  Installing all Caskfile dependencies"
 brew bundle install --no-upgrade --verbose --file=$DIRECTORY/install/Caskfile
 
-log.info "3️⃣  ⚙️  Installing all Masfile dependencies"
+log.info "3️⃣ ⚙️  Installing all Masfile dependencies"
 brew bundle install --no-upgrade --verbose --file=$DIRECTORY/install/Masfile
 
 # Finally just upgrade everything (Taps and Formulas)

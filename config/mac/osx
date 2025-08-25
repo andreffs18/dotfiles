@@ -79,11 +79,6 @@ log.success "Configured Trackpad, Mouse and Bluetooth!"
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Change screensaver to specific folder (~/MEGA/.../memes/)
-defaults -currentHost write com.apple.ScreenSaverPhotoChooser LastViewedPhotoPath -string ""
-defaults -currentHost write com.apple.ScreenSaverPhotoChooser SelectedFolderPath -string "/Users/$USER/MEGA/unbabel/media/memes"
-defaults -currentHost write com.apple.ScreenSaver.iLifeSlideShows styleKey -string "Flipup"
-
 # Start screensaver after 5 minutes with clock
 defaults -currentHost write com.apple.screensaver idleTime 300
 defaults -currentHost write com.apple.screensaver showClock -bool true

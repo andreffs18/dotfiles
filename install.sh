@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 export DIRECTORY=~/.dotfiles
-export CONFIG_DIR=~/.config
 export APPLE_ID=andreffs18@gmail.com
 export REPOSITORY=https://github.com/andreffs18/dotfiles
 
@@ -27,22 +26,15 @@ else
   popd
 fi
 
-# Now let's symlinc all our dotfiles to the directory where they are expected (our home directory)
+# Now let's symlink all our dotfiles to the directory where they are expected (our home directory)
 for FILE in $DIRECTORY/config/system/.*; do
   [ -f "$FILE" ] && ln -sfv $FILE ~
 done
 
 # Symlink all git configuration files to our home directory
-ln -sfv $DIRECTORY/config/git/.gitignore_global ~
-ln -sfv $DIRECTORY/config/git/.gitconfig ~
+# ln -sfv $DIRECTORY/config/git/.gitignore_global ~
+# ln -sfv $DIRECTORY/config/git/.gitconfig ~
 
-# Create .config folder, if it doens't exist already
-if [ ! -d "$CONFIG_DIR" ]; then
-  mkdir "$CONFIG_DIR";
-fi
-
-# Symlink python linting flake8 configuration
-ln -sfv $DIRECTORY/config/python/flake8 $CONFIG_DIR
 
 # Initialize dotfiles
 source ~/.bashrc
