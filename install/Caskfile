@@ -17,6 +17,7 @@ cask "postman"
 cask "ngrok"
 cask "docker"
 cask "studio-3t"
+cask "mongodb-compass"
 cask "tableplus"
 
 # Media & Download
