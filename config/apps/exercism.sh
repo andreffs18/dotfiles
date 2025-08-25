@@ -3,7 +3,7 @@ EXERCISM_DIR=~/projects/exercism
 
 if [ -z "${EXERCISM_TOKEN+x}" ]; then
   log.info "EXERCISM_TOKEN is unset, loading from ~/.secrets"
-  source "~/.secrets"
+  source $HOME/.secrets
 fi
 
 

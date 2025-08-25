@@ -112,10 +112,6 @@ if prompt_user "Configure Dock utilities?"; then
     source $DIRECTORY/config/apps/dockutil.sh
 fi
 
-if prompt_user "Speed pasting on ZSH?"; then
-    source $DIRECTORY/config/apps/speed-pasting-zsh.sh
-fi
-
 # Install Lolcat for funz 😂 (https://github.com/busyloop/lolcat)
 if prompt_user "Install Lolcat gem for colorful output?"; then
     sudo gem install lolcat
