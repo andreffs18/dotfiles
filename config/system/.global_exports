@@ -56,6 +56,43 @@ export GPG_TTY=$(tty)
 
 # export PATH="$PATH:$HOME/.rd/bin"
 
+# # Reset PATH
+# export PATH="/Users/andresilva/.cargo/bin:\
+# /Users/andresilva/.local/bin:\
+# /Users/andresilva/.nvm/versions/node/v12.4.0/bin:\
+# /Users/andresilva/.rbenv/versions/3.1.2/bin:\
+# /Users/andresilva/bin:\
+# /Users/andresilva/.rd/bin:\
+# /usr/local/bin:\
+# /usr/bin:\
+# /usr/sbin:\
+# /bin:\
+# /sbin:\
+# /opt/homebrew/bin:\
+# /opt/homebrew/sbin"
+
+
+# # GO PATH
+# export GOROOT=/usr/local/go
+# export GOPATH=$HOME/go
+# export GOBIN=$GOPATH/bin
+# export PATH="$PATH:$GOROOT:$GOPATH:$GOBIN:/usr/local/go/bin/"
+# . "$HOME/.local/bin/env"
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# export PATH="$HOME/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+
+# . /usr/local/opt/asdf/libexec/asdf.sh
+# . "$HOME/.local/bin/env"
+# . "$HOME/.cargo/env"
+
+# If you need to have libpq first in your PATH, run:
+# export PATH="/usr/local/opt/libpq/bin:$PATH"
+
 
 # Postgres default Host configuration
 # export PGHOST=localhost

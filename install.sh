@@ -80,11 +80,11 @@ fi
 
 # Install and configure all apps that require custom setup
 if prompt_user "Install and configure Oh My Zsh?"; then
-    source $DIRECTORY/config/apps/oh-my-zsh
+    source $DIRECTORY/config/apps/oh-my-zsh.sh
 fi
 
 if prompt_user "Configure Homebrew settings?"; then
-    source $DIRECTORY/config/apps/brew
+    source $DIRECTORY/config/apps/brew.sh
 fi
 
 if prompt_user "Install Pure prompt theme?"; then
@@ -97,19 +97,19 @@ if prompt_user "Install Pure prompt theme?"; then
 fi
 
 if prompt_user "Configure Keybase?"; then
-    source $DIRECTORY/config/apps/keybase
+    source $DIRECTORY/config/apps/keybase.sh
 fi
 
 if prompt_user "Configure SSH settings?"; then
-    source $DIRECTORY/config/apps/ssh
+    source $DIRECTORY/config/apps/ssh.sh
 fi
 
 if prompt_user "Install Exercism CLI?"; then
-    source $DIRECTORY/config/apps/exercism
+    source $DIRECTORY/config/apps/exercism.sh
 fi
 
 if prompt_user "Configure Dock utilities?"; then
-    source $DIRECTORY/config/apps/dockutil
+    source $DIRECTORY/config/apps/dockutil.sh
 fi
 
 # Install Lolcat for funz 😂 (https://github.com/busyloop/lolcat)
