@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 EXERCISM_DIR=~/projects/exercism
 
+if [ -z "${EXERCISM_TOKEN+x}" ]; then
+  log.info "EXERCISM_TOKEN is unset, loading from ~/.secrets"
+  source "~/.secrets"
+fi
+
+
 # Make sure exercism is installed
 if brew ls --versions exercism > /dev/null; then
   # The package is installed
