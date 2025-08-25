@@ -16,7 +16,7 @@ alias lls="ls -lhFAG"
 # Directory shortcut
 alias desktop="cd ~/Desktop/"
 alias documents="cd ~/Documents/"
-alias projects="cd ~/MEGA/projects/"
+alias projects="cd ~/projects/"
 alias work="cd ~/work/"
 
 # IP addresses

@@ -48,6 +48,10 @@ else
   fi
 fi
 
+# Symlink all git configuration files to our home directory
+ln -sfv $DIRECTORY/config/git/.gitignore_global ~
+ln -sfv $DIRECTORY/config/git/.gitconfig ~
+
 # Now let's symlink all our dotfiles to the directory where they are expected (our home directory)
 if prompt_user "Symlink dotfiles to home directory?"; then
     for FILE in $DIRECTORY/config/system/.*; do

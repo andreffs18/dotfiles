@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-EXERCISM_DIR=~/MEGA/projects/exercism
+EXERCISM_DIR=~/projects/exercism
 
 # Make sure exercism is installed
 if brew ls --versions exercism > /dev/null; then
