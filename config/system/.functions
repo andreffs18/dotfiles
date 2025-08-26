@@ -87,4 +87,113 @@ function update_dotfiles(){
   echo "✅ Updated ~/.dotfiles!"
 }
 
+# Push all secrets (~/.aws, ~/.ssh, ~/.secrets, ~/.unbabel) to keybase://private folder
+# $ kbpush
+function kbpush() {
+  echo "🔄 Starting keybase push operation..."
+
+  KB="keybase://private/$(keybase whoami)"
+  echo "📍 Target location: $KB"
+
+  # Handle .aws directory
+  echo ""
+  echo "1/4 Processing ~/.aws..."
+  echo "  ⏳ Removing old $KB/.aws"
+  keybase fs rm -r "$KB/.aws"
+  echo "  ⏳ Copying ~/.aws to $KB/"
+  keybase fs cp -r ~/.aws "$KB/"
+  echo "  ✅ ~/.aws completed"
+
+  # Handle .ssh directory
+  echo ""
+  echo "2/4 Processing ~/.ssh..."
+  echo "  ⏳ Removing old $KB/.ssh"
+  keybase fs rm -r "$KB/.ssh" >/dev/null 2>&1
+  echo "  ⏳ Copying ~/.ssh to $KB/"
+  keybase fs cp -r ~/.ssh "$KB/"
+  echo "  ✅ ~/.ssh completed"
+
+  # Handle .secrets file
+  echo ""
+  echo "3/4 Processing ~/.secrets..."
+  echo "  ⏳ Removing old $KB/.secrets"
+  keybase fs rm "$KB/.secrets" >/dev/null 2>&1
+  echo "  ⏳ Copying ~/.secrets to $KB/"
+  keybase fs cp ~/.secrets "$KB/"
+  echo "  ✅ ~/.secrets completed"
+
+  # Handle .unbabel file
+  echo ""
+  echo "4/4 Processing ~/.unbabel..."
+  echo "  ⏳ Removing old $KB/.unbabel"
+  keybase fs rm "$KB/.unbabel" >/dev/null 2>&1
+  echo "  ⏳ Copying ~/.unbabel to $KB/"
+  keybase fs cp ~/.unbabel "$KB/"
+  echo "  ✅ ~/.unbabel completed"
+
+  echo ""
+  echo "✅ All secrets successfully pushed to $KB"
+}
+
+# Pull all secrets (~/.aws, ~/.ssh, ~/.secrets, ~/.unbabel) from keybase://private folder
+# $ kbpull
+function kbpull() {
+  echo "🔄 Starting keybase pull operation..."
+
+  KB="keybase://private/$(keybase whoami)"
+  echo "📍 Source location: $KB"
+
+  # Handle .aws directory
+  echo ""
+  echo "1/4 Pulling ~/.aws..."
+  if [ -d ~/.aws ]; then
+    echo "  💾 Backing up existing ~/.aws to ~/.aws-bak"
+    rm -rf ~/.aws-bak >/dev/null 2>&1
+    mv ~/.aws ~/.aws-bak
+  fi
+  echo "  ⏳ Copying $KB/.aws/* to ~/.aws"
+  keybase fs cp -r "$KB/.aws" ~/
+  echo "  ✅ ~/.aws completed"
+
+  # Handle .ssh directory
+  echo ""
+  echo "2/4 Pulling ~/.ssh..."
+  if [ -d ~/.ssh ]; then
+    echo "  💾 Backing up existing ~/.ssh to ~/.ssh-bak"
+    rm -rf ~/.ssh-bak >/dev/null 2>&1
+    mv ~/.ssh ~/.ssh-bak
+  fi
+  echo "  ⏳ Copying $KB/.ssh/* to ~/.ssh"
+  keybase fs cp -r "$KB/.ssh" ~/
+  echo "  ✅ ~/.ssh completed"
+
+  # Handle .secrets file
+  echo ""
+  echo "3/4 Pulling ~/.secrets..."
+  if [ -f ~/.secrets ]; then
+    echo "  💾 Backing up existing ~/.secrets to ~/.secrets-bak"
+    rm -f ~/.secrets-bak >/dev/null 2>&1
+    mv ~/.secrets ~/.secrets-bak
+  fi
+  echo "  ⏳ Copying $KB/.secrets to ~/.secrets"
+  keybase fs cp "$KB/.secrets" ~/.secrets
+  echo "  ✅ ~/.secrets completed"
+
+  # Handle .unbabel file
+  echo ""
+  echo "4/4 Pulling ~/.unbabel..."
+  if [ -f ~/.unbabel ]; then
+    echo "  💾 Backing up existing ~/.unbabel to ~/.unbabel-bak"
+    rm -f ~/.unbabel-bak >/dev/null 2>&1
+    mv ~/.unbabel ~/.unbabel-bak
+  fi
+  echo "  ⏳ Copying $KB/.unbabel to ~/.unbabel"
+  keybase fs cp "$KB/.unbabel" ~/.unbabel
+  echo "  ✅ ~/.unbabel completed"
+
+  echo ""
+  echo "✅ All secrets successfully pulled from $KB"
+  echo "💡 Tip: Previous versions backed up with -bak suffix"
+}
+
 log.success ".functions loaded with success!"

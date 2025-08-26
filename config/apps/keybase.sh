@@ -8,9 +8,12 @@ if keybase version > /dev/null; then
 
   # Login and pull all secrets to local machine
   keybase login
-  keybase fs cp -r keybase://private/andreffs18/.aws ~/.aws
-  keybase fs cp keybase://private/andreffs18/.unbabel ~/.unbabel
-  keybase fs cp keybase://private/andreffs18/.secrets ~/.secrets
+
+
+  kbpull();
+  # keybase fs cp -r "keybase://private/andreffs18/.aws/*" ~/.aws
+  # keybase fs cp keybase://private/andreffs18/.unbabel ~/.unbabel
+  # keybase fs cp keybase://private/andreffs18/.secrets ~/.secrets
 
   # Add new dotfiles to zshrc to be sourced when new terminal tab is opened
   cat << EOT >> ~/.zshrc
