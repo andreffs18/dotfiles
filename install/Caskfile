@@ -8,6 +8,7 @@ cask "rectangle"  # Shortcuts for moving and sizing windows
 # Storage & Explorers
 cask "dropbox"
 cask "megasync"
+cask "google-drive"
 
 # Development
 cask "pycharm"
