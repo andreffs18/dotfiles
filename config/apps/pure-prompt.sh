@@ -22,8 +22,8 @@ zstyle :prompt:pure:prompt:error color red
 prompt pure
 
 # Add kube cluster and namespace context to prompt
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+source "/opt/homebrew/share/kube-ps1.sh"
 PROMPT='\$(kube_ps1) '\$PROMPT
 EOT
 
-log.success "Pure propmt configured!"
+log.success "Pure prompt configured!"
