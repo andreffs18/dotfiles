@@ -11,6 +11,7 @@ cask "megasync"
 cask "google-drive"
 
 # Development
+cask "meld" # Visual diff and merge tool
 cask "pycharm"
 cask "visual-studio-code"
 cask "sublime-text"
