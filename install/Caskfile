@@ -27,8 +27,9 @@ cask "tableplus"
 cask "spotify"
 cask "vlc"
 
-# Browser
+# Browsers
 cask "google-chrome"
+cask "firefox"
 # Bittorrent
 cask "transmission"
 # Logitech MX Master 2S drivers
