@@ -4,12 +4,75 @@ import getpass
 import os
 import random
 import re
-import requests
 import signal
 import sys
 import time
 import webbrowser
+from collections import Counter
 from datetime import datetime, timedelta
+from typing import List, Optional
+
+import requests
+from pydantic import BaseModel
+
+
+class Stats(BaseModel):
+    bag_of_origins: List[str] = []
+    bag_of_categories: List[str] = []
+
+
+GLOBAL_STATS = Stats()
+
+
+class Origin(BaseModel):
+    title: str
+
+
+class Category(BaseModel):
+    label: str
+
+
+class Item(BaseModel):
+    id: str
+    keywords: Optional[List[str]]
+    origin: Optional[Origin]
+    categories: Optional[List[Category]]
+
+
+class GetArticlesResponse(BaseModel):
+    """Example response from feedly:
+    {
+      "continuation": null,
+      "items": [
+        {
+          "id": "puQkfDdl2BcfO7M6775hz3I0o2LgRRleDDobp9hOhGo=_18292153cb6:1abc650:268d1644",
+          "keywords": [
+            "web-development",
+            "software-development",
+            "javascript",
+            "nodejs",
+            "programming"
+          ],
+          "origin": {
+            "streamId": "feed/https://betterprogramming.pub/feed",
+            "title": "Better Programming - Medium",
+            "htmlUrl": "https://betterprogramming.pub?source=rss----d0b105d10f0a---4"
+          },
+          "categories": [
+            {
+              "id": "user/39e9c8fc-dc06-4c3e-a3d6-f0d2f091ad25/category/39ecdc59-db20-4814-9642-23e0006bc60c",
+              "label": "Development"
+            }
+          ],
+          "title": "How To Create Beautiful Command Line Interactions With Node.js",
+          ...
+        }
+      ]
+    }
+    """
+
+    items: List[Item]
+    continuation: str = ""
 
 
 CACHE_DIRECTORY = f"/Users/{getpass.getuser()}/.dotfiles/cache"
@@ -41,6 +104,9 @@ def read_cache(timeframe=15):
     that was stored during the last `timeframe` days. If that is the case, return list of saved
     ids, otherwise, return None, while not forgetting to delete the existing file.
     """
+    if not os.path.exists(CACHE_DIRECTORY):
+        os.makedirs(CACHE_DIRECTORY)
+
     caches = sorted(
         [file for file in os.listdir(CACHE_DIRECTORY) if fnmatch.fnmatch(file, "feedly-articles-*.txt")],
         reverse=True,
@@ -82,6 +148,18 @@ def save_cache(articles):
         bak.write("\n".join(articles))
 
 
+def handle_stats(item: Item):
+    if item.origin:
+        GLOBAL_STATS.bag_of_origins.append(item.origin.title)
+    if item.categories:
+        GLOBAL_STATS.bag_of_categories.extend([category.label for category in item.categories])
+
+
+def print_stats():
+    print(f"{Counter(GLOBAL_STATS.bag_of_origins).most_common(5)=}")
+    print(f"{Counter(GLOBAL_STATS.bag_of_categories).most_common(5)=}")
+
+
 def get_articles_from_feedly():
     """
     Method that requests feedly for list of available articles, stored under "Saved for Later"
@@ -107,18 +185,20 @@ def get_articles_from_feedly():
         # Query feedly API to get all Saved articles, and parse all Article ids, storing them in `articles` variable.
         try:
             response = request.get(FEEDLY_URL + f"/streams/contents?streamId={stream_id}&continuation={continuation}")
-            items = response.json()["items"]
-            articles.extend([item.get("id") for item in items])
-        except:
+            response = GetArticlesResponse(**response.json())
+
+            for item in response.items:
+                articles.append(item.id)
+                handle_stats(item)
+        except Exception:
             # Might have hit the threshold of requests. Stop fetching and just use the ones we already have
             break
 
         # Then check if is there any more pages left, if not, then break out of the while loop.
-        try:
-            continuation = response.json()["continuation"]
-            print(f'\r{random.choice(["🤔", "👍", "⚡️", "🥴", "👏"])}', end="", flush=True)
-        except KeyError:
+        continuation = response.continuation
+        if not continuation:
             break
+        print(f'\r{random.choice(["🤔", "👍", "⚡️", "🥴", "👏"])}', end="", flush=True)
 
     return articles
 
@@ -147,7 +227,7 @@ articles = read_cache()
 if not articles:
     articles = get_articles_from_feedly()
 
-# Print message and sleep for a second so we can read it.
+# Print message and sleep for a second, so we can read it.
 print(f'\n✅ Found {len(articles)} articles in "Saved for later"!')
 time.sleep(1)
 
