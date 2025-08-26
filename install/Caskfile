@@ -16,7 +16,8 @@ cask "visual-studio-code"
 cask "sublime-text"
 cask "postman"
 cask "ngrok"
-cask "docker"
+# cask "docker" # Use Rancher instead of Docker
+cask "rancher"  # Kubernetes and container management on the desktop
 cask "studio-3t"
 cask "mongodb-compass"
 cask "tableplus"

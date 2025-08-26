@@ -8,7 +8,3 @@ source ~/.aliases
 source ~/.functions
 source ~/.global_exports
 source ~/.mansettings
-
-##############################################################
-# User configuration
-##############################################################

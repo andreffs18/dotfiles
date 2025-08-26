@@ -60,20 +60,11 @@ plugins=(
 
 autoload -U compinit && compinit
 
-source $ZSH/oh-my-zsh.sh
-
 source $DIRECTORY/config/apps/speed-pasting-zsh.sh
 
-##############################################################
-# User configuration
-##############################################################
+source $ZSH/oh-my-zsh.sh
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
 source ~/.bash_profile
-
 
 # Make sure my varrun docker.sock is symlined to /var/run/docker.sock
 # sudo ln -s -f $HOME/.rd/docker.sock /var/run/docker.sock
