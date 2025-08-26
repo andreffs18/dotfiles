@@ -119,7 +119,6 @@ if prompt_user "Install Lolcat gem for colorful output?"; then
 fi
 
 # Reminder to install missing apps, suggest updating and restart
-log.warning "Don't forget to install the following:\n👉  Exodus: https://www.exodus.io/download/\n👉  Final Cut Pro"
 log.success "Mac os configured! 🔮\n To update software run 'sudo softwareupdate -i -a'."
 
 # Prompt for final reboot

@@ -38,3 +38,4 @@ cask "keycastr"
 cask "bitwarden"
 cask "keybase"
 cask "gpg-suite"
+cask "sdm" # StrongDM. Way to authenticate to use Unbabel environments/databases
