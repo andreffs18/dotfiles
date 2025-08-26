@@ -112,6 +112,11 @@ if prompt_user "Configure Dock utilities?"; then
     source $DIRECTORY/config/apps/dockutil.sh
 fi
 
+if prompt_user "Startup Rectangle?"; then
+    source $DIRECTORY/config/apps/rectangle.sh
+fi
+
+
 # Install Lolcat for funz 😂 (https://github.com/busyloop/lolcat)
 if prompt_user "Install Lolcat gem for colorful output?"; then
     sudo gem install lolcat
