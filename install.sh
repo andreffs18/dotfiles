@@ -116,6 +116,8 @@ if prompt_user "Startup Rectangle?"; then
     source $DIRECTORY/config/apps/rectangle.sh
 fi
 
+open -a "Unsplash Wallpapers"
+
 
 # Install Lolcat for funz 😂 (https://github.com/busyloop/lolcat)
 if prompt_user "Install Lolcat gem for colorful output?"; then
