@@ -32,8 +32,8 @@ cask "google-chrome"
 cask "firefox"
 # Bittorrent
 cask "transmission"
-# Logitech MX Master 2S drivers
-cask "logitech-options"
+# cask "logitech-options" # Logitech MX Master 2S drivers
+cask "logi-options+" # Logitech MX Master 3S drivers
 # Keystroke Visualizer. Good for presentations (https://github.com/sdeken/keycastr)
 cask "keycastr"
 
