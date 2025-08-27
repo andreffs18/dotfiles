@@ -9,10 +9,11 @@ if keybase version > /dev/null; then
   # Login and pull all secrets to local machine
   keybase login
 
-  kbpull()
+  kbpull
 
   # Add new dotfiles to zshrc to be sourced when new terminal tab is opened
   cat << EOT >> ~/.zshrc
+
 # Source Unbabel Secrets
 source ~/.unbabelconfigs/utils.sh
 # Source My Secrets
