@@ -5,7 +5,6 @@
 if keybase version > /dev/null; then
   # Login and pull all secrets to local machine
   keybase login
-  # keybase fs cp -r "keybase://private/andreffs18/.ssh/*" ~/.ssh
 
   # Set my ~/.ssh/id_rsa as my private key to the SSH Agent
   ssh-add --apple-use-keychain  ~/.ssh/id_rsa

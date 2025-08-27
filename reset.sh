@@ -38,10 +38,9 @@ echo "🗑  Removed ~/.emoji folder"
 # Remove configs and secrets folder/files
 rm -rf ~/.aws
 rm -rf ~/.ssh
-echo "🗑  Removed config folders (.aws and .ssh)"
-rm ~/.unbabel
+rm -rf ~/.unbabelconfigs
 rm ~/.secrets
-echo "🗑  Removed secrets (.unbabel and .secrets)"
+echo "🗑  Removed config folders (.aws, .ssh, .unbabelconfigs) and .secrets"
 
 # Remove installed apps
 yes | sudo gem uninstall lolcat && which lolcat
