@@ -22,6 +22,7 @@ cask "rancher"  # Kubernetes and container management on the desktop
 cask "studio-3t"
 cask "mongodb-compass"
 cask "tableplus"
+cask "claude-code"
 
 # Media & Download
 cask "spotify"
