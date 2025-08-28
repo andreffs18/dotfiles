@@ -10,5 +10,9 @@ mas "Unsplash", id: 1284863847
 # App to keep mac awake (https://itunes.apple.com/pt/app/amphetamine/id937984704?mt=12)
 mas "Amphetamine", id: 937984704
 
+# Update 2025-08-28: Unfortunate, Annotate is no longer available
 # Easy n'quick way to annotate screenshots (https://apps.apple.com/us/app/annotate-capture-and-share/id918207447?mt=12)
-mas "Annotate", id: 918207447
+# mas "Annotate", id: 918207447
+
+# Handy screenshot App for macOS (https://apps.apple.com/pt/app/xnip-screenshot-annotation/id1221250572)
+mas "Xnip", id: 1221250572
