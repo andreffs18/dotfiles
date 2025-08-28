@@ -32,7 +32,7 @@ function olhaaqui(){
     # Download image using Emoji API
     wget --quiet "https://xn--i-7iq.ws/emoji-image/$EMOJI.png?format\=emojione\&ar\=1x1" -O $FOLDER/$EMOJI.png
     # Convert image from .png to .jpg
-    convert $FOLDER/$EMOJI.png $FOLDER/$EMOJI.jpg
+    magick convert $FOLDER/$EMOJI.png $FOLDER/$EMOJI.jpg
     # Convert image to ascii art
     jp2a --size=96x46 $FOLDER/$EMOJI.jpg --output=$FOLDER/$EMOJI.txt
     # Replace all border "M" characters with empty space

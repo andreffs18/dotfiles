@@ -60,11 +60,11 @@ plugins=(
 
 autoload -U compinit && compinit
 
-source $DIRECTORY/config/apps/speed-pasting-zsh.sh
-
 source $ZSH/oh-my-zsh.sh
 
 source ~/.bash_profile
+
+source $DIRECTORY/config/apps/speed-pasting-zsh.sh
 
 # Make sure my varrun docker.sock is symlined to /var/run/docker.sock
 # sudo ln -s -f $HOME/.rd/docker.sock /var/run/docker.sock
