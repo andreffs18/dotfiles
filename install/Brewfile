@@ -20,6 +20,8 @@ brew "zsh"
 brew "node"
 # Get lightweight comand line json processor
 brew "jq"
+# Install load testing command line tool
+brew "hey"
 # Kubectl utils: prompt & quickly switch contexts
 brew "kubectl"
 brew "kubectx"
