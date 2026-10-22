@@ -70,6 +70,28 @@ function pwdgen(){
   perl -pe 'binmode(STDIN, ":bytes"); tr/A-Za-z0-9_\!\@\#\$\%\^\&\*\(\)-+=//dc;' < /dev/urandom | head -c $1
 }
 
+# Sort JSON keys in place. Takes files and/or folders (default "."). Invalid files are skipped.
+# eg: $ sortjson .
+#     $ sortjson configs/ a.json
+#     $ sortjson **/*.json
+#     $ find . -name '*.json' -not -path '*/node_modules/*' -print0 | xargs -0 zsh -ic 'sortjson "$@"' _
+function sortjson(){
+  local arg f
+  local -a files
+  (( $# )) || set -- .
+  for arg in "$@"; do
+    if [[ -d $arg ]]; then
+      files+=("$arg"/*.json(N))
+    else
+      files+=("$arg")
+    fi
+  done
+  for f in "${files[@]}"; do
+    jq --sort-keys . "$f" > "$f.tmp" && mv "$f.tmp" "$f" \
+      || { echo "skipped: $f" >&2; rm -f "$f.tmp"; }
+  done
+}
+
 # Update local version of my dotfiles by pulling them from github and sources /apps folder
 function update_dotfiles(){
   pushd ~/.dotfiles
