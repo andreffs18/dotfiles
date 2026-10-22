@@ -9,21 +9,19 @@ cat << EOT >> ~/.zshrc
 # Pure Prompt Configuration
 # more can be found here: https://github.com/sindresorhus/pure#getting-started
 autoload -U promptinit; promptinit
-
-# optionally define some options
-PURE_CMD_MAX_EXEC_TIME=10
-
-# change the path color
+# change the path color; change the color for both 'prompt:success' and 'prompt:error'
 zstyle :prompt:pure:path color white
-# change the color for both 'prompt:success' and 'prompt:error'
 zstyle :prompt:pure:prompt:success color green
 zstyle :prompt:pure:prompt:error color red
-
+# make sure that we always show how much time each command took
+PURE_CMD_MAX_EXEC_TIME=1
+# configure pure prompt
 prompt pure
 
-# Add kube cluster and namespace context to prompt
-source "/opt/homebrew/share/kube-ps1.sh"
-PROMPT='\$(kube_ps1) '\$PROMPT
+# add k8s to left side of prompt and clean right side
+PROMPT='$(kube_ps1) '$PROMPT
+RPROMPT=''
+
 EOT
 
 log.success "Pure prompt configured!"

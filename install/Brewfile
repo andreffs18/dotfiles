@@ -22,11 +22,9 @@ brew "node"
 brew "jq"
 # Install load testing command line tool
 brew "hey"
-# Kubectl utils: prompt & quickly switch contexts
+# Kubectl utils: quickly switch contexts
 brew "kubectl"
 brew "kubectx"
-brew "kube-ps1"
-brew "minikube"
 # Install OpenAPI generator (Swagger)
 brew "openapi-generator"
 # Heroku toolkit

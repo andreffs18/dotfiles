@@ -49,12 +49,18 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# Plugins page: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins
 # plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting)
 plugins=(
+    tt
     git
-    zsh-syntax-highlighting
-    zsh-autosuggestions
+    extract
+    history
+    colorize
+    kube-ps1
     zsh-completions
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -67,12 +73,11 @@ autoload -U promptinit; promptinit
 zstyle :prompt:pure:path color white
 zstyle :prompt:pure:prompt:success color green
 zstyle :prompt:pure:prompt:error color red
-
+PURE_CMD_MAX_EXEC_TIME=1
 prompt pure
 
-# Add kube cluster and namespace context to prompt
-source "/usr/local/share/kube-ps1.sh"
 PROMPT='$(kube_ps1) '$PROMPT
+RPROMPT=''
 
 source ~/.bash_profile
 source $DIRECTORY/config/apps/speed-pasting-zsh.sh
@@ -87,8 +92,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-nvm() { unset -f nvm; [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"; nvm "$@"; }
-node() { unset -f node; [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"; node "$@"; }
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Suppress the "Last login:" line macOS prints on every new terminal session.
 # ~/.hushlogin just needs to exist — its presence is the signal to the OS to stay quiet.
