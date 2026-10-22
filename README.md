@@ -62,7 +62,7 @@ Lastly, on the **Terminal > Preferences > General** Tab, check if the **"Shells 
 
 ## Functionality
 - Custom Terminal configurations: zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) framework and [pure prompt](https://github.com/sindresorhus/pure) theme.
-- Prefered IDE's for development: [PyCharm](https://www.jetbrains.com/pycharm/), [VisualStudio Code](https://code.visualstudio.com/) and [SublimeText2](https://www.sublimetext.com/).
+- Preferred IDE's for development: [PyCharm](https://www.jetbrains.com/pycharm/), [VisualStudio Code](https://code.visualstudio.com/) and [SublimeText2](https://www.sublimetext.com/).
 - `kubectl` utils like: [kube-ps1](https://github.com/jonmosco/kube-ps1) prompt and [kubectx](https://github.com/ahmetb/kubectx) to quickly switch between contexts.
 - Random emoji "Hello screen" animation.
 - Util to open random Feedly "Saved for later" article 🤓
@@ -71,7 +71,7 @@ Lastly, on the **Terminal > Preferences > General** Tab, check if the **"Shells 
 ### Future
 - Add dotfiles as brew tap so we can install from [```"$ brew install andreffs18-dotfiles"```](https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap).
 - Presentation alias that setup computer with key screen cast.
-- `npm` usefull packages installation like, [terminalizer](https://github.com/faressoft/terminalizer) and [@vue/cli](https://cli.vuejs.org/guide/installation.html).
+- `npm` useful packages installation like, [terminalizer](https://github.com/faressoft/terminalizer) and [@vue/cli](https://cli.vuejs.org/guide/installation.html).
 
 ## Copy&Paste Dotfiles
 
@@ -136,7 +136,7 @@ flowchart LR
     bash_rc --> functions["~/.functions"]
     bash_rc --> logging["~/.logging"]
     bash_rc --> global_exports["~/.global_exports"]
-    bash_rc --> mansettings["~/.mansetting"]
+    bash_rc --> mansettings["~/.mansettings"]
 ```
 
 ℹ️ Both **~/work** and **~/projects** folders were created in the `source ~/.dotfiles/config/mac/osx`

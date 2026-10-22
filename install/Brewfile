@@ -18,7 +18,7 @@ brew "dockutil"
 brew "zsh"
 # Install node
 brew "node"
-# Get lightweight comand line json processor
+# Get lightweight command line json processor
 brew "jq"
 # Install load testing command line tool
 brew "hey"
