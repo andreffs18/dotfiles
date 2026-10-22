@@ -212,4 +212,15 @@ function kbpull() {
   echo "💡 Tip: Previous versions backed up with -bak suffix"
 }
 
+# Purge ALL docker stuff (containers, images, networks, volumes, build cache) when disk is full.
+makemehappy() {
+  echo "Disk usage before:" && docker system df
+  # Stop & remove every container (xargs -r skips when there are none)
+  docker ps -aq | xargs -r docker rm -f
+  # Remove everything unused: images, networks, volumes and build cache
+  docker system prune --all --volumes --force
+  docker builder prune --all --force
+  echo "Disk usage after:" && docker system df
+}
+
 log.success ".functions loaded with success!"
