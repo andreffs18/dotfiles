@@ -16,7 +16,7 @@ function findstr(){
 
 # Select random emoji and display it as "Hello" screen.
 function olhaaqui(){
-  FOLDER=~/.emoji
+  FOLDER=~/.cache/emoji
   # Create folder if doesnt exist
   mkdir -p $FOLDER
   EMOJIES=(💩 🚀 ❗️ 😭 🎉 🎁 😘 👋 💎 🤖 🐇 🇵🇹)
