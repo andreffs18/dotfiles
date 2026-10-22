@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
 import fnmatch
-import getpass
 import os
 import random
 import re
 import requests
 import signal
 import sys
+import threading
 import time
 import webbrowser
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 
-CACHE_DIRECTORY = f"/Users/{getpass.getuser()}/.dotfiles/cache"
+CACHE_DIRECTORY = os.path.expanduser("~/.cache/feedly")
 FEEDLY_URL = "https://cloud.feedly.com/v3"
+
+os.makedirs(CACHE_DIRECTORY, exist_ok=True)
 
 
 def signal_handler(signal, frame):
@@ -34,6 +36,17 @@ request = requests.Session()
 request.headers.update({"Content-Type": "application/json", "Authorization": f"OAuth {FEEDLY_TOKEN}"})
 
 
+def _animate(stop_event):
+    emojis = ["🤔", "👍", "⚡️", "🥴", "👏"]
+    frames = [".  ", ".. ", "..."]
+    i = 0
+    while not stop_event.is_set():
+        print(f'\r{emojis[i % len(emojis)]} Getting articles{frames[i % len(frames)]}', end="", flush=True)
+        i += 1
+        time.sleep(1)
+    print('\r' + ' ' * 30 + '\r', end="", flush=True)
+
+
 def read_cache(timeframe=15):
     """
     Search for the most recent "feedly-articles-{date}.txt" and return list of cached ids.
@@ -51,7 +64,7 @@ def read_cache(timeframe=15):
     match = re.search(r"\d{4}-\d{2}-\d{2}", caches[0])
     date = datetime.strptime(match.group(), "%Y-%m-%d")
 
-    today = datetime.utcnow()
+    today = datetime.now(timezone.utc).replace(tzinfo=None)
     if today > date + timedelta(days=timeframe):
         os.remove(os.path.join(CACHE_DIRECTORY, caches[0]))
         return None
@@ -76,7 +89,7 @@ def save_cache(articles):
         reverse=True,
     )
     if not caches:
-        caches.append(f'feedly-articles-{datetime.utcnow().strftime("%Y-%m-%d")}.txt')
+        caches.append(f'feedly-articles-{datetime.now(timezone.utc).strftime("%Y-%m-%d")}.txt')
 
     with open(os.path.join(CACHE_DIRECTORY, caches[0]), "w+") as bak:
         bak.write("\n".join(articles))
@@ -100,6 +113,11 @@ def get_articles_from_feedly():
         print(f"🙅‍♂️ Something wrong happend: {str(e)}")
         sys.exit(1)
 
+    # Spin up animator thread so the ellipsis cycles smoothly while API pages are fetched.
+    stop_event = threading.Event()
+    animator = threading.Thread(target=_animate, args=(stop_event,))
+    animator.start()
+
     stream_id = f'user/{response.json()["id"]}/tag/global.saved'
     continuation = ""
     articles = []
@@ -116,9 +134,11 @@ def get_articles_from_feedly():
         # Then check if is there any more pages left, if not, then break out of the while loop.
         try:
             continuation = response.json()["continuation"]
-            print(f'\r{random.choice(["🤔", "👍", "⚡️", "🥴", "👏"])}', end="", flush=True)
         except KeyError:
             break
+
+    stop_event.set()
+    animator.join()
 
     return articles
 
@@ -148,7 +168,7 @@ if not articles:
     articles = get_articles_from_feedly()
 
 # Print message and sleep for a second so we can read it.
-print(f'\n✅ Found {len(articles)} articles in "Saved for later"!')
+print(f'✅ Found {len(articles)} articles in "Saved for later"!')
 time.sleep(1)
 
 # Get article count if given, get only 1 otherwise.
