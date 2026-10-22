@@ -202,10 +202,10 @@ log.success "Configured Calendar!"
 # Energy Saver                                                                #
 ###############################################################################
 
-# Show Battery Percentage on the meny bar
+# Show Battery Percentage on the menu bar
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
-# Set power sleep (batery, charger, UPS) to no sleep
+# Set power sleep (battery, charger, UPS) to no sleep
 sudo pmset -a sleep 0
 sudo pmset -a disablesleep 0
 sudo pmset -a hibernatemode 0

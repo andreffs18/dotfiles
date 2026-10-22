@@ -110,7 +110,7 @@ def get_articles_from_feedly():
             )
             sys.exit(1)
     except Exception as e:
-        print(f"🙅‍♂️ Something wrong happend: {str(e)}")
+        print(f"🙅‍♂️ Something wrong happen: {str(e)}")
         sys.exit(1)
 
     # Spin up animator thread so the ellipsis cycles smoothly while API pages are fetched.
