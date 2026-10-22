@@ -63,6 +63,8 @@ alias delpyc="find . -name '*.pyc' -delete"  # delete all .pyc files
 
 # Kubernetes shortcuts
 alias abracadabra='jq -r ".data |= (. |map_values(@base64d))"'
+alias kctx="kubectx"
+alias kns="kubens"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
