@@ -12,4 +12,4 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-log.success "Speed up pasting on zsh $(zsh --version)!"
+log.success "$(zsh --version) speed-pasting configured!"

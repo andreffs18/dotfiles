@@ -1,7 +1,5 @@
-#!/usr/bin/env bash
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/$USER/.oh-my-zsh
 
@@ -11,6 +9,7 @@ export ZSH=/Users/$USER/.oh-my-zsh
 # Turn of zsh theme so Pure Prompt can run
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="amuse"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -44,7 +43,7 @@ export ZSH=/Users/$USER/.oh-my-zsh
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -57,16 +56,50 @@ plugins=(
     zsh-autosuggestions
     zsh-completions
 )
+source $ZSH/oh-my-zsh.sh
 
 autoload -U compinit && compinit
 
-source $ZSH/oh-my-zsh.sh
+# Pure Prompt Configuration
+# more can be found here: https://github.com/sindresorhus/pure#getting-started
+autoload -U promptinit; promptinit
+# change the path color; change the color for both 'prompt:success' and 'prompt:error'
+zstyle :prompt:pure:path color white
+zstyle :prompt:pure:prompt:success color green
+zstyle :prompt:pure:prompt:error color red
+
+prompt pure
+
+# Add kube cluster and namespace context to prompt
+source "/usr/local/share/kube-ps1.sh"
+PROMPT='$(kube_ps1) '$PROMPT
 
 source ~/.bash_profile
-
 source $DIRECTORY/config/apps/speed-pasting-zsh.sh
 
-# Make sure my varrun docker.sock is symlined to /var/run/docker.sock
+. "$HOME/.local/bin/env"
+
+export PATH="$HOME/.rd/bin:$PATH"
+# Make sure my var run docker.sock is symlinked to /var/run/docker.sock
 # sudo ln -s -f $HOME/.rd/docker.sock /var/run/docker.sock
 
-# sfl &
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+nvm() { unset -f nvm; [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"; nvm "$@"; }
+node() { unset -f node; [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"; node "$@"; }
+
+# Suppress the "Last login:" line macOS prints on every new terminal session.
+# ~/.hushlogin just needs to exist — its presence is the signal to the OS to stay quiet.
+[[ -f ~/.hushlogin ]] || touch ~/.hushlogin
+
+#################### Custom user settings ####################
+source ~/.unbabelconfigs/utils.sh
+# Source My Secrets
+source ~/.secrets
+
+# Welcome message
+olhaaqui
+
+sfl
