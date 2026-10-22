@@ -31,17 +31,17 @@ fi
 if [ -d "$DIRECTORY" ]; then
   if prompt_user "Directory exists. Pull latest changes from repository?"; then
     echo "🌀 Pulling from repository..."
-    pushd $DIRECTORY
-    git pull origin master
-    popd
+    pushd "$DIRECTORY" > /dev/null
+    git pull
+    popd > /dev/null
   fi
 else
   if prompt_user "Directory does not exist. Clone dotfiles repository?"; then
     echo "✨ Creating directory and cloning repository..."
-    mkdir $DIRECTORY
-    pushd $DIRECTORY
+    mkdir "$DIRECTORY"
+    pushd "$DIRECTORY" > /dev/null
     git clone $REPOSITORY .
-    popd
+    popd > /dev/null
   else
     echo "❌ Cannot continue without dotfiles repository. Exiting."
     exit 1
@@ -119,19 +119,13 @@ fi
 open -a "Unsplash Wallpapers"
 
 
-# Install Lolcat for funz 😂 (https://github.com/busyloop/lolcat)
-if prompt_user "Install Lolcat gem for colorful output?"; then
-    sudo gem install lolcat
-    log.success "$(lolcat --version)" | lolcat
-fi
-
 # Reminder to install missing apps, suggest updating and restart
 log.success "Mac os configured! 🔮\n To update software run 'sudo softwareupdate -i -a'."
 
 # Prompt for final reboot
 if prompt_user "Reboot computer to complete setup?"; then
     log.success "Restarting computer..." | lolcat
-    sleep 10
+    for i in {10..1}; do echo "  Rebooting in $i..."; sleep 1; done
     log.success "👋"
     sudo reboot
 else

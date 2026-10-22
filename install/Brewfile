@@ -32,6 +32,7 @@ brew "heroku"
 # For emoji animation on terminal startup
 brew "jp2a"
 brew "imagemagick"
+brew "lolcat"
 # For GPG management
 brew "gpg"
 # Add exercism client
