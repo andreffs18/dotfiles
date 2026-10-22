@@ -19,31 +19,28 @@ function olhaaqui(){
   FOLDER=~/.cache/emoji
   # Create folder if doesn't exist
   mkdir -p $FOLDER
-  EMOJIES=(💩 🚀 ❗️ 😭 🎉 🎁 😘 👋 💎 🤖 🐇 🇵🇹)
+  EMOJIES=(💩 🚀 ❗️ 😭 🎉 🎁 😘 👋 💎 🤖 🐇 🇵🇹 🦄 🔥 🍕 🦊 🌈 🐉 🍺 ⚡️ 🎸 🐙 🏴󠁧󠁢󠁳󠁣󠁴󠁿)
   # Get random emoji from list
-  INDEX=$(expr $RANDOM % ${#EMOJIES[@]}) # get index between [0, len(emojies)]
-  INDEX=$(($INDEX>0 ? $INDEX : 1)) # max(index, 1)
+  INDEX=$(( RANDOM % ${#EMOJIES[@]} + 1 )) # get index between [1, len(emojies)]
   EMOJI=${EMOJIES[$INDEX]}
 
   # Check if emoji was previously used. If so use that, otherwise, download it.
-  pushd ~/ &>/dev/null
   if [ ! -f "$FOLDER/$EMOJI.txt" ] ; then
     echo "Downloading \"$EMOJI\"..."
     # Download image using Emoji API
-    wget --quiet "https://xn--i-7iq.ws/emoji-image/$EMOJI.png?format\=emojione\&ar\=1x1" -O $FOLDER/$EMOJI.png
+    wget --quiet "https://xn--i-7iq.ws/emoji-image/$EMOJI.png?format=emojione&ar=1x1" -O $FOLDER/$EMOJI.png
     # Convert image from .png to .jpg
-    magick convert $FOLDER/$EMOJI.png $FOLDER/$EMOJI.jpg
+    magick $FOLDER/$EMOJI.png $FOLDER/$EMOJI.jpg
     # Convert image to ascii art
-    jp2a --size=96x46 $FOLDER/$EMOJI.jpg --output=$FOLDER/$EMOJI.txt
+    jp2a --size=96x46 $FOLDER/$EMOJI.jpg --output=$FOLDER/$EMOJI.txt 2>/dev/null
     # Replace all border "M" characters with empty space
     sed -i.bak "s/M/ /g" $FOLDER/$EMOJI.txt
     # Delete temp files
     rm $FOLDER/$EMOJI.png $FOLDER/$EMOJI.jpg $FOLDER/$EMOJI.txt.bak
   fi
-  popd &>/dev/null || true
 
   # Print image
-  cat $FOLDER/$EMOJI.txt | lolcat
+  lolcat $FOLDER/$EMOJI.txt
 }
 
 # Shortcut to get a random article from my Feedly account from the "Saved for Later" tag
