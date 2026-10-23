@@ -79,4 +79,6 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 # [Unbabel] Login into ECR
 alias ecrlogin='aws ecr get-login-password --region us-east-1 | docker login -u AWS --password-stdin 506714715093.dkr.ecr.us-east-1.amazonaws.com'
 
+alias c="claude"
+
 log.success ".aliases loaded with success!"

@@ -25,6 +25,7 @@ brew "hey"
 # Kubectl utils: quickly switch contexts
 brew "kubectl"
 brew "kubectx"
+brew "k9s"
 # Install OpenAPI generator (Swagger)
 brew "openapi-generator"
 # Heroku toolkit
@@ -40,5 +41,13 @@ brew "exercism"
 # Add aws client app and "aws Authenticator" (useful for work)
 brew "awscli"
 brew "aws-iam-authenticator"
-# ccat is the colorizing cat (https://github.com/owenthereal/ccat)
-brew "ccat"
+# hugo - static website generator (for my blog)
+brew "hugo"
+# given the machine specs, see which are the best models to run locally
+brew "llmfit"
+# opensource inference engine
+brew "ollama"
+# Upgrade all the things: updates brew, mas, oh-my-zsh, nvm, npm, pip, uv, etc. in one command (https://github.com/topgrade-rs/topgrade)
+brew "topgrade"
+# Github command line tool. H elpful for scripts and llms interacting with github repos
+brew "gh"

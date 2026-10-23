@@ -27,6 +27,7 @@ cask "claude-code"
 # Media & Download
 cask "spotify"
 cask "vlc"
+cask "calibre"
 
 # Browsers
 cask "google-chrome"
