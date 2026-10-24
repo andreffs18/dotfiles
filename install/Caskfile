@@ -12,6 +12,7 @@ cask "google-drive"
 
 # Development
 cask "meld" # Visual diff and merge tool
+cask "cmux"
 cask "pycharm"
 cask "visual-studio-code"
 cask "sublime-text"
