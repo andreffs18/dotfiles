@@ -1,0 +1,4 @@
+# Third-party skills installed with `npx skills add` (managed upstream, updated with `npx skills update -g`)
+# <source> <skill>
+vercel-labs/skills find-skills
+mattpocock/skills grill-me

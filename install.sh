@@ -108,6 +108,10 @@ if prompt_user "Install Exercism CLI?"; then
     source $DIRECTORY/config/apps/exercism.sh
 fi
 
+if prompt_user "Link Claude Code skills and settings?"; then
+    source $DIRECTORY/config/apps/claude.sh
+fi
+
 if prompt_user "Configure Dock utilities?"; then
     source $DIRECTORY/config/apps/dockutil.sh
 fi
