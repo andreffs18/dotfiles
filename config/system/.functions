@@ -50,8 +50,8 @@ function sfl(){
 	python3 $HOME/.dotfiles/bin/feedly_read_later.py $@
 }
 
-# Refresh FEEDLY_TOKEN by reading the feedly.token.auth cookie from Chrome.
-# Requires: python -m pip install browser-cookie3 requests
+# Refresh FEEDLY_TOKEN by reading feedly.session (feedlyToken) from Chrome localStorage.
+# Requires: python -m pip install dfindexeddb python-snappy requests zstd
 # eg: $ update_feedly_token
 function update_feedly_token(){
   python3 $HOME/.dotfiles/bin/refresh_feedly_token.py
