@@ -1,40 +1,51 @@
 #!/usr/bin/env python3
 """
-Refreshes the Feedly OAuth token by reading the feedly.token.auth cookie
-directly from Chrome via the macOS Keychain.
+Refreshes the Feedly OAuth token by reading the `feedly.session` entry
+(field `feedlyToken`) from Chrome's localStorage for https://feedly.com.
 
 Setup (one-time):
-  python -m pip install browser-cookie3 requests
+  python -m pip install dfindexeddb python-snappy requests zstd
 """
+import json
 import os
+import pathlib
 import re
+import shutil
 import sys
+import tempfile
 
-import browser_cookie3
 import requests
+from dfindexeddb.leveldb.record import FolderReader
 
 
 FEEDLY_API = "https://cloud.feedly.com/v3"
 SECRETS_FILE = os.path.expanduser("~/.secrets")
+CHROME_LS = os.path.expanduser(
+    "~/Library/Application Support/Google/Chrome/Default/Local Storage/leveldb"
+)
 
 
 def get_token():
-    """
-    Read and decrypt Chrome cookies for feedly.com via the macOS Keychain.
-    Note: macOS may prompt for Keychain access the first time this runs.
-    """
-    cj = browser_cookie3.chrome(domain_name=".feedly.com")
-    cookies = list(cj)
-    for c in cookies:
-        print(f"  {c.name}: {c.value[:40]}...")
-    return next((c.value for c in cookies if c.name == "feedly.token.auth"), None)
+    """Read feedlyToken from Chrome's localStorage (copied, as Chrome locks the DB)."""
+    with tempfile.TemporaryDirectory() as tmp:
+        db = pathlib.Path(tmp) / "leveldb"
+        shutil.copytree(CHROME_LS, db)
+        records = [
+            r.record
+            for r in FolderReader(db).GetRecords(use_manifest=True)
+            if r.record.key.endswith(b"feedly.session")
+        ]
+    if not records:
+        return None
+    latest = max(records, key=lambda r: r.sequence_number)
+    return json.loads(latest.value[1:]).get("feedlyToken")  # value[0] is the encoding byte
 
 
 def verify_token(token):
     """Verify the token is valid by hitting the Feedly profile endpoint."""
     r = requests.get(f"{FEEDLY_API}/profile", headers={"Authorization": f"OAuth {token}"})
     if r.ok:
-        print(f"  Authenticated as: {r.json().get('email')}")
+        print(f"👤 Authenticated as: {r.json().get('email')}")
     return r.ok
 
 
@@ -51,11 +62,10 @@ def update_secrets(token):
 
 
 def main():
-    print("🍪 Reading Chrome cookies for feedly.com...")
+    print("🔑 Reading feedly.session from Chrome localStorage...")
     token = get_token()
-
     if not token:
-        print("❌ feedly.token.auth cookie not found. Make sure you're logged into Feedly in Chrome.")
+        print("❌ feedly.session not found in Chrome localStorage. Make sure you're logged into Feedly in Chrome.")
         sys.exit(1)
 
     print("🔍 Verifying token against Feedly API...")
@@ -65,7 +75,7 @@ def main():
 
     update_secrets(token)
     print("✅ FEEDLY_TOKEN updated in ~/.secrets")
-    print("   Run `resource` or open a new terminal tab to use it.")
+    print("🔄 Run `resource` or open a new terminal tab to use it.")
 
 
 if __name__ == "__main__":
