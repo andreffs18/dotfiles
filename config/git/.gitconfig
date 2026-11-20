@@ -36,3 +36,5 @@
 	gpgsign = false # true
 [gpg]
 	program = /usr/local/bin/gpg
+[branch]
+	sort = -committerdate

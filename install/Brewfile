@@ -51,3 +51,5 @@ brew "ollama"
 brew "topgrade"
 # Github command line tool. H elpful for scripts and llms interacting with github repos
 brew "gh"
+# Utility to ping multiple hosts/ips and display plot
+brew "gping"

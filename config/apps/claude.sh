@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Symlink own Claude Code skills and settings from the dotfiles into ~/.claude,
+# Symlink own Claude Code skills, settings and statusline script from the dotfiles into ~/.claude,
 # then install third-party skills listed in skills.txt
 # Existing real files/dirs are moved to <name>.bak so nothing is lost.
 CLAUDE_SRC=$DIRECTORY/config/claude
@@ -19,6 +19,7 @@ for skill in "$CLAUDE_SRC"/skills/*/; do
 done
 
 link "$CLAUDE_SRC/settings.json" ~/.claude/settings.json
+link "$CLAUDE_SRC/statusline.sh" ~/.claude/statusline.sh
 
 # Third-party skills: installed from upstream so they can be updated, not copied into the repo
 if command -v npx >/dev/null 2>&1; then

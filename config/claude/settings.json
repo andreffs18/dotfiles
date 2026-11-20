@@ -1,7 +1,12 @@
 {
   "model": "sonnet",
-  "skipWorkflowUsageWarning": true,
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
   "enabledPlugins": {
-    "pr-review-toolkit@claude-plugins-official": true
-  }
+    "pr-review-toolkit@claude-plugins-official": true,
+    "miro@claude-plugins-official": true
+  },
+  "skipWorkflowUsageWarning": true
 }
