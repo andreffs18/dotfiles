@@ -51,3 +51,5 @@ brew "ollama"
 brew "topgrade"
 # Github command line tool. H elpful for scripts and llms interacting with github repos
 brew "gh"
+# Fast Python package/project manager; runs scripts with inline dependencies
+brew "uv"

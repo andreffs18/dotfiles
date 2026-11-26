@@ -1,10 +1,13 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.9"
+# dependencies = ["dfindexeddb", "python-snappy", "requests", "zstd"]
+# ///
 """
 Refreshes the Feedly OAuth token by reading the `feedly.session` entry
 (field `feedlyToken`) from Chrome's localStorage for https://feedly.com.
 
-Setup (one-time):
-  python -m pip install dfindexeddb python-snappy requests zstd
+Dependencies are declared inline (PEP 723) and resolved by uv on run.
 """
 import json
 import os

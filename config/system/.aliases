@@ -57,8 +57,6 @@ alias git-delete-dangling-commits='git reflog expire --expire-unreachable=now --
 alias git-churn="~/.dotfiles/bin/git-churn"
 
 # Python shortcuts
-alias py="python manage.py runserver"
-alias shell="python manage.py shell"         # start python shell session
 alias delpyc="find . -name '*.pyc' -delete"  # delete all .pyc files
 
 # Kubernetes shortcuts

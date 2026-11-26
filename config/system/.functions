@@ -44,17 +44,17 @@ function olhaaqui(){
 }
 
 # Shortcut to get a random article from my Feedly account from the "Saved for Later" tag
-# Requires: python -m pip install requests
+# Requires: uv (dependencies are declared inline in the script)
 # eg: $ sfl 10
 function sfl(){
-	python3 $HOME/.dotfiles/bin/feedly_read_later.py $@
+	uv run --script $HOME/.dotfiles/bin/feedly_read_later.py $@
 }
 
 # Refresh FEEDLY_TOKEN by reading feedly.session (feedlyToken) from Chrome localStorage.
-# Requires: python -m pip install dfindexeddb python-snappy requests zstd
+# Requires: uv (dependencies are declared inline in the script)
 # eg: $ update_feedly_token
 function update_feedly_token(){
-  python3 $HOME/.dotfiles/bin/refresh_feedly_token.py
+  uv run --script $HOME/.dotfiles/bin/refresh_feedly_token.py
 }
 
 # Function to decode jwt tokens. Works like this:
