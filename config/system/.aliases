@@ -58,6 +58,7 @@ alias git-churn="~/.dotfiles/bin/git-churn"
 
 # Python shortcuts
 alias delpyc="find . -name '*.pyc' -delete"  # delete all .pyc files
+alias delds="find . -name .git -prune -o -name .DS_Store -exec rm -f {} +"  # delete all .DS_Store files
 
 # Kubernetes shortcuts
 alias abracadabra='jq -r ".data |= (. |map_values(@base64d))"'

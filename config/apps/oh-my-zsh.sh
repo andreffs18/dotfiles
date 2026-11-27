@@ -6,11 +6,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # Overwrite installed .zshrc from oh-my-zsh with my own
 ln -sfv $DIRECTORY/config/system/.zshrc ~
 
-# TODO(andreffs18): Maybe we don't need this anymore because these plugins are shipped inside of ozm now
-# Download plugins (DON'T FORGET, in case you want to add more, to add them to list of "plugins" on ~/.dotfiles/config/system/.zshrc!)
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-# git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-# git clone https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zsh/custom/plugins/zsh-completions
+# (DON'T FORGET, in case you add more custom plugins, to add them to the "plugins" list on ~/.dotfiles/config/system/.zshrc!)
+[[ -d ~/.oh-my-zsh/custom/plugins/zsh-completions ]] || git clone https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zsh/custom/plugins/zsh-completions
 
 # Print zsh version
 log.success "Installed oh-my-zsh on $(zsh --version)!"
